@@ -2,20 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0, 100%, 100%;
+    --foreground: 210, 50%, 20%; /* Updated base text color */
+
+    --card: 0, 0%, 100%;
+    --card-foreground: 222.2, 84%, 4.9%;
+
+    --popover: 0, 0%, 100%;
+    --popover-foreground: 222.2, 84%, 4.9%;
+
+    --primary: 60, 81%, 83%;
+    --primary-foreground: 154, 67%, 18%;
+
+    --secondary: 154, 67%, 18%;
+    --secondary-foreground: 60, 81%, 83%;
+
+    --muted: 210, 40%, 96.1%;
+    --muted-foreground: 215.4, 16.3%, 46.9%;
+
+    --accent: 27, 98%, 48%;
+    --accent-foreground: 222.2, 47.4%, 11.2%;
+
+    --accent-secondary: 210, 86%, 56%;
+    --primary2: 146, 42%, 52%;
+    --primary3: 67, 46%, 39%;
+    --secondary2: 27, 65%, 24%;
+
+    --destructive: 0, 84.2%, 60.2%;
+    --destructive-foreground: 210, 40%, 98%;
+
+    --border: 214.3, 31.8%, 91.4%;
+    --input: 214.3, 31.8%, 91.4%;
+    --ring: 222.2, 84%, 4.9%;
+
+    --radius: 0.5rem;
+
+    --hover-background: 210, 50%, 90%; /* New hover background color */
+    --hover-foreground: 154, 25%, 72%; /* Updated hover text color to #9cc2bb */
+  }
+
+  .dark {
+    --background: 222.2, 84%, 4.9%;
+    --foreground: 210, 50%, 90%; /* Updated base text color for dark mode */
+
+    --card: 222.2, 84%, 4.9%;
+    --card-foreground: 210, 40%, 98%;
+
+    --popover: 222.2, 84%, 4.9%;
+    --popover-foreground: 210, 40%, 98%;
+
+    --primary: 210, 40%, 98%;
+    --primary-foreground: 222.2, 47.4%, 11.2%;
+
+    --secondary: 217.2, 32.6%, 17.5%;
+    --secondary-foreground: 210, 40%, 98%;
+
+    --muted: 217.2, 32.6%, 17.5%;
+    --muted-foreground: 215, 20.2%, 65.1%;
+
+    --accent: 217.2, 32.6%, 17.5%;
+    --accent-foreground: 210, 40%, 98%;
+
+    --destructive: 0, 62.8%, 30.6%;
+    --destructive-foreground: 210, 40%, 98%;
+
+    --border: 217.2, 32.6%, 17.5%;
+    --input: 217.2, 32.6%, 17.5%;
+    --ring: 212.7, 26.8%, 83.9%;
+
+    --hover-background: 210, 50%, 70%; /* New hover background color for dark mode */
+    --hover-foreground: 154, 25%, 72%; /* Updated hover text color to #9cc2bb for dark mode */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white text-foreground;
+  }
+  a:hover, button:hover {
+    background-color: hsl(var(--hover-background));
+    color: hsl(var(--hover-foreground));
+  }
+}
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
 }
