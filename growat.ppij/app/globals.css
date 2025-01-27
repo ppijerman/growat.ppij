@@ -80,7 +80,7 @@
 
 @font-face {
   font-family: 'Akzidenz Grotesk';
-  src: url(/fonts/Akzidenz-grotesk-bold.ttf) format('truetype');
+  src: url('/fonts/Akzidenz-grotesk-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
