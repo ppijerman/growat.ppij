@@ -1,6 +1,7 @@
 "use client";
 
-import iconicLogo from "@/assets/logo.png";
+import GrowAtLogo from "@/assets/logogrowat.png";
+import PPIJLogo from "@/assets/logoppij.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useScroll, motion, useMotionValueEvent } from "framer-motion";
@@ -41,82 +42,14 @@ const navItems: NavItem[] = [
         label: "About",
         description: "Learn more about ICONIC's objectives and goals",
       },
-      {
-        href: PATHS.OUR_TEAM,
-        label: "Our Team",
-        description: "Meet our dedicated ICONIC 2024 team",
-      },
-      {
-        href: PATHS.REVIEWERS,
-        label: "Reviewers",
-        description: "Our panel of abstract reviewers",
-      },
-      {
-        href: PATHS.JOIN_THE_MOVEMENT,
-        label: "Join the Movement",
-        description: "Join the movement to plant mangrooves with ICONIC 2024",
-      },
-    ],
-  },
-  {
-    href: PATHS.EVENTS,
-    label: "Program Overview",
-    submenus: [
-      {
-        href: PATHS.EVENTS,
-        label: "Events and Schedule",
-        description: "Explore our 3-day event and schedule",
-      },
-      {
-        href: PATHS.SPEAKERS,
-        label: "Speakers",
-        description: "Meet our list of speakers",
-      },
-      {
-        href: PATHS.SUBJECT,
-        label: "Subject",
-        description: "Learn about the subjects of ICONIC 2024",
-      },
-    ],
-  },
-  {
-    href: PATHS.DURING_THE_STAY,
-    label: "During the Stay",
-    submenus: [
-      {
-        href: PATHS.DURING_THE_STAY,
-        label: "During the Stay",
-        description: "Learn more about your stay during the conference",
-      },
-      {
-        href: PATHS.PREPARATION,
-        label: "Preparation",
-        description: "Get ready for the conference",
-      },
-      {
-        href: PATHS.VENUE,
-        label: "Venue Göttingen",
-        description: "Explore the ICONIC 2024's Venue",
-      },
-      {
-        href: PATHS.ONLINE_PARTICIPANT,
-        label: "Online Participant",
-        description: "Guidelines for online participation",
-      },
-      {
-        href: PATHS.CITY_DAY_TRIP,
-        label: "City Day Trip",
-        description: "Explore the city of Göttingen",
-      },
-      { href: PATHS.FAQ, label: "FAQ" },
     ],
   },
   { href: PATHS.PARTNERSHIP, label: "Partnership" },
-  { href: PATHS.EVENT_REGISTRATION, label: "Registration" },
-  { href: PATHS.SUBMISSION, label: "Book of Abstract" },
+  { href: PATHS.EVENTS, label: "Events" },
+
 ];
 
-export function IconicHeader() {
+export function GrowatHeader() {
   const pathname = usePathname();
 
   const { scrollY } = useScroll();
@@ -149,7 +82,10 @@ export function IconicHeader() {
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
       <Link href={PATHS.HOME}>
-        <Image src={iconicLogo} alt="Iconic Logo" className="w-12" />
+      <div className="flex items-center space-x-2">
+        <Image src={GrowAtLogo} alt="GrowAt Logo" className="w-12" />
+        <Image src={PPIJLogo} alt="PPIJ Logo" className="w-12" />
+      </div>
       </Link>
       <Sheet>
         <SheetTrigger asChild>
@@ -161,11 +97,11 @@ export function IconicHeader() {
         <SheetContent side="right">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <Image
-              src={iconicLogo}
-              alt="Iconic Logo"
+              src={PPIJLogo}
+              alt="PPIJ Logo"
               className="w-[48px] md:w-[60px] p-2 transition"
             />
-            <span className="text-lg font-bold">ICONIC 2024</span>
+            <span className="text-lg font-bold">Growat.ppij</span>
           </Link>
           <div className="grid gap-4 py-6">
             {navItems.map((item, index) =>

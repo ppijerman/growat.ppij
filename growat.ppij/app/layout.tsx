@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import "./globals.css";
-import { IconicHeader } from "@/components/Navbar/header";
-import { IconicFooter } from "@/components/footer";
+import { GrowatHeader } from "@/components/Navbar/header";
+import { GrowatFooter } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
@@ -24,12 +24,11 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-roboto">
-        <IconicHeader />
+      <body className="font-akzidenz-grotesk">
+        <GrowatHeader />
         {children}
-        <IconicFooter />
+        <GrowatFooter />
         <Analytics />
       </body>
     </html>

@@ -3,6 +3,7 @@ export const APP_NAME = "Growat PPIJ";
 export const PATHS = {
   HOME: "/",
   ABOUT: "/about",
+  CONTACT: "/contact",
   OUR_TEAM: "/about/our-team",
   REVIEWERS: "/reviewers",
   JOIN_THE_MOVEMENT: "/join-the-movement",
@@ -27,6 +28,7 @@ export const PATHS = {
 export const BREADCRUMB_LABELS = {
   [PATHS.HOME]: "Home",
   [PATHS.ABOUT]: "About",
+  [PATHS.CONTACT]: "Contact Us",
   [PATHS.OUR_TEAM]: "Our Team",
   [PATHS.REVIEWERS]: "Reviewers",
   [PATHS.SUBJECT]: "Subject Overview",

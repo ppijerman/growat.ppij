@@ -22,11 +22,11 @@
     --muted: 210, 40%, 96.1%;
     --muted-foreground: 215.4, 16.3%, 46.9%;
 
-    --accent: 27, 98%, 48%;
+    --accent: 208, 98%, 38%; 
     --accent-foreground: 222.2, 47.4%, 11.2%;
 
     --accent-secondary: 210, 86%, 56%;
-    --primary2: 146, 42%, 52%;
+    --primary2: 179, 47%, 20%; /* primary color */
     --primary3: 67, 46%, 39%;
     --secondary2: 27, 65%, 24%;
 
@@ -39,41 +39,8 @@
 
     --radius: 0.5rem;
 
-    --hover-background: 210, 50%, 90%; /* New hover background color */
-    --hover-foreground: 154, 25%, 72%; /* Updated hover text color to #9cc2bb */
-  }
-
-  .dark {
-    --background: 222.2, 84%, 4.9%;
-    --foreground: 210, 50%, 90%; /* Updated base text color for dark mode */
-
-    --card: 222.2, 84%, 4.9%;
-    --card-foreground: 210, 40%, 98%;
-
-    --popover: 222.2, 84%, 4.9%;
-    --popover-foreground: 210, 40%, 98%;
-
-    --primary: 210, 40%, 98%;
-    --primary-foreground: 222.2, 47.4%, 11.2%;
-
-    --secondary: 217.2, 32.6%, 17.5%;
-    --secondary-foreground: 210, 40%, 98%;
-
-    --muted: 217.2, 32.6%, 17.5%;
-    --muted-foreground: 215, 20.2%, 65.1%;
-
-    --accent: 217.2, 32.6%, 17.5%;
-    --accent-foreground: 210, 40%, 98%;
-
-    --destructive: 0, 62.8%, 30.6%;
-    --destructive-foreground: 210, 40%, 98%;
-
-    --border: 217.2, 32.6%, 17.5%;
-    --input: 217.2, 32.6%, 17.5%;
-    --ring: 212.7, 26.8%, 83.9%;
-
-    --hover-background: 210, 50%, 70%; /* New hover background color for dark mode */
-    --hover-foreground: 154, 25%, 72%; /* Updated hover text color to #9cc2bb for dark mode */
+    --hover-background: 0, 0%, 100%; /* New hover background color */
+    --hover-foreground: 0, 0%, 13%; /* Updated hover text color to #a9e5bb */
   }
 }
 
@@ -84,6 +51,10 @@
   body {
     @apply bg-white text-foreground;
   }
+  header a:hover, header button:hover {
+    color: hsl(var(--hover-foreground));
+  }
+
   a:hover, button:hover {
     background-color: hsl(var(--hover-background));
     color: hsl(var(--hover-foreground));
@@ -98,4 +69,22 @@
 
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+@font-face {
+  font-family: 'Akzidenz Grotesk';
+  src: url('/fonts/AkzidenzGrotesk-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akzidenz Grotesk';
+  src: url(/fonts/Akzidenz-grotesk-bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-akzidenz-grotesk {
+  font-family: 'Akzidenz Grotesk',
 }
