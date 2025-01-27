@@ -41,66 +41,18 @@ export function GrowatFooter() {
           </ul>
         </div>
 
-        <div className="flex flex-col gap-3 w-full border-b-2 border-l-0 md:border-l-2 md:border-b-0 pb-3 md:pl-3">
-          <ul className="flex flex-col gap-3 text-sm md:text-base">
-            <Link href={PATHS.ABOUT} className="hover:text-accent transition">
-              <li>About Us</li>
-            </Link>
-            <Link href={PATHS.SUBJECT}>
-              <li>Subject</li>
-            </Link>
-            <Link
-              href={PATHS.OUR_TEAM}
-              className="hover:text-accent transition"
-            >
-              <li>Our Team</li>
-            </Link>
-            <Link
-              href={PATHS.PARTNERSHIP}
-              className="hover:text-accent transition"
-            >
-              <li>Partnership</li>
-            </Link>
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-3 w-full items border-b-2 border-l-0 md:border-l-2 md:border-b-0 pb-3 md:pl-3">
-          <ul className="flex flex-col gap-3 text-sm md:text-base">
-            <Link
-              href={PATHS.DURING_THE_STAY}
-              className="hover:text-accent transition"
-            >
-              <li>During the Stay</li>
-            </Link>
-            <Link
-              href={PATHS.SUBMISSION}
-              className="hover:text-accent transition"
-            >
-              <li>Submission</li>
-            </Link>
-            <Link
-              href={PATHS.REVIEWERS}
-              className="hover:text-accent transition"
-            >
-              <li>Reviewers</li>
-            </Link>
-            <Link href={PATHS.FAQ}>
-              <li>FAQ</li>
-            </Link>
-          </ul>
+        <div className="flex flex-row gap-2 pb-5">
+          <Link href="https://instagram.com/growat.ppij">
+            <InstagramLogoIcon className="w-10 h-10  hover:text-accent transition" />
+          </Link>
+          <Link href="#">
+            <BiLogoYoutube className="w-10 h-10  hover:text-accent transition" />
+          </Link>
         </div>
       </div>
-      <div className="flex flex-row gap-2 pb-5">
-        <Link href="https://instagram.com/growat.ppij">
-          <InstagramLogoIcon className="w-10 h-10  hover:text-accent transition" />
-        </Link>
-        <Link href="#">
-          <BiLogoYoutube className="w-10 h-10  hover:text-accent transition" />
-        </Link>
-      </div>
-      <div className="flex w-[70%] flex-col items-center py-3 border-t-2 border-t-gray-300">
+      <div className="flex w-[85%] flex-col items-center py-3 border-t-2 border-t-gray-500">
         Copyright &copy; {new Date().getFullYear()} GrowAt PPI Jerman
       </div>
-    </footer>
-  );
-}
+        </footer>
+      );
+    }

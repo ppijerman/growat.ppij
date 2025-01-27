@@ -40,7 +40,7 @@ const navItems: NavItem[] = [
       {
         href: PATHS.ABOUT,
         label: "About",
-        description: "Learn more about ICONIC's objectives and goals",
+        description: "Learn more about GrowAt PPI Jerman",
       },
     ],
   },
