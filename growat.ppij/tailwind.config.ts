@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
-const defaultTheme = require('tailwindcss/defaultTheme');
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config = {
   darkMode: ["class"],
