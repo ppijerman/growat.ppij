@@ -4,7 +4,7 @@ const require = createRequire(import.meta.url);
 
 import defaultTheme from 'tailwindcss/defaultTheme';
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -12,7 +12,6 @@ const config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -21,7 +20,6 @@ const config = {
         "2xl": "1400px",
       },
     },
-
     listStyleType: {
       disc: "disc",
       decimal: "decimal",
@@ -29,11 +27,9 @@ const config = {
       square: "square",
       roman: "upper-roman",
     },
-
     extend: {
       backgroundImage: {
-        "landing": "url('/Landing Page_neu_SVG.svg')",
-
+        "landing": "url('@/assets/backdrop.png')",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -101,6 +97,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
 
 export default config;
