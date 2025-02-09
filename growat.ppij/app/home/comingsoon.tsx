@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import WhatToExpect from './what-to-expect';
+//import AIPSE from './aipse-registration';
+//import Recap from './recap';
+import MentorshipSurvey from './mentorship-survey';
 
 const Comingsoon: React.FC = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -35,9 +38,16 @@ const Comingsoon: React.FC = () => {
                     </div>
                 </div>
             </div>
+            {/* WhatToExpect and MentorshipSurvey Sections */}
             <div className="transition-opacity duration-500" style={{ opacity: 1 - opacity }}>
                 <WhatToExpect isVisible={scrollY > windowHeight / 2} />
             </div>
+
+            {/* Added some spacing between sections */}
+            <div className="mt-16">
+                <MentorshipSurvey isVisible={scrollY > windowHeight} />
+            </div>
+
         </div>
     );
 };
