@@ -3,10 +3,13 @@
 import React, { useEffect, useState } from "react"
 
 const timelineData = [
-  { date: "Q1 2023", event: "Project Kickoff" },
-  { date: "Q2 2023", event: "Initial Development" },
-  { date: "Q3 2023", event: "Beta Release" },
-  { date: "Q4 2023", event: "Official Launch" },
+  { date: "February 2025", event: "IT Online Workshop" },
+  { date: "March 2025", event: "1st Inspiring Webinar" },
+  { date: "April-May 2025", event: "Step Up Mentorship 3.0" },
+  { date: "June 2025", event: "SEA Career Fair" },
+  { date: "June 2025", event: "Indonesian Networking Night" },
+  { date: "June 2025", event: "Company Visit" },
+  { date: "August 2025", event: "2nd Power-Packed Webinar" },
 ]
 
 interface TimelineProps {
@@ -21,7 +24,7 @@ const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
       timelineData.forEach((_, index) => {
         setTimeout(() => {
           setVisibleItems((prev) => [...prev, index])
-        }, index * 500)
+        }, 0)
       })
     } else {
       setVisibleItems([])
@@ -49,8 +52,8 @@ const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
           >
             <div className="order-1 w-5/12"></div>
             <div className="order-1 w-5/12 px-1 py-4 text-center bg-white rounded-lg shadow-md">
-              <h3 className="mb-1 text-xl font-semibold">{item.date}</h3>
-              <p className="text-gray-700">{item.event}</p>
+              <h3 className="mb-1 text-xl font-semibold">{item.event}</h3>
+              <p className="text-gray-700">{item.date}</p>
             </div>
           </div>
         ))}

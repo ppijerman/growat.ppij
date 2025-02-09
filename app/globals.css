@@ -11,6 +11,14 @@
 
   --background-image-landing: url("@/public/assets/backdrop.png");
 
+  /* GrowAt color pallete  */
+  --color-ga-beige: #e6e6dd;
+  --color-ga-light-green: #a9e5bb;
+  --color-ga-green: #1b4a49;
+  --color-ga-blue: #0267c1;
+  --color-ga-dark: #222222;
+  --color-ga-light: #fefefe;
+
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));

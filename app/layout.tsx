@@ -47,7 +47,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </Head>
-      <body className="font-akzidenz-grotesk">
+      <body className="font-akzidenz-grotesk bg-ga-beige text-ga-dark">
         {children}
         <Footer />
         <Analytics />
