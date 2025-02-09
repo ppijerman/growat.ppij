@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
-import LogoGrowat from "@/assets/logogrowat.png"
+import LogoGrowat from "@/public/assets/logogrowat.png"
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)

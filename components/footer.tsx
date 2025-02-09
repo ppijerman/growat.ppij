@@ -1,14 +1,9 @@
 import Image from "next/image"
-import PPIJLogo from "@/assets/logoppij.png"
-import GrowAtLogo from "@/assets/logogrowat.png"
-import {
-  InstagramLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons"
+import PPIJLogo from "@/public/assets/logoppij.png"
+import GrowAtLogo from "@/public/assets/logogrowat.png"
+import { InstagramLogoIcon } from "@radix-ui/react-icons"
 import { BiLogoYoutube } from "react-icons/bi"
 import Link from "next/link"
-import { PATHS } from "@/lib/constants"
 
 export function GrowatFooter() {
   return (

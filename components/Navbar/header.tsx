@@ -1,6 +1,6 @@
 "use client"
 
-import GrowAtLogo from "@/assets/logogrowat.png"
+import GrowAtLogo from "@/public/assets/logogrowat.png"
 import Image from "next/image"
 import Link from "next/link"
 import { PATHS } from "@/lib/constants"
@@ -141,7 +141,7 @@ export function GrowatHeader({ heroHeight }: { heroHeight: number }) {
                         <NavigationMenuLink asChild key={subIndex}>
                           <Link
                             href={submenu.href}
-                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-accent focus:bg-gray-100 focus:outline-none"
+                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-accent focus:bg-gray-100 focus:outline-hidden"
                             prefetch={false}
                           >
                             <div className="text-sm font-medium leading-none">
@@ -162,7 +162,7 @@ export function GrowatHeader({ heroHeight }: { heroHeight: number }) {
                 <NavigationMenuLink asChild key={index}>
                   <Link
                     href={item.href}
-                    className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xl font-medium transition-colors hover:text-accent focus:bg-gray-100 focus:outline-none ${
+                    className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xl font-medium transition-colors hover:text-accent focus:bg-gray-100 focus:outline-hidden ${
                       isActive(item.href) ? "text-primary2" : ""
                     }`}
                     prefetch={false}
@@ -215,26 +215,6 @@ function MenuIcon(props: React.ComponentProps<"svg">) {
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  )
-}
-
-function XIcon(props: React.ComponentProps<"svg">) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
     </svg>
   )
 }

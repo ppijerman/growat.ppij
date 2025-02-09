@@ -4,14 +4,14 @@ import { GrowatHeader } from "@/components/Navbar/header"
 import { GrowatFooter } from "@/components/footer"
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
-import Backdrop from "@/assets/backdrop.png"
-import Hero from "./home/landing"
+import Backdrop from "@/public/assets/backdrop.png"
+import Hero from "./hero"
 
 export const metadata: Metadata = {
   title: "Growat PPI Jerman",
   description: "Growat PPI Jerman",
   icons: {
-    icon: "@/assets/logogrowat.png",
+    icon: "@/public/assets/logogrowat.png",
     apple: "/apple-touch-icon.png",
   },
 }
