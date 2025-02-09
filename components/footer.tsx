@@ -1,25 +1,33 @@
-import Image from "next/image";
-import PPIJLogo from "@/assets/logoppij.png";
-import GrowAtLogo from "@/assets/logogrowat.png";
+import Image from "next/image"
+import PPIJLogo from "@/assets/logoppij.png"
+import GrowAtLogo from "@/assets/logogrowat.png"
 import {
   InstagramLogoIcon,
   LinkedInLogoIcon,
   TwitterLogoIcon,
-} from "@radix-ui/react-icons";
-import { BiLogoYoutube } from "react-icons/bi";
-import Link from "next/link";
-import { PATHS } from "@/lib/constants";
+} from "@radix-ui/react-icons"
+import { BiLogoYoutube } from "react-icons/bi"
+import Link from "next/link"
+import { PATHS } from "@/lib/constants"
 
 export function GrowatFooter() {
   return (
     <footer className="bg-white text-gray-600 min-h-[200px] flex flex-col items-center justify-center w-full py-8">
       <div className="flex flex-col md:flex-row gap-[4vw] justify-center items-center w-[90%] p-5">
-        <div className="flex items-center space-x-2 justify-center w-full">
-          <Link href="https://growat.ppijerman.org" target="_blank" rel="noopener noreferrer">
-            <Image src={GrowAtLogo} alt="GrowAt Logo" width={150} height={60} />
+        <div className="flex items-center space-x-4 justify-center w-full">
+          <Link
+            href="https://growat.ppijerman.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={GrowAtLogo} alt="GrowAt Logo" height={60} />
           </Link>
-          <Link href="https://ppijerman.org" target="_blank" rel="noopener noreferrer">
-            <Image src={PPIJLogo} alt="PPI Jerman Logo" width={80} height={60} />
+          <Link
+            href="https://ppijerman.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src={PPIJLogo} alt="PPI Jerman Logo" height={60} />
           </Link>
         </div>
 
@@ -53,6 +61,6 @@ export function GrowatFooter() {
       <div className="flex w-[85%] flex-col items-center py-3 border-t-2 border-t-gray-500">
         Copyright &copy; {new Date().getFullYear()} GrowAt PPI Jerman
       </div>
-        </footer>
-      );
-    }
+    </footer>
+  )
+}

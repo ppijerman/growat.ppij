@@ -1,8 +1,10 @@
-import type { Config } from "tailwindcss";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
+import type { Config } from "tailwindcss"
+import { createRequire } from "module"
+import BackdropImage from "@/public/assets/backdrop.png"
 
-import defaultTheme from 'tailwindcss/defaultTheme';
+const require = createRequire(import.meta.url)
+
+import defaultTheme from "tailwindcss/defaultTheme"
 
 const config: Config = {
   darkMode: ["class"],
@@ -29,7 +31,7 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        "landing": "url('@/assets/backdrop.png')",
+        landing: "url('@/assets/backdrop.png')",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -91,12 +93,12 @@ const config: Config = {
       },
       fontFamily: {
         "utile-display": ['"utile-display"', "sans-serif"],
-        "inter": ['Inter var', ...defaultTheme.fontFamily.sans],
-        "roboto": ['Roboto', 'sans-serif']
+        inter: ["Inter var", ...defaultTheme.fontFamily.sans],
+        roboto: ["Roboto", "sans-serif"],
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}
 
-export default config;
+export default config

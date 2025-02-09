@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import GrowAtLogo from "@/assets/logogrowat.png";
-import PPIJLogo from "@/assets/logoppij.png";
-import Image from "next/image";
-import Link from "next/link";
-import { useScroll, motion, useMotionValueEvent } from "framer-motion";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { PATHS } from "@/lib/constants";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+import GrowAtLogo from "@/assets/logogrowat.png"
+import Image from "next/image"
+import Link from "next/link"
+import { PATHS } from "@/lib/constants"
+import { navItems } from "@/lib/navItems"
+import { useScroll, motion, useMotionValueEvent } from "framer-motion"
+import { usePathname } from "next/navigation"
+import { useState } from "react"
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleTrigger,
   CollapsibleContent,
-} from "@/components/ui/collapsible";
+} from "@/components/ui/collapsible"
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -22,71 +22,45 @@ import {
   NavigationMenuItem,
   NavigationMenuTrigger,
   NavigationMenuContent,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui/navigation-menu"
 
-type NavItem = {
-  href: string;
-  label: string;
-  description?: string;
-  submenus?: NavItem[];
-};
+export function GrowatHeader({ heroHeight }: { heroHeight: number }) {
+  const pathname = usePathname()
 
-const navItems: NavItem[] = [
-  { href: PATHS.HOME, label: "Home" },
-  {
-    href: PATHS.ABOUT,
-    label: "About",
-    submenus: [
-      {
-        href: PATHS.ABOUT,
-        label: "About",
-        description: "Learn more about GrowAt PPI Jerman",
-      },
-    ],
-  },
-  { href: PATHS.PARTNERSHIP, label: "Partnership" },
-  { href: PATHS.EVENTS, label: "Events" },
-
-];
-
-export function GrowatHeader() {
-  const pathname = usePathname();
-
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll()
+  const [hidden, setHidden] = useState(true)
 
   // show/hide header on scroll
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    if (latest > previous && latest > 150) {
-      setHidden(true);
+    const previous = scrollY.getPrevious() ?? 0
+    if (latest > previous && latest > (4 / 10) * heroHeight) {
+      setHidden(false)
     } else {
-      setHidden(false);
+      setHidden(true)
     }
-  });
+  })
 
   // Define a function to determine if a link is active based on the pathname
   const isActive = (linkPath: string) => {
-    if (linkPath === "/") return pathname === "/";
-    return pathname === linkPath || pathname.includes(linkPath);
-  };
+    if (linkPath === "/") return pathname === "/"
+    return pathname === linkPath || pathname.includes(linkPath)
+  }
 
   return (
     <motion.header
-      className="sticky top-0 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-white z-50"
+      className="fixed top-0 flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-white z-50"
       variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" },
       }}
+      initial="hidden"
       animate={hidden ? "hidden" : "visible"}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <Link href={PATHS.HOME}>
-      <div className="flex items-center space-x-2">
-        <Image src={GrowAtLogo} alt="GrowAt Logo" className="w-12" />
-        <Image src={PPIJLogo} alt="PPIJ Logo" className="w-12" />
-      </div>
+      <Link href={PATHS.HOME} className="max-h-20">
+        <Image src={GrowAtLogo} alt="GrowAt Logo" className="w-32" />
       </Link>
+
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden ml-auto">
@@ -95,20 +69,12 @@ export function GrowatHeader() {
           </Button>
         </SheetTrigger>
         <SheetContent side="right">
-          <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Image
-              src={PPIJLogo}
-              alt="PPIJ Logo"
-              className="w-[48px] md:w-[60px] p-2 transition"
-            />
-            <span className="text-lg font-bold">Growat.ppij</span>
-          </Link>
           <div className="grid gap-4 py-6">
             {navItems.map((item, index) =>
               item.submenus ? (
                 <Collapsible className="grid gap-4" key={index}>
                   <Link href={item.href}>
-                    <CollapsibleTrigger className="flex w-full items-center text-lg font-semibold [&[data-state=open]>svg]:rotate-90 py-2">
+                    <CollapsibleTrigger className="flex w-full items-center text-xl font-semibold [&[data-state=open]>svg]:rotate-90 py-2">
                       {item.label}{" "}
                       <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
                     </CollapsibleTrigger>
@@ -138,7 +104,7 @@ export function GrowatHeader() {
               ) : (
                 <Link
                   href={item.href}
-                  className="flex flex-col w-full items-start py-2 text-lg font-semibold"
+                  className="flex flex-col w-full items-start py-2 text-xl font-semibold"
                   key={index}
                   prefetch={false}
                 >
@@ -163,7 +129,7 @@ export function GrowatHeader() {
               item.submenus ? (
                 <NavigationMenuItem key={index}>
                   <NavigationMenuTrigger
-                    className={`hover:text-accent bg-white hover:bg-white focus:bg-gray-100 ${
+                    className={`hover:text-accent bg-white hover:bg-white focus:bg-gray-100 text-xl ${
                       isActive(item.href) ? "text-primary2" : ""
                     }`}
                   >
@@ -196,7 +162,7 @@ export function GrowatHeader() {
                 <NavigationMenuLink asChild key={index}>
                   <Link
                     href={item.href}
-                    className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:text-accent focus:bg-gray-100 focus:outline-none ${
+                    className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xl font-medium transition-colors hover:text-accent focus:bg-gray-100 focus:outline-none ${
                       isActive(item.href) ? "text-primary2" : ""
                     }`}
                     prefetch={false}
@@ -210,7 +176,7 @@ export function GrowatHeader() {
         </NavigationMenu>
       </div>
     </motion.header>
-  );
+  )
 }
 
 function ChevronRightIcon(props: React.ComponentProps<"svg">) {
@@ -229,7 +195,7 @@ function ChevronRightIcon(props: React.ComponentProps<"svg">) {
     >
       <path d="m9 18 6-6-6-6" />
     </svg>
-  );
+  )
 }
 
 function MenuIcon(props: React.ComponentProps<"svg">) {
@@ -250,7 +216,7 @@ function MenuIcon(props: React.ComponentProps<"svg">) {
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
-  );
+  )
 }
 
 function XIcon(props: React.ComponentProps<"svg">) {
@@ -270,5 +236,5 @@ function XIcon(props: React.ComponentProps<"svg">) {
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />
     </svg>
-  );
+  )
 }
