@@ -9,7 +9,7 @@
   --list-style-type-square: square;
   --list-style-type-roman: upper-roman;
 
-  --background-image-landing: url("@/public/assets/backdrop.png");
+  --background-image-landing: url("/assets/backdrop.png");
 
   /* GrowAt color pallete  */
   --color-ga-beige: #e6e6dd;
