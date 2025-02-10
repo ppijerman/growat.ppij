@@ -7,29 +7,37 @@ import Link from "next/link"
 
 export function GrowatFooter() {
   return (
-    <footer className="bg-white text-gray-600 min-h-[200px] flex flex-col items-center justify-center w-full py-8">
+    <footer className="bg-white text-gray-600 flex flex-col items-center justify-center w-full py-8 px-[5%]">
       <div className="flex flex-col md:flex-row gap-[4vw] justify-center items-center w-[90%] p-5">
-        <div className="flex items-center space-x-4 justify-center w-full">
+        <div className="grid grid-cols-2 space-x-2 justify-start max-h-10 w-80">
           <Link
             href="https://growat.ppijerman.org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={GrowAtLogo} alt="GrowAt Logo" height={60} />
+            <Image
+              src={GrowAtLogo}
+              alt="GrowAt Logo"
+              className="object-contain"
+            />
           </Link>
           <Link
             href="https://ppijerman.org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={PPIJLogo} alt="PPI Jerman Logo" height={60} />
+            <Image
+              src={PPIJLogo}
+              alt="PPI Jerman Logo"
+              className="object-contain"
+            />
           </Link>
         </div>
 
-        <div className="flex flex-col w-full gap-4 border-b-2 md:border-none pb-3">
+        <div className="flex flex-col grow w-full gap-4 border-b-2 md:border-none pb-3">
           <ul>
             <li>
-              <h2 className="text-lg">Contact Us</h2>
+              <h2 className="text-lg">Contact us</h2>
             </li>
             <li>
               <p className="">
@@ -53,7 +61,7 @@ export function GrowatFooter() {
           </Link>
         </div>
       </div>
-      <div className="flex w-[85%] flex-col items-center py-3 border-t-2 border-t-gray-500">
+      <div className="flex w-full flex-col items-center py-3 border-t-2 border-t-gray-500">
         Copyright &copy; {new Date().getFullYear()} GrowAt PPI Jerman
       </div>
     </footer>

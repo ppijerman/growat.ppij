@@ -7,25 +7,13 @@ type NavItem = {
   submenus?: NavItem[]
 }
 
-export const navItems: NavItem[] = [
+export const NavItems: NavItem[] = [
   {
     href: PATHS.HOME,
     label: "Home",
-    submenus: [
-      {
-        href: PATHS.HOME,
-        label: "AIPSE Workshop",
-        description: "AI stuff",
-      },
-      {
-        href: PATHS.HOME,
-        label: "AIPSE Workshop",
-        description: "AI stuff",
-      },
-    ],
   },
   {
-    href: PATHS.HOME,
+    href: "#event-timeline",
     label: "Events",
     submenus: [
       {

@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import LogoGrowat from "@/public/assets/logogrowat.png"
+import { NavItems } from "@/lib/navItems"
+import Link from "next/link"
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
@@ -25,22 +27,36 @@ export default function Hero() {
   const opacity = windowHeight ? Math.max(1 - scrollY / windowHeight, 0) : 1
 
   return (
-    <div className="mb-20">
+    <div>
       <div className="relative w-full h-screen" style={{ opacity }}>
         <div className="top-0 left-0 w-full h-full bg-landing bg-cover bg-center">
-          <div className="flex flex-col items-center justify-center h-full space-y-4">
-            <Image
-              src={LogoGrowat}
-              alt="Logo Growat"
-              className="mx-auto my-0 p-5 object-contain max-h-96"
-            />
-            <div className="flex-row justify-items-center text-center text-black">
-              <h1 className="text-6xl font-bold">Coming soon</h1>
-              <p className="text-2xl mt-4">Scroll for more information</p>
+          <div className="flex flex-col h-full space-y-4 pt-10">
+            {/* Header, links */}
+            <div className="flex items-start justify-center space-x-10 text-3xl font-medium">
+              {NavItems.map((item, index) => (
+                <Link key={index} href={item.href} className="hover:underline">
+                  {item.label}
+                </Link>
+              ))}
             </div>
-          </div>
-          <div className="absolute bottom-0 w-full flex justify-center mb-10">
-            <Arrow className="animate-bounce" />
+
+            {/* Logo and text */}
+            <div className="grow flex flex-col items-center justify-center">
+              <Image
+                src={LogoGrowat}
+                alt="Logo Growat"
+                className="mx-auto my-0 p-5 object-contain max-h-64"
+              />
+              <div className="flex-row justify-items-center text-center text-black">
+                <h1 className="text-5xl font-bold">Coming soon</h1>
+                <p className="text-xl">Scroll for more information</p>
+              </div>
+            </div>
+
+            {/* arrow */}
+            <div className="w-full flex justify-center mb-10">
+              <Arrow className="animate-bounce" />
+            </div>
           </div>
         </div>
       </div>

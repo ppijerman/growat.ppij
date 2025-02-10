@@ -9,7 +9,7 @@
   --list-style-type-square: square;
   --list-style-type-roman: upper-roman;
 
-  --background-image-landing: url("/public/assets/backdrop.png");
+  --background-image-landing: url("@/public/assets/backdrop.png");
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -174,14 +174,14 @@
 
 @font-face {
   font-family: "Akzidenz Grotesk";
-  src: url("/fonts/AkzidenzGrotesk-Light.ttf") format("truetype");
+  src: url("@/public/fonts/AkzidenzGrotesk-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Akzidenz Grotesk";
-  src: url("/fonts/Akzidenz-grotesk-bold.ttf") format("truetype");
+  src: url("@/public/fonts/Akzidenz-grotesk-bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

@@ -1,11 +1,8 @@
 import Head from "next/head"
 import "./globals.css"
-import { GrowatHeader } from "@/components/Navbar/header"
 import { GrowatFooter } from "@/components/footer"
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
-import Backdrop from "@/public/assets/backdrop.png"
-import Hero from "./hero"
 
 export const metadata: Metadata = {
   title: "Growat PPI Jerman",
@@ -51,8 +48,6 @@ export default function RootLayout({
         />
       </Head>
       <body className="font-akzidenz-grotesk">
-        <Hero />
-        <GrowatHeader heroHeight={Backdrop.height} />
         {children}
         <GrowatFooter />
         <Analytics />

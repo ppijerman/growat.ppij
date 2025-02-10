@@ -30,7 +30,8 @@ const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
 
   return (
     <div
-      className={`container mx-auto p-6 transition-opacity duration-500 ${
+      id="event-timeline"
+      className={`container mx-auto pt-20 p-6 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
