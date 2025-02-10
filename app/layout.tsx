@@ -1,6 +1,6 @@
 import Head from "next/head"
 import "./globals.css"
-import { GrowatFooter } from "@/components/footer"
+import { Footer } from "@/components/footer"
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 
@@ -49,7 +49,7 @@ export default function RootLayout({
       </Head>
       <body className="font-akzidenz-grotesk">
         {children}
-        <GrowatFooter />
+        <Footer />
         <Analytics />
       </body>
     </html>

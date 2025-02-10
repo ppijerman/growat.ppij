@@ -5,7 +5,7 @@ import { InstagramLogoIcon } from "@radix-ui/react-icons"
 import { BiLogoYoutube } from "react-icons/bi"
 import Link from "next/link"
 
-export function GrowatFooter() {
+export function Footer() {
   return (
     <footer className="bg-white text-gray-600 flex flex-col items-center justify-center w-full py-8 px-[5%]">
       <div className="flex flex-col md:flex-row gap-[4vw] justify-center items-center w-[90%] p-5">
