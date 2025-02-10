@@ -2,14 +2,13 @@ import Image from "next/image"
 import PPIJLogo from "@/public/assets/logoppij.png"
 import GrowAtLogo from "@/public/assets/logogrowat.png"
 import { InstagramLogoIcon } from "@radix-ui/react-icons"
-import { BiLogoYoutube } from "react-icons/bi"
 import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-white text-gray-600 flex flex-col items-center justify-center w-full py-8 px-[5%]">
-      <div className="flex flex-col md:flex-row gap-[4vw] justify-center items-center w-[90%] p-5">
-        <div className="grid grid-cols-2 space-x-2 justify-start max-h-10 w-80">
+    <footer className="mt-auto bg-white text-gray-600 flex flex-col items-center justify-center py-8 px-[5%]">
+      <div className="flex flex-col md:flex-row gap-[4vw] justify-center items-center w-[90%] p-5 space-y-5">
+        <div className="px-5 grid grid-cols-2 space-x-2 justify-start max-h-10 w-80">
           <Link
             href="https://growat.ppijerman.org"
             target="_blank"
@@ -34,7 +33,7 @@ export function Footer() {
           </Link>
         </div>
 
-        <div className="flex flex-col grow w-full gap-4 border-b-2 md:border-none pb-3">
+        <div className="flex flex-col grow w-full md:border-none pb-3 text-center md:text-left">
           <ul>
             <li>
               <h2 className="text-lg">Contact us</h2>
@@ -55,9 +54,6 @@ export function Footer() {
         <div className="flex flex-row gap-2 pb-5">
           <Link href="https://instagram.com/growat.ppij">
             <InstagramLogoIcon className="w-10 h-10  hover:text-accent transition" />
-          </Link>
-          <Link href="#">
-            <BiLogoYoutube className="w-10 h-10  hover:text-accent transition" />
           </Link>
         </div>
       </div>

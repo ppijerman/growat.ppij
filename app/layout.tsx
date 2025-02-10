@@ -47,7 +47,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </Head>
-      <body className="font-akzidenz-grotesk bg-ga-beige text-ga-dark">
+      <body className="flex flex-col font-akzidenz-grotesk bg-ga-beige text-ga-dark h-screen py-0">
         {children}
         <Footer />
         <Analytics />

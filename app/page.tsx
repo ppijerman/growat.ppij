@@ -6,11 +6,13 @@ import MentorshipSurvey from "./mentorship-survey"
 
 export default function Home() {
   return (
-    <main className="w-screen">
+    <div className="">
       <Hero />
       <Header heroHeight={Backdrop.height} />
-      <Timeline isVisible={true} />
-      <MentorshipSurvey isVisible={true} />
-    </main>
+      <main className="px-7 lg:px-[8%]">
+        <Timeline isVisible={true} />
+        <MentorshipSurvey isVisible={true} />
+      </main>
+    </div>
   )
 }
