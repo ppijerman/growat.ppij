@@ -21,7 +21,7 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <Card className="mx-[5%] grid grid-cols-2 items-center justify-items-center p-4 my-10">
+      <Card className="mx-[5%] grid grid-cols-2 items-center justify-items-center p-4 my-10 h-60">
         <CardHeader className="items-center">
           <CardTitle className="text-2xl">Step Up Mentorship 3.0 🚀</CardTitle>
           <CardDescription className="text-xl">Coming soon!</CardDescription>

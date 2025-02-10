@@ -1,6 +1,14 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import React from "react"
 
 const timelineData = [
   { date: "February 2025", event: "IT Online Workshop" },
@@ -17,47 +25,36 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
-  const [visibleItems, setVisibleItems] = useState<number[]>([])
-
-  useEffect(() => {
-    if (isVisible) {
-      timelineData.forEach((_, index) => {
-        setTimeout(() => {
-          setVisibleItems((prev) => [...prev, index])
-        }, 0)
-      })
-    } else {
-      setVisibleItems([])
-    }
-  }, [isVisible])
-
   return (
     <div
       id="event-timeline"
-      className={`container mx-auto pt-20 p-6 transition-opacity duration-500 ${
+      className={`container pt-20 pb-10 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h2 className="text-4xl font-bold text-center mb-12">What to Expect</h2>
-      <div className="relative">
-        <div className="border-l-4 border-gray-200 absolute h-full left-1/2 transform -translate-x-1/2"></div>
-        {timelineData.map((item, index) => (
-          <div
-            key={index}
-            className={`mb-8 flex justify-between items-center w-full ${
-              index % 2 === 0 ? "flex-row-reverse" : "flex-row"
-            } ${
-              visibleItems.includes(index) ? "opacity-100" : "opacity-0"
-            } transition-opacity duration-500`}
-          >
-            <div className="order-1 w-5/12"></div>
-            <div className="order-1 w-5/12 px-1 py-4 text-center bg-white rounded-lg shadow-md">
-              <h3 className="mb-1 text-xl font-semibold">{item.event}</h3>
-              <p className="text-gray-700">{item.date}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <h2 className="text-4xl font-bold text-center mb-5">What to Expect</h2>
+      <Carousel>
+        <CarouselContent>
+          {timelineData.map((item, index) => (
+            <CarouselItem key={index} className="basis-1/4 text-center">
+              <Card
+                className={`flex-col h-40 items-center justify-center content-center my-4 ${
+                  index % 2 === 0
+                    ? "bg-ga-light text-ga-green"
+                    : "bg-ga-green text-ga-beige"
+                }`}
+              >
+                <CardHeader className="m-0 p-0">
+                  <CardTitle className="m-0 p-0">{item.event}</CardTitle>
+                </CardHeader>
+                <CardContent className="m-0 p-0">{item.date}</CardContent>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   )
 }
