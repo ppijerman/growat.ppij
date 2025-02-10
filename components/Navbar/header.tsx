@@ -8,7 +8,12 @@ import { NavItems } from "@/lib/navItems"
 import { useScroll, motion, useMotionValueEvent } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+} from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import {
   Collapsible,
@@ -70,6 +75,7 @@ export function Header({ heroHeight }: { heroHeight: number }) {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
+          <SheetTitle className="hidden">Menu</SheetTitle>
           <SheetContent side="right">
             <div className="grid gap-4 py-6">
               {NavItems.map((item, index) =>

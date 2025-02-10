@@ -28,17 +28,22 @@ const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
   return (
     <div
       id="event-timeline"
-      className={`container pt-20 pb-10 transition-opacity duration-500 ${
+      className={`container my-6 md:pt-24 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h2 className="text-4xl font-bold text-center mb-5">What to Expect</h2>
-      <Carousel>
-        <CarouselContent>
+      <h2 className="text-4xl lg:text-5xl font-bold text-center w-full underline">
+        What to Expect
+      </h2>
+      <Carousel className="mx-4 my-5">
+        <CarouselContent className="-ml-2">
           {timelineData.map((item, index) => (
-            <CarouselItem key={index} className="basis-1/4 text-center">
+            <CarouselItem
+              key={index}
+              className="pl-2 sm:basis-1/2 md:basis-1/4 lg:basis-1/5 text-center"
+            >
               <Card
-                className={`flex-col h-40 items-center justify-center content-center my-4 ${
+                className={`text-xl flex-col h-40 items-center justify-center content-center p-3 my-2 ${
                   index % 2 === 0
                     ? "bg-ga-light text-ga-green"
                     : "bg-ga-green text-ga-beige"
