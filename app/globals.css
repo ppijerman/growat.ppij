@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@custom-variant dark (&: is(.dark *));
+@theme {
+  --list-style-type-*: initial;
+  --list-style-type-disc: disc;
+  --list-style-type-decimal: decimal;
+  --list-style-type-none: none;
+  --list-style-type-square: square;
+  --list-style-type-roman: upper-roman;
+
+  --background-image-landing: url("@/public/assets/backdrop.png");
+
+  /* GrowAt color pallete  */
+  --color-ga-beige: #e6e6dd;
+  --color-ga-light-green: #a9e5bb;
+  --color-ga-green: #1b4a49;
+  --color-ga-blue: #0267c1;
+  --color-ga-dark: #222222;
+  --color-ga-light: #fefefe;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary2: hsl(var(--primary2));
+  --color-primary3: hsl(var(--primary3));
+  --color-accent2: hsl(var(--accent-secondary));
+  --color-secondary2: hsl(var(--secondary2));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  --font-utile-display: "utile-display", sans-serif;
+  --font-inter: Inter var, ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-roboto: Roboto, sans-serif;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0, 100%, 100%;
+    --foreground: 210, 50%, 20%; /* Updated base text color */
+
+    --card: 0, 0%, 100%;
+    --card-foreground: 222.2, 84%, 4.9%;
+
+    --popover: 0, 0%, 100%;
+    --popover-foreground: 222.2, 84%, 4.9%;
+
+    --primary: 60, 81%, 83%;
+    --primary-foreground: 154, 67%, 18%;
+
+    --secondary: 154, 67%, 18%;
+    --secondary-foreground: 60, 81%, 83%;
+
+    --muted: 210, 40%, 96.1%;
+    --muted-foreground: 215.4, 16.3%, 46.9%;
+
+    --accent: 208, 98%, 38%;
+    --accent-foreground: 222.2, 47.4%, 11.2%;
+
+    --accent-secondary: 210, 86%, 56%;
+    --primary2: 179, 47%, 20%; /* primary color */
+    --primary3: 67, 46%, 39%;
+    --secondary2: 27, 65%, 24%;
+
+    --destructive: 0, 84.2%, 60.2%;
+    --destructive-foreground: 210, 40%, 98%;
+
+    --border: 214.3, 31.8%, 91.4%;
+    --input: 214.3, 31.8%, 91.4%;
+    --ring: 222.2, 84%, 4.9%;
+
+    --radius: 0.5rem;
+
+    --hover-background: 0, 0%, 100%; /* New hover background color */
+    --hover-foreground: 0, 0%, 13%; /* Updated hover text color to #a9e5bb */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white text-foreground;
+  }
+  header a:hover,
+  header button:hover {
+    color: hsl(var(--hover-foreground));
+  }
+
+  a:hover,
+  button:hover {
+    background-color: hsl(var(--hover-background));
+    color: hsl(var(--hover-foreground));
+  }
+}
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  src: url("@/public/fonts/AkzidenzGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  src: url("@/public/fonts/Akzidenz-grotesk-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-akzidenz-grotesk {
+  font-family: "Akzidenz Grotesk";
+}
