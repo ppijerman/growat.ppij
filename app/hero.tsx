@@ -45,7 +45,7 @@ export default function Hero() {
               <Image
                 src={LogoGrowat}
                 alt="Logo Growat"
-                className="mx-auto my-0 p-5 object-contain max-h-56"
+                className="absolute mx-auto my-0 p-5 object-contain max-h-56 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               />
             </div>
             <div className="flex-row justify-items-center text-center text-black mb-10 ">
