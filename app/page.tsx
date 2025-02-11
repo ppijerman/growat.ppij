@@ -3,6 +3,7 @@ import Hero from "@/app/hero"
 import { Header } from "@/components/Navbar/header"
 import Timeline from "@/app/timeline"
 import MentorshipSurvey from "./mentorship-survey"
+//import Recap from "./recap"
 
 export default function Home() {
   return (
