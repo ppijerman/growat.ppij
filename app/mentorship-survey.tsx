@@ -21,28 +21,29 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <Card className="flex flex-col md:grid-cols-2 md:grid-rows-1 my-5">
+      <Card className="flex flex-col md:flex-0 md:grid md:grid-cols-2 md:grid-rows-1 md:place-items-center md:py-5 my-5 ">
         <CardHeader className="items-center">
-          <CardTitle className="text-xl md:text-3xl">
+          <CardTitle className="text-xl md:text-3xl text-center">
             Step Up Mentorship 3.0 🚀
           </CardTitle>
           <CardDescription className="text-xl md:text-2xl">
             Coming soon!
           </CardDescription>
         </CardHeader>
-        <CardContent className="items-center flex-col justify-items-center space-y-2 md:space-y-5">
+        <CardContent className="items-center justify-items-center space-y-2 md:space-y-5">
           <p className="text-base md:text-2xl text-center leading-relaxed">
             Take part in this survey to help us enhance your experience!
           </p>
-          <Link href="https://ppij.org/MentorshipSurvey">
-            <Button
-              variant="secondary"
-              className="md:text-2xl flex items-center text-ga-beige"
-            >
+          <Button
+            variant="secondary"
+            className="md:text-2xl flex items-center text-ga-beige"
+            asChild
+          >
+            <Link href="https://ppij.org/MentorshipSurvey">
               <div>Participate here</div>
               <ArrowRightIcon className="ml-2 h-5" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </CardContent>
       </Card>
     </div>
