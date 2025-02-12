@@ -4,10 +4,8 @@ import GrowAtLogo from "@/public/assets/logogrowat.png"
 import Image from "next/image"
 import Link from "next/link"
 import { PATHS } from "@/lib/constants"
-import { NavItems } from "@/lib/navItems"
-import { useScroll, motion, useMotionValueEvent } from "framer-motion"
+import { motion } from "framer-motion"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
 import {
   Sheet,
   SheetTrigger,
@@ -28,22 +26,37 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu"
+import { events } from "@/lib/events"
 
-export function Header({ heroHeight }: { heroHeight: number }) {
+type NavItem = {
+  href: string
+  label: string
+  description?: string
+  submenus?: NavItem[]
+}
+
+const NavItems: NavItem[] = [
+  {
+    href: PATHS.HOME,
+    label: "Home",
+  },
+  {
+    href: "/#event-timeline",
+    label: "Events",
+  },
+]
+
+function fetchEventSubmenus() {
+  return events
+    .filter((event) => event.showOnNavbar === true)
+    .map((event) => ({
+      href: `/events/${event.slug}`,
+      label: event.title,
+      description: event.shortDescription,
+    }))
+}
+export default function Header() {
   const pathname = usePathname()
-
-  const { scrollY } = useScroll()
-  const [hidden, setHidden] = useState(true)
-
-  // show/hide header on scroll
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0
-    if (latest > previous && latest > (2 / 10) * heroHeight) {
-      setHidden(false)
-    } else {
-      setHidden(true)
-    }
-  })
 
   // Define a function to determine if a link is active based on the pathname
   const isActive = (linkPath: string) => {
@@ -51,15 +64,17 @@ export function Header({ heroHeight }: { heroHeight: number }) {
     return pathname === linkPath || pathname.includes(linkPath)
   }
 
+  const navItems = NavItems
+  navItems.find((item) => item.label === "Events")!.submenus =
+    fetchEventSubmenus()
+
   return (
     <motion.header
-      className="fixed top-0 flex h-20 w-full shrink-0 items-center bg-white z-50"
+      className="flex h-20 w-full shrink-0 items-center bg-white z-50"
       variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" },
       }}
-      initial="hidden"
-      animate={hidden ? "hidden" : "visible"}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
       <div className="flex mx-10 items-center lg:px-[5%] z-50 w-full">
@@ -78,7 +93,7 @@ export function Header({ heroHeight }: { heroHeight: number }) {
           <SheetTitle className="hidden">Menu</SheetTitle>
           <SheetContent side="right">
             <div className="grid gap-4 py-6">
-              {NavItems.map((item, index) =>
+              {navItems.map((item, index) =>
                 item.submenus ? (
                   <Collapsible className="grid gap-4" key={index}>
                     <Link href={item.href}>

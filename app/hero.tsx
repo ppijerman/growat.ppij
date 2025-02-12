@@ -1,64 +1,29 @@
 "use client"
 
-// import React, { useEffect, useState } from "react"
-import Image from "next/image"
-import LogoGrowat from "@/public/assets/logogrowat.png"
-import { NavItems } from "@/lib/navItems"
 import Link from "next/link"
 
 export default function Hero() {
-  // const [scrollY, setScrollY] = useState(0)
-  // const [windowHeight, setWindowHeight] = useState(0)
-
-  // const handleScroll = () => {
-  //   setScrollY(window.scrollY)
-  // }
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     setWindowHeight(window.innerHeight)
-  //     window.addEventListener("scroll", handleScroll)
-  //     return () => {
-  //       window.removeEventListener("scroll", handleScroll)
-  //     }
-  //   }
-  // }, [])
-
-  // const opacity = windowHeight ? Math.max(1 - scrollY / windowHeight, 0) : 1
-
   return (
-    <div>
-      <div className="relative w-full h-screen">
-        <div className="top-0 left-0 h-full bg-landing bg-cover bg-center">
-          <div className="flex flex-col h-full space-y-4 pt-10">
-            {/* Header, links */}
-            <div className="flex items-start justify-center space-x-10 text-3xl font-medium">
-              {NavItems.map((item, index) => (
-                <Link key={index} href={item.href} className="hover:underline">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+    <div className="h-full flex flex-col bg-landing bg-cover bg-center px-5 items-center pb-5">
+      {/* Logo and text */}
+      <div className="my-auto landscape:mb-0 landscape:mt-auto landscape:md:my-auto items-end text-center text-4xl md:text-5xl lg:text-6xl font-bold">
+        Grow at PPI Jerman <br />
+        Let&apos;s Grow, Glow and Go!
+      </div>
+      <div className="flex-row justify-items-center text-center text-black mb-10 landscape:mb-0 landscape:md:inline">
+        <h1 className="text-xl md:text-3xl lg:text-4xl font-medium">
+          Coming soon
+        </h1>
+        <p className="text-base md:text-lg lg:text-xl font-normal">
+          Scroll for more information
+        </p>
+      </div>
 
-            {/* Logo and text */}
-            <div className="grow flex flex-col items-center justify-center">
-              <Image
-                src={LogoGrowat}
-                alt="Logo Growat"
-                className="absolute mx-auto my-0 p-5 object-contain max-h-56 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-              />
-            </div>
-            <div className="flex-row justify-items-center text-center text-black mb-10 ">
-              <h1 className="text-3xl font-bold">Coming soon</h1>
-              <p className="text-xl">Scroll for more information</p>
-            </div>
-
-            {/* arrow */}
-            <div className="w-full flex justify-center mb-10">
-              <Arrow className="animate-bounce" />
-            </div>
-          </div>
-        </div>
+      {/* arrow */}
+      <div className="row-start-3 w-full flex justify-center mb-10 landscape:mb-1">
+        <Link href="#event-timeline" className="hover:bg-transparent">
+          <Arrow className="transform not-hover:scale-80 not-hover:duration-300 hover:scale-100 landscape:not-hover:scale-70 hover:duration-400" />
+        </Link>
       </div>
     </div>
   )

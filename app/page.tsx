@@ -1,14 +1,15 @@
-import Backdrop from "@/public/assets/backdrop.png"
+import Header from "@/components/Navbar/header"
 import Hero from "@/app/hero"
-import { Header } from "@/components/Navbar/header"
 import Timeline from "@/app/timeline"
 import MentorshipSurvey from "./mentorship-survey"
 
 export default function Home() {
   return (
-    <div className="">
-      <Hero />
-      <Header heroHeight={Backdrop.height} />
+    <div>
+      <div className="flex h-dvh flex-col">
+        <Header />
+        <Hero />
+      </div>
       <main className="px-7 lg:px-[8%]">
         <Timeline isVisible={true} />
         <MentorshipSurvey isVisible={true} />

@@ -4,9 +4,9 @@ import GrowAtLogo from "@/public/assets/logogrowat.png"
 import { InstagramLogoIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="mt-auto bg-white text-gray-600 flex flex-col items-center justify-center py-8 px-[5%]">
+    <footer className="mt-auto mb-0 bg-white text-gray-600 flex flex-col items-center justify-center py-8 px-[5%]">
       <div className="flex flex-col md:flex-row gap-[4vw] justify-center items-center w-[90%] p-5 space-y-5">
         <div className="px-5 grid grid-cols-2 space-x-2 justify-start max-h-10 w-80">
           <Link
