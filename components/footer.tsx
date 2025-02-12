@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="mt-auto mb-0 bg-white text-gray-600 flex flex-col items-center justify-center py-8 px-[5%]">
+    <footer className="mt-auto mb-0 bg-ga-light text-ga-dark flex flex-col items-center justify-center py-8 px-[5%]">
       <div className="flex flex-col md:flex-row gap-[4vw] justify-center items-center w-[90%] p-5 space-y-5">
         <div className="px-5 grid grid-cols-2 space-x-2 justify-start max-h-10 w-80">
           <Link
@@ -53,11 +53,11 @@ export default function Footer() {
 
         <div className="flex flex-row gap-2 pb-5">
           <Link href="https://instagram.com/growat.ppij">
-            <InstagramLogoIcon className="w-10 h-10  hover:text-accent transition" />
+            <InstagramLogoIcon className="w-10 h-10  hover:text-ga-blue transition" />
           </Link>
         </div>
       </div>
-      <div className="flex w-full flex-col items-center py-3 border-t-2 border-t-gray-500">
+      <div className="flex w-full flex-col items-center py-3 border-t-2 border-ga-dark">
         Copyright &copy; {new Date().getFullYear()} GrowAt PPI Jerman
       </div>
     </footer>

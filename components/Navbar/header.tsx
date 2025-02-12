@@ -55,6 +55,7 @@ function fetchEventSubmenus() {
       description: event.shortDescription,
     }))
 }
+
 export default function Header() {
   const pathname = usePathname()
 
@@ -70,7 +71,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="flex h-20 w-full shrink-0 items-center bg-white z-50"
+      className="flex h-20 w-full shrink-0 items-center bg-ga-light z-50"
       variants={{
         visible: { y: 0 },
         hidden: { y: "-100%" },
@@ -152,19 +153,19 @@ export default function Header() {
                 item.submenus ? (
                   <NavigationMenuItem key={index}>
                     <NavigationMenuTrigger
-                      className={`hover:text-accent bg-white hover:bg-white focus:bg-gray-100 text-xl font-medium ${
+                      className={`hover:text-ga-blue bg-ga-light hover:bg-ga-light focus:bg-gray-100 text-xl font-medium ${
                         isActive(item.href) ? "text-primary2" : ""
                       }`}
                     >
                       {item.label}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="grid w-[200px] p-2">
+                      <div className="grid w-64 p-2">
                         {item.submenus.map((submenu, subIndex) => (
                           <NavigationMenuLink asChild key={subIndex}>
                             <Link
                               href={submenu.href}
-                              className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-accent focus:bg-gray-100 focus:outline-hidden"
+                              className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-ga-beige hover:text-ga-blue focus:bg-gray-100 focus:outline-hidden"
                               prefetch={false}
                             >
                               <div className="text-sm font-bold leading-none">
@@ -185,8 +186,8 @@ export default function Header() {
                   <NavigationMenuLink asChild key={index}>
                     <Link
                       href={item.href}
-                      className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xl font-medium transition-colors hover:text-accent focus:bg-gray-100 focus:outline-hidden ${
-                        isActive(item.href) ? "text-primary2" : ""
+                      className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xl font-medium transition-colors hover:text-ga-blue focus:bg-gray-100 focus:outline-hidden ${
+                        isActive(item.href) ? "text-ga-blue" : ""
                       }`}
                       prefetch={false}
                     >
