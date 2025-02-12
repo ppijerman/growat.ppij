@@ -68,7 +68,7 @@ const timelineData: TimelineData[] = [
   {
     date: "August 2025",
     event: "2nd Power-Packed Webinar",
-    icon: <BatteryCharging size={120} className={iconClasses} />,
+    icon: <BatteryCharging size={120} className={`pl-3 ${iconClasses}`} />,
   },
 ]
 
@@ -79,12 +79,11 @@ interface TimelineProps {
 const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
   return (
     <div
-      id="event-timeline"
-      className={`container my-10 pt-5 transition-opacity duration-500 ${
+      className={`container my-5 py-5 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h2 className="text-ga-green text-4xl lg:text-5xl font-bold text-center w-full underline">
+      <h2 className="text-ga-green text-4xl lg:text-5xl font-bold text-center w-full">
         Upcoming Events
       </h2>
       <Carousel className="mx-3 my-4">
@@ -92,7 +91,7 @@ const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
           {timelineData.map((item, index) => (
             <CarouselItem
               key={index}
-              className="px-2 sm:basis-1/2 md:basis-1/4 lg:basis-1/5 text-center"
+              className="px-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 text-center"
             >
               <Card
                 className={`flex flex-col h-96 text-xl justify-between text-center my-2 ${
@@ -101,12 +100,12 @@ const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
                     : "bg-ga-green text-ga-beige"
                 }`}
               >
-                <CardHeader className="h-[25%]">
+                <CardHeader className="h-[25%] justify-center">
                   <CardTitle>{item.event}</CardTitle>
                 </CardHeader>
                 <CardContent className="grow flex items-stretch">
                   <div
-                    className={`grow flex rounded-lg border-2 border-dashed font-bold items-center justify-center px-2 ${
+                    className={`grow flex rounded-lg border-2 font-bold items-center justify-center px-2 ${
                       index % 2 === 0 ? "border-ga-green" : "border-ga-beige"
                     }`}
                   >

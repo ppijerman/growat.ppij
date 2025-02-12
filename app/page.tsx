@@ -6,7 +6,7 @@ import MentorshipSurvey from "./mentorship-survey"
 export default function Home() {
   return (
     <div>
-      <div className="flex h-dvh flex-col">
+      <div className="flex flex-col h-dvh">
         <Header />
         <Hero />
       </div>

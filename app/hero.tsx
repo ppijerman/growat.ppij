@@ -4,25 +4,26 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <div className="h-full flex flex-col bg-landing bg-cover bg-center px-5 items-center pb-5">
+    <div className="relative h-full flex flex-col bg-landing bg-cover bg-center">
       {/* Logo and text */}
-      <div className="my-auto landscape:mb-0 landscape:mt-auto landscape:md:my-auto items-end text-center text-4xl md:text-5xl lg:text-6xl font-bold">
-        Grow at PPI Jerman <br />
-        Let&apos;s Grow, Glow and Go!
-      </div>
-      <div className="flex-row justify-items-center text-center text-black mb-10 landscape:mb-0 landscape:md:inline">
-        <h1 className="text-xl md:text-3xl lg:text-4xl font-medium">
-          Coming soon
+      <div className="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-5 justify-items-center text-center text-4xl md:text-6xl lg:text-8xl font-bold grow">
+        <h1 className="">
+          Grow at
+          <br />
+          PPI Jerman
         </h1>
-        <p className="text-base md:text-lg lg:text-xl font-normal">
-          Scroll for more information
-        </p>
+        <h3 className="font-normal text-xl leading-relaxed md:text-2xl lg:text-3xl">
+          Let&apos;s Grow, Glow and Go!
+        </h3>
       </div>
 
       {/* arrow */}
-      <div className="row-start-3 w-full flex justify-center mb-10 landscape:mb-1">
-        <Link href="#event-timeline" className="hover:bg-transparent">
-          <Arrow className="transform not-hover:scale-80 not-hover:duration-300 hover:scale-100 landscape:not-hover:scale-70 hover:duration-400" />
+      <div className="w-full flex justify-center mt-auto mb-10 landscape:mb-1">
+        <Link
+          href="#event-timeline"
+          className="hover:bg-transparent focus:bg-transparent"
+        >
+          <Arrow className="animate-bounce transform not-hover:scale-60 not-hover:duration-300 hover:scale-70 landscape:not-hover:scale-50 landscape:hover:scale-60 hover:duration-400" />
         </Link>
       </div>
     </div>
@@ -34,7 +35,7 @@ function Arrow(props: React.ComponentProps<"svg">) {
     <svg
       {...props}
       width="44"
-      height="70"
+      height="75"
       viewBox="0 0 22 35"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
