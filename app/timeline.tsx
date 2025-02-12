@@ -79,7 +79,6 @@ interface TimelineProps {
 const Timeline: React.FC<TimelineProps> = ({ isVisible }) => {
   return (
     <div
-      id="event-timeline"
       className={`container my-5 py-5 transition-opacity duration-500 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}

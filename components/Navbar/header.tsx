@@ -56,6 +56,7 @@ function fetchEventSubmenus() {
     }))
 }
 
+
 export default function Header() {
   const pathname = usePathname()
 
