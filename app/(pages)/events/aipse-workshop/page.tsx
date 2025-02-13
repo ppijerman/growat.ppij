@@ -21,7 +21,7 @@ export default function Page() {
               Developing GenAI Chatbot using LangChain: LLM and simple RAG
             </h1>
             <h2 className="text-center pt-6 text-[#36485C] lg:text-[18px] lg:leading-7">
-              22 Feb 25 | Online
+              22 Feb & 1 Mar | Online
             </h2>
             <p className="text-center pt-8 text-[#36485C] lg:text-[20px] lg:leading-7">
               Dengan berkembangnya AI, memahami cara kerja chatbot cerdas menjadi keterampilan yang semakin berharga. 
@@ -30,8 +30,8 @@ export default function Page() {
           </div>
 
           <div className="flex w-full flex-col items-center gap-x-6 pt-[50px] lg:pb-[250px]">
-            <Link href="https://ppij.org/AIPSEPPIJGenAI">
-              <span className='bg-[#1b4a49] py-4 px-8 text-white rounded-[4px] lg:w-fit'>Registrasi Sekarang</span>
+            <Link href="https://ppij.org/AIPSEPPIJGENAI">
+              <span className='bg-[#1b4a49] py-6 px-8 text-white rounded-[4px] lg:w-fit'>Registrasi Sekarang</span>
             </Link>
           </div>
 
@@ -42,11 +42,11 @@ export default function Page() {
 
         <div className='w-full flex justify-center absolute top-[705px] lg:top-[660px]'>
           <div>
-            <h2 className='text-md lg:text-2xl text-center text-[#36485C]'>Moderator: Muhammad Rafi Aziz Dzakwan</h2>
+            <h2 className='text-md lg:text-2xl text-center px-1 text-[#36485C]'>Moderator: Muhammad Rafi Aziz Dzakwan</h2>
             <Image src={fotoMod} alt='fotoModerator' width={500}/>
           </div>
           <div>
-            <h2 className='text-md lg:text-2xl text-center text-[#36485C]'>Narasumber: Alvin Rindra Fazrie, M.Sc</h2>
+            <h2 className='text-md lg:text-2xl px-1 text-center text-[#36485C]'>Narasumber: Alvin Rindra Fazrie, M.Sc</h2>
             <div className='bg-[#000020]'>
               <Image src={fotoNarsum} alt='fotoNarsum' width={500} height={200}/>
             </div>
@@ -57,8 +57,8 @@ export default function Page() {
           <div className='w-full pb-10 pt-20 px-6 max-w-7xl mx-auto flex-col flex gap-10'>
             <div>
               <h2 className='text-2xl text-[#36485C] lg:leading-6'>Tempat dan Waktu</h2>
-              <div className='pl-5 text-[24px]'>
-                <p className='pt-10'>🗓️ 22 Februari & 1 Maret 2025</p>
+              <div className='pl-5 lg:text-[24px]'>
+                <p className='pt-8'>🗓️ 22 Februari & 1 Maret 2025</p>
                 <p>⏰ 07:30-11:30 CET | 13:30-17:30 WIB</p>
                 <p>📍 Zoom Meeting</p>
               </div>
