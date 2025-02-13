@@ -34,11 +34,7 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
           <p className="text-base md:text-2xl text-center mb-0">
             Take part in this survey to help us enhance your experience!
           </p>
-          <Button
-            variant="secondary"
-            className="items-center text-ga-beige"
-            asChild
-          >
+          <Button variant="secondary" className="" asChild>
             <Link
               href="https://ppij.org/MentorshipSurvey"
               className="space-x-px"
