@@ -95,11 +95,11 @@ export default function Header() {
                     </CollapsibleTrigger>
                   </Link>
                   <CollapsibleContent>
-                    <div className="-mx-6 grid gap-6 bg-muted p-6">
+                    <div className="-mx-6 grid gap-6 bg-ga-beige p-6">
                       {item.submenus.map((submenu, subIndex) => (
                         <Link
                           href={submenu.href}
-                          className="group grid h-auto w-full justify-start gap-1"
+                          className="group grid h-auto w-full justify-start gap-1 bg-transparent"
                           key={subIndex}
                           prefetch={false}
                         >
@@ -119,7 +119,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="flex flex-col w-full items-start py-2 text-xl font-semibold"
+                  className="flex flex-col w-full items-start py-2 text-xl"
                   key={index}
                   prefetch={false}
                 >
