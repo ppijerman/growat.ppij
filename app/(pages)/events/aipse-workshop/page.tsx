@@ -9,43 +9,55 @@ import faissLogo from '@/public/assets/FAISS.png';
 import groqLogo from '@/public/assets/groq-logo.png';
 import langchainLogo from '@/public/assets/Lang Chain.png';
 import pineconeLogo from '@/public/assets/Pinecone-Logo.webp';
+import fotoNarsum from '@/public/assets/fotoNarsum.png';
+import fotoMod from '@/public/assets/fotoModerator.jpg';
 
 export default function Page() {
   return (
-    <div className='bg-[#ffffff]'>
+    <div className='bg-[#fefefe]'>
       <div className="py-[110px] bg-[#a9e5bb]">
           <div className="px-[20px] lg:px-[280px]">
-            <h1 className="text-center text-[32px] leading-[40px] font-bold text-[#1b4a49] lg:text-5xl lg:leading-[72px]">
+            <h1 className="text-center text-[32px] leading-[40px] font-bold font-stretch-condensed tracking-wider text-[#1b4a49] lg:text-5xl lg:leading-[72px]">
               Developing GenAI Chatbot using LangChain: LLM and simple RAG
             </h1>
             <h2 className="text-center pt-6 text-[#36485C] lg:text-[18px] lg:leading-7">
               22 Feb 25 | Online
             </h2>
-            <p className="text-center pt-6 text-[#36485C] lg:text-[18px] lg:leading-7">
+            <p className="text-center pt-8 text-[#36485C] lg:text-[20px] lg:leading-7">
               Dengan berkembangnya AI, memahami cara kerja chatbot cerdas menjadi keterampilan yang semakin berharga. 
               Workshop ini akan membekalimu dengan konsep AI, LangChain, dan RAG untuk membangun solusi berbasis AI. 
-              Menguasai teknologi ini dapat membuka peluang karier di industri yang terus berkembang.
             </p>
           </div>
 
-          <div className="flex w-full flex-col items-center pt-8 gap-x-6">
+          <div className="flex w-full flex-col items-center gap-x-6 pt-[50px] lg:pb-[250px]">
             <Link href="https://ppij.org/AIPSEPPIJGenAI">
               <span className='bg-[#1b4a49] py-4 px-8 text-white rounded-[4px] lg:w-fit'>Registrasi Sekarang</span>
             </Link>
           </div>
 
-          {/* <div className="flex w-full flex-col items-center pt-8 gap-x-6">
-            <button className="bg-[#1b4a49] py-4 px-8 text-white rounded-[4px] lg:w-fit">
-              Registrasi Sekarang!
-            </button>
-          </div> */}
+          <div className='pb-[200px] lg:pb-0'>
+            {/* padding bottom */}
+          </div>
         </div>
 
-        <div>
+        <div className='w-full flex justify-center absolute top-[705px] lg:top-[660px]'>
+          <div>
+            <h2 className='text-md lg:text-2xl text-center text-[#36485C]'>Moderator: Muhammad Rafi Aziz Dzakwan</h2>
+            <Image src={fotoMod} alt='fotoModerator' width={500}/>
+          </div>
+          <div>
+            <h2 className='text-md lg:text-2xl text-center text-[#36485C]'>Narasumber: Alvin Rindra Fazrie, M.Sc</h2>
+            <div className='bg-[#000020]'>
+              <Image src={fotoNarsum} alt='fotoNarsum' width={500} height={200}/>
+            </div>
+          </div>
+        </div>
+
+        <div className='lg:pt-[270px]'>
           <div className='w-full pb-10 pt-20 px-6 max-w-7xl mx-auto flex-col flex gap-10'>
             <div>
               <h2 className='text-2xl text-[#36485C] lg:leading-6'>Tempat dan Waktu</h2>
-              <div className='pl-5'>
+              <div className='pl-5 text-[24px]'>
                 <p className='pt-10'>🗓️ 22 Februari & 1 Maret 2025</p>
                 <p>⏰ 07:30-11:30 CET | 13:30-17:30 WIB</p>
                 <p>📍 Zoom Meeting</p>
@@ -53,8 +65,8 @@ export default function Page() {
             </div>
 
             <div>
-              <h2 className='text-2xl text-[#36485C] lg:leading-6'>Tentang Event</h2>
-                <div className='pl-5'>
+              <h2 className='text-2xl text-[#36485C] leading-6'>Tentang Event</h2>
+                <div className='pl-5 lg:text-[18px]'>
                   <div className='pt-10'>
                     <p>
                       <span className='font-bold'>Our Instructor:</span> Alvin Rindra Fazrie, M.Sc., Senior AI & Data Consultant
@@ -89,7 +101,7 @@ export default function Page() {
 
                   <div>
                     <p className='font-bold pt-4'>Workshop tools:</p>
-                    <div className='flex flex-row items-center gap-5 pt-[20px]'>
+                    <div className='flex flex-row flex-wrap items-center gap-5 pt-[20px] sm:'>
                       <Image src={chatgptLogo} alt="Logo chatGPT" width={100}/>
                       <Image src={langchainLogo} alt="Logo LangChain" width={100}/>
                       <Image src={groqLogo} alt="Logo Groq" width={100}/>
@@ -101,18 +113,21 @@ export default function Page() {
             </div>
 
             <div>
-              <h2 className='text-2xl text-[#36485C] lg:leading-6'>Biaya Pendaftaran</h2>
-              <div className='pt-10'>
-                <p className='font-bold'>Untuk Mahasiswa:</p>
-                <p>
+              <h2 className='text-2xl text-[#36485C] leading-6'>Biaya Pendaftaran</h2>
+              <div className='pt-8'>
+                <div className='pl-5 lg:text-[18px]'>
+                  <p className='font-bold'>Untuk Mahasiswa:</p>
+                  <p>
                   • 5 orang pertama: 30€ (Rp 500.000,-)<br/>
                   • orang selanjutnya: 35€ (Rp 585.000,-)
-                </p>
-                <p className='font-bold'>Untuk umum:</p>
-                <p>
-                • 5 orang pertama: 45€ (Rp 750.000,-)<br/>
-                • orang selanjutnya: 50€ (Rp 840.000,-)
-                </p>
+                  </p>
+                  <p className='font-bold'>Untuk umum:</p>
+                  <p>
+                  • 5 orang pertama: 45€ (Rp 750.000,-)<br/>
+                  • orang selanjutnya: 50€ (Rp 840.000,-)
+                  </p>
+                </div>
+                
               </div>
             </div>
 
@@ -124,7 +139,7 @@ export default function Page() {
             </div> */}
           </div>
 
-          <div className='flex justify-center gap-[50px]'>
+          <div className='flex flex-wrap justify-center gap-[50px]'>
             <Image src={aipseLogo} alt="Logo AIPSE" width={200} height={71.56}/>
             <Image src={dtsLogo} alt="Logo DTS" width={200} height={71.56}/>
           </div>

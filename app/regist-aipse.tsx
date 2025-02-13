@@ -32,7 +32,7 @@ const RegistAIPSE: React.FC<RegistAIPSEProps> = ({ isVisible }) => {
           <p className="text-base md:text-2xl text-center leading-relaxed">
             Register to AIPSE here!
           </p>
-          <Link href="#">
+          <Link href="https://ppij.org/AIPSEPPIJGenAI">
             <Button
               variant="secondary"
               className="md:text-2xl flex items-center text-ga-beige"
