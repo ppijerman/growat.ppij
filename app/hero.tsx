@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <div className="relative h-full flex flex-col bg-landing bg-cover bg-center">
       {/* Logo and text */}
-      <div className="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-5 justify-items-center text-center text-4xl md:text-6xl lg:text-8xl font-bold grow">
+      <div className="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-5 justify-items-center text-center text-5xl md:text-6xl lg:text-8xl font-bold grow">
         <h1 className="">
           Grow at
           <br />
