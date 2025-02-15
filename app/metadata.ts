@@ -4,7 +4,7 @@ const metadata: Metadata = {
   title: "Growat PPI Jerman",
   description: "Growat PPI Jerman",
   icons: {
-    icon: "/public/assets/logogrowat.png",
+    icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 }
