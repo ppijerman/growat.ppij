@@ -34,7 +34,7 @@ const WorkshopRegistration: React.FC<WorkshopRegistrationProps> = ({
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center space-y-2 md:space-y-5">
           <div className="text-xl">22.02.2025 & 01.03.2025</div>
-          <Link href="/events/aipse-workshop">
+          <Link href="/events/genAI-workshop">
             <Button variant="secondary" className="space-x-px">
               <div>Details here!</div>
               <ArrowRightIcon className="w-4 h-4" />
