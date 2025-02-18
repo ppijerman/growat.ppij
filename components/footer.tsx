@@ -44,7 +44,7 @@ export default function Footer() {
                   href="mailto:career.development@ppij.org"
                   className="font-semibold hover:text-accent transition"
                 >
-                  career.development@ppij.org
+                  career.development@ppijerman.org
                 </a>
               </p>
             </li>
