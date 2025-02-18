@@ -41,7 +41,7 @@ export default function Footer() {
             <li>
               <p className="">
                 <a
-                  href="mailto:career.development@ppij.org"
+                  href="mailto:career.development@ppijerman.org"
                   className="font-semibold hover:text-accent transition"
                 >
                   career.development@ppijerman.org
