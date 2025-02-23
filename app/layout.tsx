@@ -5,12 +5,8 @@ import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Growat PPI Jerman",
-  description: "Growat PPI Jerman",
-  icons: {
-    icon: "/assets/logogrowat.png",
-    apple: "/apple-touch-icon.png",
-  },
+  title: "Grow at PPI Jerman",
+  description: "Grow at PPI Jerman",
 }
 
 export default function RootLayout({
