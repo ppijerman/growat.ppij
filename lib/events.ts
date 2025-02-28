@@ -23,4 +23,14 @@ export const events: Event[] = [
     href: "/",
     showOnNavbar: true,
   },
+  {
+    slug: "webinar",
+    title: "growAt Webinar",
+    description: "Business stuff",
+    date: "2022-01-01",
+    location: "Online",
+    image: undefined,
+    href: "/",
+    showOnNavbar: true,
+  },
 ]
