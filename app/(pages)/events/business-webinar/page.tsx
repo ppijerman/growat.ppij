@@ -32,8 +32,8 @@ export default function Page() {
   return (
     <div className="bg-ga-light">
       {/* Header & Speakers Section */}
-      <div className="py-10 bg-[#a9e5bb] px-5">
-        <div>
+      <div className="py-10 bg-[#a9e5bb]">
+        <div className="px-5 lg:px-40 xl:px-72">
           <h1 className="text-center text-[32px] leading-[40px] font-bold tracking-wider text-[#1b4a49] lg:text-5xl lg:leading-[72px]">
             Talkshow: A to Z Entrepreneurship and Business: Indonesian Business
             Owners in Germany
@@ -74,7 +74,7 @@ export default function Page() {
           <div className="flex justify-center">
             <Link href="https://ppij.org/talkshow-entrepreneurship-growatppij">
               <Button variant="secondary" size="lg">
-                Registrasi Sekarang
+                Register for free here
               </Button>
             </Link>
           </div>
