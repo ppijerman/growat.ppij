@@ -88,12 +88,10 @@ export default function Header() {
             {navItems.map((item, index) =>
               item.submenus ? (
                 <Collapsible className="grid gap-4" key={index}>
-                  <Link href={item.href}>
-                    <CollapsibleTrigger className="flex w-full items-center text-xl [&[data-state=open]>svg]:rotate-90 py-2">
-                      {item.label}{" "}
-                      <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
-                    </CollapsibleTrigger>
-                  </Link>
+                  <CollapsibleTrigger className="flex w-full items-center text-xl [&[data-state=open]>svg]:rotate-90 py-2">
+                    <Link href={item.href}>{item.label} </Link>
+                    <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                  </CollapsibleTrigger>
                   <CollapsibleContent>
                     <div className="-mx-6 grid gap-6 bg-ga-beige p-6">
                       {item.submenus.map((submenu, subIndex) => (
