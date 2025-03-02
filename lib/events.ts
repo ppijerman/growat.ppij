@@ -16,7 +16,17 @@ export const events: Event[] = [
   {
     slug: "genAI-workshop",
     title: "GenAI Workshop",
-    description: "AI stuff",
+    description: "Workshop on AI",
+    date: "2022-01-01",
+    location: "Online",
+    image: undefined,
+    href: "/",
+    showOnNavbar: true,
+  },
+  {
+    slug: "business-webinar",
+    title: "Business Webinar",
+    description: "",
     date: "2022-01-01",
     location: "Online",
     image: undefined,
