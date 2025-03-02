@@ -34,9 +34,9 @@ export const events: Event[] = [
     showOnNavbar: true,
   },
   {
-    slug: "webinar",
-    title: "growAt Webinar",
-    description: "Business stuff",
+    slug: "step-up-mentorship",
+    title: "Step Up Mentorship",
+    description: "",
     date: "2022-01-01",
     location: "Online",
     image: undefined,
