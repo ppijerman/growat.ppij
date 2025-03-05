@@ -42,6 +42,8 @@ export default function Page() {
             March 15 | Online
           </h2>
           <p className="text-center text-lg pt-8 text-[#36485C] lg:text-[20px] lg:leading-7">
+            📢 Calling all aspiring entrepreneurs! 📢
+            <br />
             Learn from successful Indonesian business owners in Germany and get
             the insights you need to kickstart your own venture! 🌱💼
           </p>
@@ -94,23 +96,23 @@ export default function Page() {
         </div>
 
         <div>
-          <h2 className="text-2xl text-[#36485C] leading-6">About event</h2>
+          <h2 className="text-2xl text-[#36485C] leading-6 pb-1">
+            About event
+          </h2>
           <div className="pl-5 lg:text-[18px]">
-            <div className="pt-10">
-              <p>
-                <span className="font-semibold underline">Our Speakers:</span>
-              </p>
-              <p>
-                <span className="font-bold">Muhammad Ihsan H Sukmana</span>
-                <br />
-                CPO & Co-Founder Mitigant GmbH <br />
-              </p>
-              <p>
-                <span className="font-bold">Andru Thifaldy</span>
-                <br />
-                Co-Founder Meramanis Coffee <br />
-              </p>
-            </div>
+            <p>
+              <span className="font-semibold underline">Our Speakers:</span>
+            </p>
+            <p>
+              <span className="font-bold">Andru Thifaldy</span>
+              <br />
+              Co-Founder Meramanis Coffee <br />
+            </p>
+            <p>
+              <span className="font-bold">Muhammad Ihsan H Sukmana</span>
+              <br />
+              CPO & Co-Founder Mitigant GmbH <br />
+            </p>
           </div>
         </div>
       </div>
