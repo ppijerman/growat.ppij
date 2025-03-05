@@ -32,13 +32,8 @@ export default function Page() {
   return (
     <div className="bg-ga-light">
       {/* Header & Speakers Section */}
-<<<<<<< HEAD
       <div className="py-10 bg-[#a9e5bb]">
         <div className="px-5 lg:px-40 xl:px-72">
-=======
-      <div className="py-10 bg-[#a9e5bb] px-5">
-        <div>
->>>>>>> 16c0d81 (update and refactor business webinar page)
           <h1 className="text-center text-[32px] leading-[40px] font-bold tracking-wider text-[#1b4a49] lg:text-5xl lg:leading-[72px]">
             Talkshow: A to Z Entrepreneurship and Business: Indonesian Business
             Owners in Germany
@@ -47,14 +42,10 @@ export default function Page() {
             March 15 | Online
           </h2>
           <p className="text-center text-lg pt-8 text-[#36485C] lg:text-[20px] lg:leading-7">
-<<<<<<< HEAD
             📢 Calling all aspiring entrepreneurs! 📢
             <br />
             Learn from successful Indonesian business owners in Germany and get
             the insights you need to kickstart your own venture! 🌱💼
-=======
-            Desc text here
->>>>>>> 16c0d81 (update and refactor business webinar page)
           </p>
         </div>
 
@@ -86,11 +77,7 @@ export default function Page() {
           <div className="flex justify-center">
             <Link href="https://ppij.org/talkshow-entrepreneurship-growatppij">
               <Button variant="secondary" size="lg">
-<<<<<<< HEAD
                 Register now!
-=======
-                Registrasi Sekarang
->>>>>>> 16c0d81 (update and refactor business webinar page)
               </Button>
             </Link>
           </div>
@@ -109,7 +96,6 @@ export default function Page() {
         </div>
 
         <div>
-<<<<<<< HEAD
           <h2 className="text-2xl text-[#36485C] leading-6 pb-1">
             About event
           </h2>
@@ -127,35 +113,6 @@ export default function Page() {
               <br />
               CPO & Co-Founder Mitigant GmbH <br />
             </p>
-=======
-          <h2 className="text-2xl text-[#36485C] leading-6">About event</h2>
-          <div className="pl-5 lg:text-[18px]">
-            <div className="pt-10">
-              <p>
-                <span className="font-semibold underline">Our Speakers:</span>
-              </p>
-              <p>
-                <span className="font-bold">Muhammad Ihsan H Sukmana</span>
-                <br />
-                CPO & Co-Founder Mitigant GmbH <br />
-              </p>
-              <p>
-                <span className="font-bold">Andru Thifaldy</span>
-                <br />
-                Co-Founder Meramanis Coffee <br />
-              </p>
-            </div>
-
-            <div className="pt-4">
-              <p className="font-bold underline">What you will learn:</p>
-              <p>Something</p>
-            </div>
-
-            <div className="pt-4">
-              <p className="font-bold underline">What you will get:</p>
-              <p>Something</p>
-            </div>
->>>>>>> 16c0d81 (update and refactor business webinar page)
           </div>
         </div>
       </div>
