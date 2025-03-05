@@ -42,7 +42,8 @@ export default function Page() {
             March 15 | Online
           </h2>
           <p className="text-center text-lg pt-8 text-[#36485C] lg:text-[20px] lg:leading-7">
-            Desc text here
+            Learn from successful Indonesian business owners in Germany and get
+            the insights you need to kickstart your own venture! 🌱💼
           </p>
         </div>
 
@@ -74,7 +75,7 @@ export default function Page() {
           <div className="flex justify-center">
             <Link href="https://ppij.org/talkshow-entrepreneurship-growatppij">
               <Button variant="secondary" size="lg">
-                Register for free here
+                Register now!
               </Button>
             </Link>
           </div>
@@ -109,16 +110,6 @@ export default function Page() {
                 <br />
                 Co-Founder Meramanis Coffee <br />
               </p>
-            </div>
-
-            <div className="pt-4">
-              <p className="font-bold underline">What you will learn:</p>
-              <p>Something</p>
-            </div>
-
-            <div className="pt-4">
-              <p className="font-bold underline">What you will get:</p>
-              <p>Something</p>
             </div>
           </div>
         </div>
