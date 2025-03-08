@@ -25,13 +25,13 @@ export function MentorsCarousel() {
       {/* Section header */}
       <h1 className="text-3xl md:text-5xl text-white font-bold pt-10">Our Mentors</h1>
 
-      <div className="w-full max-w-screen-2xl bg-transparent mx-auto">
+      <div className="w-full max-w-screen-1xl bg-transparent mx-auto">
         <Carousel className="relative">
-          <CarouselContent className="flex gap-4 md:gap-8">
+          <CarouselContent className="flex gap-1 md:gap-2">
             {mentors.map((mentor, index) => (
               <CarouselItem
                 key={index}
-                className="px-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 text-center"
+                className="px-1 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 text-center"
               >
                 <Card className="flex flex-col items-center justify-between my-2 bg-transparent border-0 shadow-none">
                   <CardHeader className="flex justify-center py-4">
@@ -41,7 +41,7 @@ export function MentorsCarousel() {
                       className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover object-top drop-shadow-lg"
                     />
                   </CardHeader>
-                  <CardContent className="px-2 text-white bg-transparent">
+                  <CardContent className="px-1 text-white bg-transparent">
                     <CardTitle className="text-md md:text-lg font-bold">
                       {mentor.name}
                     </CardTitle>
