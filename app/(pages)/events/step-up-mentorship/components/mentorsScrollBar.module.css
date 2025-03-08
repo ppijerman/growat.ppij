@@ -1,0 +1,17 @@
+
+/* Chrome, Edge, and Safari specific styles */
+.scrollbarContainer::-webkit-scrollbar {
+    height: 5px;
+  width: 5px;
+  -webkit-border-radius: 1ex;
+
+  }
+  
+  .scrollbarContainer::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  .scrollbarContainer::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  

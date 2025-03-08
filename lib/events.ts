@@ -33,4 +33,14 @@ export const events: Event[] = [
     href: "/",
     showOnNavbar: true,
   },
+  {
+    slug: "step-up-mentorship",
+    title: "Step Up Mentorship",
+    description: "",
+    date: "2022-01-01",
+    location: "Online",
+    image: undefined,
+    href: "/",
+    showOnNavbar: true,
+  },
 ]
