@@ -19,9 +19,7 @@ const WorkshopRegistration: React.FC<WorkshopRegistrationProps> = ({
 }) => {
   return (
     <div
-      className={`transition-opacity duration-500 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`transition-opacity duration-500 ${isVisible ? "" : "hidden"}`}
     >
       <Card className="flex flex-col md:grid-cols-2 md:grid-rows-1 my-5">
         <CardHeader className="items-center text-center ">
