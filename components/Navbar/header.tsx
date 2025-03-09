@@ -28,6 +28,7 @@ import {
 import { events } from "@/lib/events"
 
 type NavItem = {
+  id: string
   href: string
   label: string
   description?: string
@@ -36,23 +37,55 @@ type NavItem = {
 
 const NavItems: NavItem[] = [
   {
+    id: "home",
     href: PATHS.HOME,
     label: "Home",
   },
   {
-    href: "/#event-timeline",
-    label: "Events",
+    id: "upcoming-events",
+    href: "/",
+    label: "Upcoming Events",
+    description: "See all upcoming events",
+  },
+  {
+    id: "past-events",
+    href: "/",
+    label: "Past Events",
+    description: "Browse past events",
   },
 ]
 
-function fetchEventSubmenus() {
-  return events
-    .filter((event) => event.showOnNavbar === true)
-    .map((event) => ({
-      href: `/events/${event.slug}`,
+function fetchEventSubmenus(navItems: NavItem[]) {
+  const upcomingEvents = events
+    .filter((event) => event.showOnNavbar)
+    .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+    .filter((event) => event.startDate > new Date())
+
+  // Map upcoming events to submenus
+  const upcomingEventsSubmenu = navItems?.find(
+    (submenu) => submenu.id === "upcoming-events"
+  )
+  if (upcomingEventsSubmenu) {
+    upcomingEventsSubmenu.submenus = upcomingEvents.map((event) => ({
+      id: event.slug,
+      href: "/events/" + event.slug,
       label: event.title,
       description: event.shortDescription,
     }))
+  }
+
+  const pastEvents = events.filter((event) => event.startDate < new Date())
+  const pastEventsSubmenu = navItems?.find(
+    (submenu) => submenu.id === "past-events"
+  )
+  if (pastEventsSubmenu) {
+    pastEventsSubmenu.submenus = pastEvents.map((event) => ({
+      id: event.slug,
+      href: "/events/" + event.slug,
+      label: event.title,
+      description: event.shortDescription,
+    }))
+  }
 }
 
 export default function Header() {
@@ -65,8 +98,7 @@ export default function Header() {
   }
 
   const navItems = NavItems
-  navItems.find((item) => item.label === "Events")!.submenus =
-    fetchEventSubmenus()
+  fetchEventSubmenus(navItems)
 
   return (
     <div className="flex h-20 w-full px-10 items-center lg:px-[5%] z-50 bg-ga-light">
@@ -149,7 +181,7 @@ export default function Header() {
                     {item.label}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-64 p-2">
+                    <div className="grid md:w-[400px] lg:w-[500px] p-2">
                       {item.submenus.map((submenu, subIndex) => (
                         <NavigationMenuLink asChild key={subIndex}>
                           <Link
