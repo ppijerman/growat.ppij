@@ -4,7 +4,7 @@ import Image from "next/image"
 import logoPPIJ from "@/public/assets/logoppij.png"
 import logoGrowAt from "@/public/assets/logogrowat.png"
 
-const buttonClass = "bg-ga-light-green hover:cursor-pointer hover:bg-ga-light-green/80 text-ga-dark py-2 px-4 rounded drop-shadow-lg shadow-ga-light-green/50"
+const buttonClass = "bg-ga-green hover:cursor-pointer hover:bg-ga-green/80 text-ga-light py-2 px-4 rounded drop-shadow-xl shadow-ga-green/80"
 
 export default function Hero() {
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="text-ga-green">
-          <h1 className="text-center text-5xl leading-6 font-bold lg:text-7xl lg:leading-11">
+          <h1 className="text-center text-5xl/100 leading-12 font-bold lg:text-7xl lg:leading-11">
             Step Up Mentorship 3.0
           </h1>
           <h2 className="text-center pt-6 text-2xl lg:text-2xl lg:leading-7">

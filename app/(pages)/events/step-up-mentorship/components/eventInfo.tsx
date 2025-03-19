@@ -67,12 +67,10 @@ const involveData: CardData[] = [
 
 export default function EventInfo() {
   return (
-    <main className="w-full">
+    <main>
       <div className="md:flex lg:col-2 lg:row-1">
-        <div className="flex lg:w-1/2 w-full items-center justify-center">
-          <div className="max-w-[1024px] lg:max-w-[635px] rounded-lg overflow-hidden">
-            <Image src={teamworkPhoto} alt="photo"/>
-          </div>
+        <div className="lg:w-1/2" style={{position:"relative"}}>
+          <Image src={teamworkPhoto} alt="photo" fill={true} style={{objectFit: "cover"}}/>
         </div>
 
         <div className="lg:w-1/2 w-full">
@@ -105,7 +103,7 @@ export default function EventInfo() {
         <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:gap-4 l:gap-8 xl:gap-14 md:py-5 md:px-14 l:px-22 xl:px-30 md:bg-ga-light">
         {sessionData.map((item, index) => (
           <Card key={index} 
-          className="flex flex-col sm:w-full md:w-1/3 bg-gradient-to-r from-ga-blue to-[#a2d3bc] h-fit md:h-96 border-0"
+          className="flex flex-col sm:w-full md:w-1/3 bg-gradient-to-r from-ga-blue to-[#a2d3bc] h-fit md:h-96 border-0 rounded-none md:rounded-2xl"
           >
             <CardHeader className="items-center text-center text-ga-light">
               <CardContent>
@@ -115,7 +113,7 @@ export default function EventInfo() {
                 {item.title}
               </CardTitle>
             </CardHeader>
-            <CardDescription className="self-center text-justify text-md sm:text-lg lg:text-xl px-30 md:px-4 lg:px-5 pb-4 text-ga-light">
+            <CardDescription className="self-center text-justify text-md sm:text-lg lg:text-xl px-10 md:px-4 lg:px-5 pb-4 text-ga-light">
               {item.desc}
             </CardDescription>
           </Card>
@@ -127,23 +125,23 @@ export default function EventInfo() {
 
       <div className="bg-ga-green p-5 pt-10">
           <h1 className="text-3xl leading-6 font-bold text-ga-light lg:text-5xl lg:leading-11">
-            Who will be involved?
+            <i>Who will be involved?</i>
           </h1>
           {/* Card */}
         <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:gap-4 l:gap-8 xl:gap-14 md:py-5 md:px-14 l:px-22 xl:px-30 bg-ga-green">
         {involveData.map((item, index) => (
           <Card key={index} 
-          className="flex flex-col sm:w-full md:w-1/3  bg-ga-green h-78 border-0"
+          className="flex flex-col sm:w-full md:w-1/3 bg-ga-green h-fit md:h-96 border-0 rounded-none md:rounded-2xl"
           >
             <CardHeader className="items-center text-center text-ga-light">
               <CardContent>
                 {item.icon}
               </CardContent>
-              <CardTitle className="text-md md:text-xl lg:text-2xl font-bold">
+              <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold">
                 {item.title}
               </CardTitle>
             </CardHeader>
-            <CardDescription className="self-center text-justify text-md sm:text-lg lg:text-xl px-5 pb-4 text-ga-light">
+            <CardDescription className="self-center text-justify text-md sm:text-lg lg:text-xl px-10 md:px-4 lg:px-5 pb-4 text-ga-light">
               {item.desc}
             </CardDescription>
           </Card>
