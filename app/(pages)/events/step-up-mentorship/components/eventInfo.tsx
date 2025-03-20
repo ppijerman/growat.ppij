@@ -70,7 +70,7 @@ export default function EventInfo() {
     <main>
       <div className="md:flex lg:col-2 lg:row-1">
         <div className="lg:w-1/2" style={{position:"relative"}}>
-          <Image src={teamworkPhoto} alt="photo" fill={true} style={{objectFit: "cover"}}/>
+          <Image src={teamworkPhoto} alt="photo" fill={true} style={{objectFit: "cover"}} placeholder = 'blur'/>
         </div>
 
         <div className="lg:w-1/2 w-full">
