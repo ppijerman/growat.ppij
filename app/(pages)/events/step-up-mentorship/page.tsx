@@ -1,16 +1,17 @@
 import EventInfo from "./components/eventInfo"
-// import Countdown from "./components/countdown"
 import Timeline from "./components/timeline"
-// import Mentors from "./components/mentors"
-// import MentoringTech from "./components/mentoringTech"
 import Hero from "./components/hero"
+import { Countdown } from "./components/countdown"
+import { MentorsCarousel } from "./components/mentors"
 
 export default function Page() {
   return (
-    <main>
-      <Hero/>
-      <EventInfo/>
-      <Timeline/>
+    <main className="w-screen">
+      <Hero />
+      <Countdown />
+      <EventInfo />
+      <Timeline />
+      <MentorsCarousel />
     </main>
   )
 }
