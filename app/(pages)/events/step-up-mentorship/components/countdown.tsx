@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 
 export function Countdown() {
-  const eventDate = new Date("2025-04-19T00:00:00Z")
+  // Event date is now initialized inside the useEffect
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -14,6 +14,7 @@ export function Countdown() {
   useEffect(() => {
     const updateCountdown = () => {
       const currentTime = new Date().getTime()
+      const eventDate = new Date("2025-04-19T00:00:00Z")
       const timeLeft = eventDate.getTime() - currentTime
 
       if (timeLeft > 0) {
@@ -31,7 +32,7 @@ export function Countdown() {
     }
     const intervalChange = setInterval(updateCountdown, 1000)
     return () => clearInterval(intervalChange)
-  }, [eventDate])
+  }, [])
 
   return (
     <section className="flex flex-col justify-center items-center text-primary bg-ga-light-green min-h-[25rem] py-5">
