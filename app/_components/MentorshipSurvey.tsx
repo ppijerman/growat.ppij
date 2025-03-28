@@ -27,19 +27,19 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
             Step Up Mentorship 3.0 🚀
           </CardTitle>
           <CardDescription className="text-xl md:text-2xl m-0">
-            Coming soon!
+            PPIJ x IPA Networking event
           </CardDescription>
         </CardHeader>
         <CardContent className="pb-0 flex flex-col justify-center items-center gap-2">
           <p className="text-base md:text-2xl text-center mb-0">
-            Take part in this survey to help us enhance your experience!
+            Find out more here!
           </p>
           <Button variant="secondary" className="" asChild>
             <Link
-              href="https://ppij.org/MentorshipSurvey"
+              href="https://growat.ppijerman.org/events/step-up-mentorship"
               className="space-x-px"
             >
-              <div>Participate here</div>
+              <div>Participate</div>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>

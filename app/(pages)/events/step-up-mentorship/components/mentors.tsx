@@ -28,7 +28,7 @@ export function MentorsCarousel() {
       <div className="w-full max-w-screen-2xl mx-auto">
         <Carousel
           orientation="horizontal"
-          opts={{ align: "center", loop: true }}
+          opts={{ align: "center", loop: true, }}
           className="relative"
         >
           <CarouselContent className="flex gap-3 ml-1">
@@ -42,14 +42,14 @@ export function MentorsCarousel() {
                     <Image
                       src={mentor.image}
                       alt={mentor.name}
-                      className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover object-top drop-shadow-lg"
+                      className="w-48 h-48 rounded-full object-cover object-top drop-shadow-lg"
                     />
                   </CardHeader>
                   <CardContent className="px-1 text-white bg-transparent">
-                    <CardTitle className="text-md md:text-lg font-bold">
+                    <CardTitle className="text-2xl font-bold">
                       {mentor.name}
                     </CardTitle>
-                    <p className="text-sm">{mentor.title}</p>
+                    <p className="text-xl">{mentor.title}</p>
                   </CardContent>
                 </Card>
               </CarouselItem>
