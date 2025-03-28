@@ -36,7 +36,7 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
           </p>
           <Button variant="secondary" className="" asChild>
             <Link
-              href="https://growat.ppijerman.org/events/step-up-mentorship"
+              href="/events/step-up-mentorship"
               className="space-x-px"
             >
               <div>Participate</div>

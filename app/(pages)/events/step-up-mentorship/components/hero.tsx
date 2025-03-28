@@ -53,7 +53,7 @@ export default function Hero() {
             </Button>
             <Button variant="secondary" className="" asChild>
               <Link
-                href="https://ppij.org/StepUp-MenteeRegistForm "
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfBkzNgoEKN4sDz6am2Kfn56G__4RHPKxSax0OBgeW4DBHzvQ/viewform"
                 className="text-xl py-5 px-4"
               >
                 Mentees: Register here!
