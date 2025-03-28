@@ -14,7 +14,7 @@ export default function Home() {
       </div>
       <main className="px-7 lg:px-[8%]">
         <Timeline isVisible={true} />
-        <WorkshopRegistration isVisible={true} />
+        <WorkshopRegistration isVisible={false} />
         <MentorshipSurvey isVisible={true} />
         {/* <Recap isVisible={true} /> */}
       </main>

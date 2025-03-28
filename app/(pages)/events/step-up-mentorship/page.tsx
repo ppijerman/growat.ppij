@@ -1,5 +1,4 @@
 
-
 import { Countdown } from "@/app/(pages)/events/step-up-mentorship/components/countdown";
 import { MentorsCarousel } from "./components/mentors";
 
