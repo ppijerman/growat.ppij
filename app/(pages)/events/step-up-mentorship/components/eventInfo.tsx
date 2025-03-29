@@ -137,7 +137,7 @@ export default function EventInfo() {
 
       <div className="bg-ga-green p-5 pt-10">
         <h1 className="text-3xl leading-6 font-bold text-ga-light lg:text-5xl lg:leading-11">
-          <i>Who will be involved?</i>
+          Who will be involved?
         </h1>
         {/* Card */}
         <div className="flex flex-wrap md:flex-nowrap items-start justify-center md:gap-4 l:gap-8 xl:gap-14 md:py-5 md:px-14 l:px-22 xl:px-30 bg-ga-green">
