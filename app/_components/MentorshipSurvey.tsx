@@ -27,7 +27,7 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
             Step Up Mentorship 3.0 🚀
           </CardTitle>
           <CardDescription className="text-xl md:text-2xl m-0">
-            PPIJ x IPA Networking event
+            growAt x IPA Networking event
           </CardDescription>
         </CardHeader>
         <CardContent className="pb-0 flex flex-col justify-center items-center gap-2">
