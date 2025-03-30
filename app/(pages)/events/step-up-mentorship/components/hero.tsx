@@ -46,11 +46,8 @@ export default function Hero() {
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-x-5 md:mx-14 lg:px-30 lg:mx-30 xl:mx-72">
           <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
-            <Link
-              href="https://drive.google.com/file/d/1GG782N4FSumClSg6XyVnOFDtcGOJJolW/view"
-              className=""
-            >
-              Mentee&apos;s Handbook
+            <Link href="https//ppij.org/StepUp-MentorsRegistForm" className="">
+              Mentors Free Registration!
             </Link>
           </Button>
           <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
@@ -59,6 +56,11 @@ export default function Hero() {
               className=""
             >
               Mentees Free Registration!
+            </Link>
+          </Button>
+          <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
+            <Link href="https://ppij.org/MenteeHandbook" className="">
+              Mentee&apos;s Handbook
             </Link>
           </Button>
         </div>
