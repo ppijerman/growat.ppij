@@ -64,9 +64,9 @@ export default function Timeline() {
           </h1>
         </div>
         <div className="mt-5">
-          <table className="w-full border-collapse text-left ">
+          <table className="w-full border-collapse text-left indent-2">
             <thead className="bg-gradient-to-r from-ga-blue to-[#a2d3bc] text-ga-light">
-              <tr className="indent-2">
+              <tr className="">
                 <th className="">Timeline</th>
                 <th className="">Agenda</th>
               </tr>

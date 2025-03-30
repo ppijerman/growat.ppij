@@ -117,7 +117,7 @@ export default function EventInfo() {
           {sessionData.map((item, index) => (
             <Card
               key={index}
-              className="flex flex-col w-full md:w-1/3 bg-gradient-to-tr from-ga-blue from-40% to-[#a2d3bc] md:h-96 border-0 rounded-none md:rounded-2xl"
+              className="flex flex-col sm:w-full md:w-1/3 bg-gradient-to-tr from-ga-blue from-40% to-[#a2d3bc] h-fit md:h-96 border-0 rounded-none md:rounded-2xl"
             >
               <CardHeader className="items-center text-center text-ga-light">
                 <CardContent>{item.icon}</CardContent>
@@ -137,7 +137,7 @@ export default function EventInfo() {
 
       <div className="bg-ga-green p-5 pt-10">
         <h1 className="text-3xl leading-6 font-bold text-ga-light lg:text-5xl lg:leading-11">
-          Who will be involved?
+          <i>Who will be involved?</i>
         </h1>
         {/* Card */}
         <div className="flex flex-wrap md:flex-nowrap items-start justify-center md:gap-4 l:gap-8 xl:gap-14 md:py-5 md:px-14 l:px-22 xl:px-30 bg-ga-green">
