@@ -117,7 +117,7 @@ export default function EventInfo() {
           {sessionData.map((item, index) => (
             <Card
               key={index}
-              className="flex flex-col sm:w-full md:w-1/3 bg-gradient-to-tr from-ga-blue from-40% to-[#a2d3bc] h-fit md:h-96 border-0 rounded-none md:rounded-2xl"
+              className="flex flex-col w-full md:w-1/3 bg-gradient-to-tr from-ga-blue from-40% to-[#a2d3bc] md:h-96 border-0 rounded-none md:rounded-2xl"
             >
               <CardHeader className="items-center text-center text-ga-light">
                 <CardContent>{item.icon}</CardContent>

@@ -1,24 +1,18 @@
-"use client"; 
-import * as React from "react";
-import Image from "next/image"; 
-import { MentorsList } from "@/public/assets/stepUpMentors/mentors"; 
+"use client"
+import * as React from "react"
+import Image from "next/image"
+import { MentorsList } from "@/public/assets/stepUpMentors/mentors"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-
-} from "@/components/ui/carousel"; 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"; 
+} from "@/components/ui/carousel"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function MentorsCarousel() {
-  const mentors = MentorsList;
+  const mentors = MentorsList
 
   return (
     <section className="bg-gradient-to-r from-ga-blue to-ga-light-green flex flex-col items-center justify-center gap-10 py-10 px-10">
@@ -28,7 +22,7 @@ export function MentorsCarousel() {
       <div className="w-full max-w-screen-2xl mx-auto">
         <Carousel
           orientation="horizontal"
-          opts={{ align: "center", loop: true, }}
+          opts={{ align: "center", loop: true }}
           className="relative"
         >
           <CarouselContent className="flex gap-3 ml-1">
@@ -60,5 +54,5 @@ export function MentorsCarousel() {
         </Carousel>
       </div>
     </section>
-  );
+  )
 }
