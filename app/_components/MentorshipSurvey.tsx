@@ -14,7 +14,9 @@ interface MentorshipSurveyProps {
   isVisible: boolean
 }
 
-const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
+const StepUpMentorshipSection: React.FC<MentorshipSurveyProps> = ({
+  isVisible,
+}) => {
   return (
     <div
       className={`transition-opacity duration-500 ${
@@ -27,19 +29,16 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
             Step Up Mentorship 3.0 🚀
           </CardTitle>
           <CardDescription className="text-xl md:text-2xl m-0">
-            Coming soon!
+            Grow at PPI Jerman x IPA Career Mentorship Program
           </CardDescription>
         </CardHeader>
         <CardContent className="pb-0 flex flex-col justify-center items-center gap-2">
           <p className="text-base md:text-2xl text-center mb-0">
-            Take part in this survey to help us enhance your experience!
+            Find out more and participate here!
           </p>
           <Button variant="secondary" className="" asChild>
-            <Link
-              href="https://ppij.org/MentorshipSurvey"
-              className="space-x-px"
-            >
-              <div>Participate here</div>
+            <Link href="/events/step-up-mentorship" className="space-x-px">
+              <div>More details</div>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
@@ -49,4 +48,4 @@ const MentorshipSurvey: React.FC<MentorshipSurveyProps> = ({ isVisible }) => {
   )
 }
 
-export default MentorshipSurvey
+export default StepUpMentorshipSection
