@@ -46,11 +46,6 @@ export default function Hero() {
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-x-5 md:mx-14 lg:px-30 lg:mx-30 xl:mx-72">
           <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
-            <Link href="https//ppij.org/StepUp-MentorsRegistForm" className="">
-              Mentors Free Registration!
-            </Link>
-          </Button>
-          <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSfBkzNgoEKN4sDz6am2Kfn56G__4RHPKxSax0OBgeW4DBHzvQ/viewform"
               className=""
