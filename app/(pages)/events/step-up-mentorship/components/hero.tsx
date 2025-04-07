@@ -16,21 +16,21 @@ export default function Hero() {
           alt="logo growat"
           width={150}
           height={60}
-          className="object-contain w-1/6  lg:w-[10%]"
+          className="object-contain w-1/3 md:w-1/6 lg:w-[10%]"
         />
         <Image
           src={logoPPIJ}
           alt="logo PPIJ"
           width={150}
           height={60}
-          className="object-contain w-1/6  lg:w-[10%]"
+          className="object-contain w-1/3 md:w-1/6 lg:w-[10%]"
         />
         <Image
           src={logoIPA}
           alt="logo IPA"
           width={150}
           height={60}
-          className="object-contain w-1/6 lg:w-[10%]"
+          className="object-contain w-1/3 md:w-1/6 lg:w-[10%]"
         />
       </div>
 
