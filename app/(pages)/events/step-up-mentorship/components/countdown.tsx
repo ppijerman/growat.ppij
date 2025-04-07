@@ -14,7 +14,7 @@ export function Countdown() {
   useEffect(() => {
     const updateCountdown = () => {
       const currentTime = new Date().getTime()
-      const eventDate = new Date("2025-04-19T00:00:00Z")
+      const eventDate = new Date("2025-04-13T00:00:00Z")
       const timeLeft = eventDate.getTime() - currentTime
 
       if (timeLeft > 0) {
