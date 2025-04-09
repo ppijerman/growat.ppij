@@ -81,13 +81,13 @@ export default function EventInfo() {
 
         <div className="lg:w-1/2 w-full">
           <div className="bg-gradient-to-r from-ga-blue to-[#a2d3bc] pl-3 sm:p-3 h-1/4 justify-center">
-            <h1 className="text-wrap text-3xl lg:text-5xl text-ga-light font-bold py-3">
+            <h1 className="text-wrap text-3xl lg:text-5xl lg:pb-17 text-ga-light font-bold py-3">
               What is Step Up Mentorship 3.0?
             </h1>
           </div>
 
           <div className="flex flex-col items-center justify-center p-5 bg-ga-light h-3/4">
-            <p className="leading-7 lg:pt-5 lg:mb-5 sm:text-lg lg:text-2xl">
+            <p className="leading-7 lg:mb-5 sm:text-lg lg:text-2xl">
               <b>Step Up Mentorship 3.0</b> adalah program <i>mentoring</i>{" "}
               intensif GRATIS yang berlangsung selama 3 minggu, yang mencakup
               berbagai kegiatan, seperti <i>summit</i>, sesi{" "}

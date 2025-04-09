@@ -1,96 +1,125 @@
 
-import MentorPic from "@/public/assets/img-round-placeholder.png";
+import adji from "@/public/assets/stepUpMentors/mentorPhoto/adji.png";
+import ainur from "@/public/assets/stepUpMentors/mentorPhoto/ainur.png";
+import arsyatria from "@/public/assets/stepUpMentors/mentorPhoto/arsyatria.png";
+import citra from "@/public/assets/stepUpMentors/mentorPhoto/citra.png";
+import diaddra from "@/public/assets/stepUpMentors/mentorPhoto/diaddra.png";
+import farras from "@/public/assets/stepUpMentors/mentorPhoto/farras.png";
+import gerry from "@/public/assets/stepUpMentors/mentorPhoto/gerry.png";
+import gita from "@/public/assets/stepUpMentors/mentorPhoto/gita.png";
+import griyana from "@/public/assets/stepUpMentors/mentorPhoto/griyana.png";
+import kevin from "@/public/assets/stepUpMentors/mentorPhoto/kevin.png";
+import livia from "@/public/assets/stepUpMentors/mentorPhoto/livia.png";
+import nabil from "@/public/assets/stepUpMentors/mentorPhoto/nabil.png";
+import naufal from "@/public/assets/stepUpMentors/mentorPhoto/naufal.png";
+import nolland from "@/public/assets/stepUpMentors/mentorPhoto/nolland.png";
+import philia from "@/public/assets/stepUpMentors/mentorPhoto/philia.png";
+import rizky from "@/public/assets/stepUpMentors/mentorPhoto/rizky.png";
+import safrina from "@/public/assets/stepUpMentors/mentorPhoto/safrina.png"; 
+import stephen from "@/public/assets/stepUpMentors/mentorPhoto/stephen.png";
+import tiara from "@/public/assets/stepUpMentors/mentorPhoto/tiara.png";
+import tobi from "@/public/assets/stepUpMentors/mentorPhoto/tobi.png"
 
 export const Mentors = {
   Mentor: {
     name: "Adji Pramudito Arioputro",
-    title: "Title here",
-    image: MentorPic,
+    title: "Technology Consultant at INVENSITY GmbH",
+    image: adji,
   },
   Mentor2: {
     name: "Arsyatria Rasaki Akbar",
-    title: "Title here",
-    image: MentorPic,
+    title: "Industrial Process Manager at CATL",
+    image: arsyatria,
   },
   Mentor3: {
     name: "Diaddra Pramudito",
-    title: "Title here",
-    image: MentorPic,
+    title: "CAMO Engineer at Excellent Air",
+    image: diaddra,
   },
   Mentor4: {
     name: "Stephen Lowis Putra",
-    title: "Title here",
-    image: MentorPic,
+    title: "Senior IT Business Analyst at BMW Group",
+    image: stephen,
   },
   Mentor5: {
     name: "Gita Flowerensia Anandini",
-    title: "Title here",
-    image: MentorPic,
+    title: "Molecular Food Technology Student at University of Bonn",
+    image: gita,
   },
   Mentor6: {
     name: "Sridanto Farras Rachmadi",
-    title: "Title here",
-    image: MentorPic,
+    title: "Planer, Bauleiter, Objektüberwacher TGA/MSR at Firma KO-VO GmbH",
+    image: farras,
   },
   Mentor7: {
     name: "Safrina Sucipto",
-    title: "Title here",
-    image: MentorPic,
+    title: "Senior Marketing Consultant at PIA Media München",
+    image: safrina,
   },
   Mentor8: {
     name: "Rizky I. Sugianto",
-    title: "Title here",
-    image: MentorPic,
+    title: "Postdoctoral Researcher at Hannover Medical School",
+    image: rizky,
   },
   Mentor9: {
     name: "Tiara Cahaya Putri",
-    title: "Title here",
-    image: MentorPic,
+    title: "SAP Finance Inhouse Consultant at Robert Bosch GmbH",
+    image: tiara,
   },
   Mentor10: {
     name: "Nabil Akbarazzima Fatih",
-    title: "Title here",
-    image: MentorPic,
+    title: "Software Engineer at StrategyBridgeAI GmbH",
+    image: nabil,
   },
   Mentor11: {
     name: "Citra Puspita Maharani",
-    title: "Title here",
-    image: MentorPic,
+    title: "Designer at Drees & Sommer",
+    image: citra,
   },
   Mentor12: {
     name: "Ainur Rosyidah (Ochi)",
-    title: "Title here",
-    image: MentorPic,
+    title: "Working Student Early Talent Program Management at SAP",
+    image: ainur,
   },
   Mentor13: {
     name: "Naufal Ekadyanto Nugroho",
-    title: "Title here",
-    image: MentorPic,
+    title: "Smart Factory Consultant at Consulting Firm",
+    image: naufal,
   },
   Mentor14: {
     name: "Livia Marcha",
-    title: "Title here",
-    image: MentorPic,
+    title: "Market Revenue Junior Executive at Arabella Hospitality SE",
+    image: livia,
   },
   Mentor15: {
     name: "Philia Magdalena Setiawan",
-    title: "Title here",
-    image: MentorPic,
+    title: "Data Analytics Trainee at arvato SE",
+    image: philia,
   },
   Mentor16: {
     name: "Tobias Kusnaman",
-    title: "Title here",
-    image: MentorPic,
+    title: "Analytics Engineer at SumUp Services GmbH",
+    image: tobi,
   },
   Mentor17: {
     name: "Kevin",
-    title: "Title here",
-    image: MentorPic,
+    title: "Digital Technical Engineer at Hitachi Energy",
+    image: kevin,
   },
   Mentor18: {
     name: "Gerry Yota",
-    title: "Title here",
-    image: MentorPic,
+    title: "Senior Consultant at Digitall",
+    image: gerry,
+  },
+  Mentor19: {
+    name: "Nolland Raihan Sukma",
+    title: "Senior Consultant M&A Tax at Deloitte GmbH",
+    image: nolland,
+  },
+  Mentor20: {
+    name: "Griyana Panelewen",
+    title: "Projekt Engineering/Manager at DB InfraGO AG",
+    image: griyana,
   },
 };
 
