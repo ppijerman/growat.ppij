@@ -18,7 +18,11 @@ import rizky from "@/public/assets/stepUpMentors/mentorPhoto/rizky.png";
 import safrina from "@/public/assets/stepUpMentors/mentorPhoto/safrina.png"; 
 import stephen from "@/public/assets/stepUpMentors/mentorPhoto/stephen.png";
 import tiara from "@/public/assets/stepUpMentors/mentorPhoto/tiara.png";
-import tobi from "@/public/assets/stepUpMentors/mentorPhoto/tobi.png"
+import tobi from "@/public/assets/stepUpMentors/mentorPhoto/tobi.png";
+import ersintya from "@/public/assets/stepUpMentors/mentorPhoto/ersintya.png";
+import kemal from "@/public/assets/stepUpMentors/mentorPhoto/kemal.png";
+import nata from "@/public/assets/stepUpMentors/mentorPhoto/nata.png";
+import yolenta from "@/public/assets/stepUpMentors/mentorPhoto/yolenta.png"
 
 export const Mentors = {
   Mentor: {
@@ -121,6 +125,26 @@ export const Mentors = {
     title: "Projekt Engineering/Manager at DB InfraGO AG",
     image: griyana,
   },
+  Mentor21: {
+    name: "Ersintya Swasthi Pramadhani",
+    title: "Working Student in Global Employer Branding at SAP",
+    image: ersintya,
+  },
+  Mentor22: {
+    name: "Kemal Rais",
+    title: "Associate AuditTech at KPMG AG Wirtschaftsprüfungsgesellschaft",
+    image: kemal,
+  },
+  Mentor23: {
+    name: "Nata Atmaja",
+    title: "Assistenzarzt/Arzt in Weiterbildung in Neurologie",
+    image: nata,
+  },
+  Mentor24: {
+    name: "Yolenta Wulandari",
+    title: "Jr. Business Development Manager at STOCK Spirits",
+    image: yolenta,
+  },
 };
 
 export const MentorsList = [
@@ -141,4 +165,9 @@ export const MentorsList = [
   Mentors.Mentor16,
   Mentors.Mentor17,
   Mentors.Mentor18,
-];
+  Mentors.Mentor19,
+  Mentors.Mentor20,
+  Mentors.Mentor21,
+  Mentors.Mentor22,
+  Mentors.Mentor23,
+  Mentors.Mentor24,];
