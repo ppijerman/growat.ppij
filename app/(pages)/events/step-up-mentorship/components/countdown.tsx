@@ -58,7 +58,7 @@ export function Countdown() {
             >
               {value}
             </strong>
-            <span className="text-xl md:text-2xl lg:text-3xl font-bold text-ga-green">
+            <span className="text-md md:text-lg lg:text-xl font-bold text-ga-green">
               {key.toUpperCase()}
             </span>
           </div>
