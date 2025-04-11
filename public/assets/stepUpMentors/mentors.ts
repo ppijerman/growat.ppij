@@ -161,6 +161,7 @@ export const MentorsList = [
   Mentors.Mentor11,
   Mentors.Mentor12,
   Mentors.Mentor13,
+  Mentors.Mentor14,
   Mentors.Mentor15,
   Mentors.Mentor16,
   Mentors.Mentor17,
