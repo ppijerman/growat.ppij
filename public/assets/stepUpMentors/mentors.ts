@@ -132,7 +132,7 @@ export const Mentors = {
   },
   Mentor22: {
     name: "Kemal Rais",
-    title: "Associate AuditTech at KPMG AG Wirtschaftsprüfungsgesellschaft",
+    title: "Associate AuditTech at KPMG AG Wirtschaftsprüfungs- gesellschaft",
     image: kemal,
   },
   Mentor23: {
