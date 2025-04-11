@@ -26,8 +26,8 @@ import {
   Mic2Icon,
 } from "lucide-react"
 
-const iconClasses =
-  "w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[110px] lg:h-[110px]"
+const cardClasses = "flex flex-col w-full md:w-1/3 bg-transparent md:h-100 border-0 rounded-none md:rounded-2xl"
+const iconClasses = "w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[110px] lg:h-[110px]"
 
 const sessionData: CardData[] = [
   {
@@ -80,14 +80,14 @@ export default function EventInfo() {
         </div>
 
         <div className="lg:w-1/2 w-full">
-          <div className="flex bg-gradient-to-r from-ga-blue to-[#a2d3bc] pl-3 sm:p-3 h-1/4 items-center justify-center">
-            <h1 className="text-wrap text-3xl lg:text-5xl text-ga-light font-bold py-3">
+          <div className="bg-gradient-to-r from-ga-blue to-[#a2d3bc] pl-3 sm:p-3 h-1/4 justify-center">
+            <h1 className="text-wrap text-3xl lg:text-5xl lg:pb-17 text-ga-light font-bold py-3">
               What is Step Up Mentorship 3.0?
             </h1>
           </div>
 
           <div className="flex flex-col items-center justify-center p-5 bg-ga-light h-3/4">
-            <p className="leading-7 lg:pt-5 lg:mb-5 sm:text-lg lg:text-2xl">
+            <p className="leading-7 lg:mb-5 sm:text-lg lg:text-2xl">
               <b>Step Up Mentorship 3.0</b> adalah program <i>mentoring</i>{" "}
               intensif GRATIS yang berlangsung selama 3 minggu, yang mencakup
               berbagai kegiatan, seperti <i>summit</i>, sesi{" "}
@@ -95,8 +95,8 @@ export default function EventInfo() {
               profesional dari berbagai industri.
             </p>
             <p className="leading-7 sm:text-lg lg:text-2xl">
-              <b>Tujuan kami</b> <br />
-              Membantu dan mendampingi mahasiswa Indonesia di Jerman untuk
+              <b>Tujuan kami</b> adalah
+              membantu dan mendampingi mahasiswa Indonesia di Jerman untuk
               memperoleh <b>wawasan</b>, sehingga dapat <b>berkembang</b>{" "}
               menjadi <b>profesional yang percaya diri</b> dan{" "}
               <b>siap menghadapi dunia kerja</b>.
@@ -117,10 +117,9 @@ export default function EventInfo() {
           {sessionData.map((item, index) => (
             <Card
               key={index}
-              className="flex flex-col w-full md:w-1/3 bg-gradient-to-tr from-ga-blue from-40% to-[#a2d3bc] md:h-96 border-0 rounded-none md:rounded-2xl"
-            >
-              <CardHeader className="items-center text-center text-ga-light">
-                <CardContent>{item.icon}</CardContent>
+              className={`${cardClasses} bg-gradient-to-r md:bg-gradient-to-tr  from-ga-blue md:from-40% to-[#a2d3bc]`}>
+              <CardHeader className="items-center text-center text-ga-light p-3">
+                <CardContent className="p-3 md:p-5 lg:p-6">{item.icon}</CardContent>
                 <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold">
                   {item.title}
                 </CardTitle>
@@ -144,7 +143,7 @@ export default function EventInfo() {
           {involveData.map((item, index) => (
             <Card
               key={index}
-              className="flex-col sm:w-full md:w-1/3 bg-ga-green border-0 shadow-none rounded-none md:rounded-2xl"
+              className={`${cardClasses} bg-transparent`}
             >
               <CardHeader className="items-center text-center text-ga-light">
                 <CardContent>{item.icon}</CardContent>
@@ -152,7 +151,7 @@ export default function EventInfo() {
                   {item.title}
                 </CardTitle>
               </CardHeader>
-              <CardDescription className="self-center text-center text-md sm:text-lg lg:text-xl px-10 md:px-4 lg:px-5 text-ga-light">
+              <CardDescription className="self-center text-justify text-md sm:text-lg lg:text-xl px-10 md:px-4 lg:px-5 text-ga-light ">
                 {item.desc}
               </CardDescription>
             </Card>
