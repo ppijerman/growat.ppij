@@ -8,7 +8,6 @@ export default function Page() {
   return (
     <main className="w-screen">
       <Hero />
-      <Countdown />
       <EventInfo />
       <Mentors />
       <Timeline />
