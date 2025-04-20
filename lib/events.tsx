@@ -48,7 +48,7 @@ export const events: Event[] = [
     title: "Step Up Mentorship 3.0",
     description: "",
     startDate: new Date("2025-04-19"),
-    endDate: new Date("2005-05-10"),
+    endDate: new Date("2025-05-10"),
     location: "Online",
     image: undefined,
     icon: <Rocket />,

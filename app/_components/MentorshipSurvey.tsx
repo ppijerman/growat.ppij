@@ -28,7 +28,7 @@ const StepUpMentorshipSection: React.FC<MentorshipSurveyProps> = ({
           <CardTitle className="text-2xl md:text-3xl text-center m-0">
             Step Up Mentorship 3.0 🚀
           </CardTitle>
-          <CardDescription className="text-xl md:text-2xl m-0">
+          <CardDescription className="text-center text-xl md:text-2xl m-0">
             Grow at PPI Jerman x IPA Career Mentorship Program
           </CardDescription>
         </CardHeader>
