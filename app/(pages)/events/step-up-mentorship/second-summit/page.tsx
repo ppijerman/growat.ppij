@@ -66,7 +66,7 @@ export default function Page() {
             />
         </div>
 
-        <div className="px-5 lg:px-40 xl:px-72">
+        <div className="py-10 px-5 lg:px-40 xl:px-72">
           <h1 className="text-center text-[32px] leading-[40px] font-bold tracking-wider text-ga-dark lg:text-5xl lg:leading-[72px]">
           Summit #2: Boosting Confidence and Negotiation Skills in Interview
           </h1>
