@@ -54,6 +54,14 @@ export default function Hero() {
             </Link>
           </Button>
           <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
+            <Link
+              href="step-up-mentorship/second-summit"
+              className=""
+            >
+              2nd Summit
+            </Link>
+          </Button>
+          <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
             <Link href="https://ppij.org/MenteeHandbook" className="">
               Mentee&apos;s Handbook
             </Link>
