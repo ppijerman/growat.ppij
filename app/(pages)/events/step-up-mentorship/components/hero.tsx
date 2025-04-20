@@ -47,10 +47,18 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-x-5 md:mx-14 lg:px-30 lg:mx-30 xl:mx-72">
           <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
             <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfBkzNgoEKN4sDz6am2Kfn56G__4RHPKxSax0OBgeW4DBHzvQ/viewform"
+              href="step-up-mentorship/first-summit"
               className=""
             >
-              Mentees Free Registration!
+              1st Summit
+            </Link>
+          </Button>
+          <Button variant="secondary" className="text-xl lg:text-2xl" asChild>
+            <Link
+              href="step-up-mentorship/second-summit"
+              className=""
+            >
+              2nd Summit
             </Link>
           </Button>
           <Button variant="secondary" className="text-xl lg:text-2xl" asChild>

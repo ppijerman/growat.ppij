@@ -59,7 +59,11 @@ function fetchEventSubmenus(navItems: NavItem[]) {
   const upcomingEvents = events
     .filter((event) => event.showOnNavbar)
     .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
-    .filter((event) => event.startDate > new Date())
+    .filter(
+      (event) =>
+        (event.endDate && event.endDate > new Date()) ||
+        (!event.endDate && event.startDate > new Date())
+    )
 
   // Map upcoming events to submenus
   const upcomingEventsSubmenu = navItems?.find(
@@ -74,7 +78,13 @@ function fetchEventSubmenus(navItems: NavItem[]) {
     }))
   }
 
-  const pastEvents = events.filter((event) => event.startDate < new Date())
+  const pastEvents = events
+    .filter((event) => event.showOnNavbar)
+    .filter(
+      (event) =>
+        (event.endDate && event.endDate < new Date()) ||
+        (!event.endDate && event.startDate < new Date())
+    )
   const pastEventsSubmenu = navItems?.find(
     (submenu) => submenu.id === "past-events"
   )
