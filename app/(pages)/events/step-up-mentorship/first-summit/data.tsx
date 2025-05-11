@@ -1,22 +1,50 @@
-import logoPPIJ from "@/public/assets/logoppij.png"
-import logoGrowAt from "@/public/assets/logogrowat.png"
-import logoIPA from "@/public/assets/IPA_LogoBlack.png"
-import fotoNarsum_1 from "@/public/assets/stepUpMentors/summitPhoto/maslaSpeaker.jpg"
-import fotoMod from "@/public/assets/fotoModerator.jpg"
+type SummitLogo = {
+  src: string
+  alt: string
+}
 
-export const summitContent = {
+type SummitSpeaker = {
+  name: string
+  role: string
+  description: string
+  socmed: string
+  img: string
+}
+
+type SummitEventInfo = {
+  startDate: Date
+  endDate?: Date
+  time: string
+  location: string
+  note: string
+}
+
+type SummitContent = {
+  id: string
+  slug: string
+  logos: SummitLogo[]
+  title: string
+  description: string
+  eventInfo: SummitEventInfo
+  learningPoints: string[]
+  speakers: SummitSpeaker[]
+  link: string
+}
+
+export const summitContent: SummitContent = {
+  id: "testid",
+  slug: "first-summit",
   logos: [
-    { src: logoGrowAt, alt: "logo growat" },
-    { src: logoPPIJ, alt: "logo PPIJ" },
-    { src: logoIPA, alt: "logo IPA" },
+    { src: "/assets/logogrowat.png", alt: "logo growat" },
+    { src: "/assets/logoppij.png", alt: "logo PPIJ" },
+    { src: "/assets/IPA_LogoBlack.png", alt: "logo IPA" },
   ],
   title:
     "Summit #1: AI as Your Career Co-Pilot: Strategies for Students and Professionals",
-  date: "19 April",
   description:
     "Bergabunglah bersama kami dalam sesi pembukaan SUM 3.0, di mana kami akan mengeksplorasi cara mencari dan melamar pekerjaan secara efektif menggunakan AI. Topik-topik yang akan dibahas mencakupi pembuatan CV dan menulis surat lamaran yang menarik serta persiapan interview menggunakan alat bantu AI dan prompt engineering.",
   eventInfo: {
-    date: "🗓️ 19 April 2025",
+    startDate: new Date("2025-04-19T11:00:00Z"),
     time: "⏰ 13:00 s.d. 15:55 CET | 18:00 s.d. 20:55 WIB",
     location: "📍 Zoom Meeting",
     note: "FREE Entry, no registration required.",
@@ -35,7 +63,7 @@ export const summitContent = {
       role: "Speaker",
       description: "Social Media Strategist & Illustrator at e.Consult AG",
       socmed: "IG: malsanirmala",
-      img: fotoNarsum_1,
+      img: "/assets/stepUpMentors/summitPhoto/maslaSpeaker.jpg",
     },
     {
       name: "Muhammad Rafi Aziz Dzakwan",
@@ -43,8 +71,8 @@ export const summitContent = {
       description:
         "Bachelor Student | HAW Hamburg Logistik/Technical Business Administration",
       socmed: "IG: razizdz",
-      img: fotoMod,
+      img: "/assets/fotoModerator.jpg",
     },
   ],
-  ctaLink: "https://ppij.org/SUM",
-};
+  link: "https://ppij.org/SUM",
+}

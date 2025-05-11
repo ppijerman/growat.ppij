@@ -27,7 +27,11 @@ export default function Page() {
             {summitContent.title}
           </h1>
           <h2 className="text-center text-lg pt-6 text-ga-dark lg:text-[20px] lg:leading-7">
-            {summitContent.date} | Online
+          {new Date(summitContent.eventInfo.startDate).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          })} | Online
           </h2>
           <p className="text-center text-lg pt-8 text-ga-dark text-bold lg:text-[20px] lg:leading-7">
             {summitContent.description}
@@ -62,7 +66,7 @@ export default function Page() {
       <div className="relative">
         <div className="sticky bottom-0 z-50 bg-ga-light py-4 shadow">
           <div className="flex justify-center">
-            <Link href={summitContent.ctaLink}>
+            <Link href={summitContent.link}>
               <Button variant="secondary" size="lg">
                 Join here!
               </Button>
@@ -76,7 +80,11 @@ export default function Page() {
         <div>
           <h2 className="text-2xl text-ga-green lg:leading-6">When?</h2>
           <div className="pl-5 lg:text-[24px] pt-8">
-            <p>{summitContent.eventInfo.date}</p>
+            <p>{new Date(summitContent.eventInfo.startDate).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          })} </p>
             <p>{summitContent.eventInfo.time}</p>
             <p>{summitContent.eventInfo.location}</p>
             <p>{summitContent.eventInfo.note}</p>
