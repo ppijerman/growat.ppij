@@ -8,7 +8,7 @@ type SummitSpeaker = {
   role: string
   description: string
   socmed: string
-  img: string
+  imgUrl: string
 }
 
 type SummitEventInfo = {
@@ -26,9 +26,20 @@ type SummitContent = {
   title: string
   description: string
   eventInfo: SummitEventInfo
-  learningPoints: string[]
+  content: Content[]
   speakers: SummitSpeaker[]
   link: string
+}
+
+type IconPointers = {
+  icon: string
+  text: string
+}
+
+type Content = {
+  text?:string
+  imageUrl?:string
+  iconPointers?:IconPointers[]
 }
 
 export const summitContent: SummitContent = {
@@ -49,21 +60,33 @@ export const summitContent: SummitContent = {
     location: "📍 Zoom Meeting",
     note: "FREE Entry, no registration required.",
   },
-  learningPoints: [
-    "Bagaimana AI dapat membantu dalam proses melamar kerja:",
-    "1.1. Dalam pembuatan CV dan cover letter?",
-    "1.2. Dalam persiapan wawancara kerja?",
-    "1.3. AI Tools yang bisa digunakan untuk membuat CV dan cover letter dan bagaimana cara untuk prompt",
-    "2. Apa tantangan dalam penggunaan AI untuk melamar kerja dan bagaimana cara mengatasinya?",
-    "3. Apa pertimbangan etika dalam penggunaan AI untuk aplikasi kerja?",
-  ],
+  content: [
+    {
+      text: "Bagaimana AI dapat membantu dalam proses melamar kerja:"
+    },
+    {
+      text: "1.1. Dalam pembuatan CV dan cover letter?"
+    },
+    {
+      text: "1.2. Dalam persiapan wawancara kerja?"
+    },
+    {
+      text: "1.3. AI Tools yang bisa digunakan untuk membuat CV dan cover letter dan bagaimana cara untuk prompt"
+    },
+    {
+      text: "2. Apa tantangan dalam penggunaan AI untuk melamar kerja dan bagaimana cara mengatasinya?"
+    },
+    {
+      text: "3. Apa pertimbangan etika dalam penggunaan AI untuk aplikasi kerja?"
+    }
+  ],  
   speakers: [
     {
       name: "Malsa Nirmala Rusli",
       role: "Speaker",
       description: "Social Media Strategist & Illustrator at e.Consult AG",
       socmed: "IG: malsanirmala",
-      img: "/assets/stepUpMentors/summitPhoto/maslaSpeaker.jpg",
+      imgUrl: "/assets/stepUpMentors/summitPhoto/maslaSpeaker.jpg",
     },
     {
       name: "Muhammad Rafi Aziz Dzakwan",
@@ -71,7 +94,7 @@ export const summitContent: SummitContent = {
       description:
         "Bachelor Student | HAW Hamburg Logistik/Technical Business Administration",
       socmed: "IG: razizdz",
-      img: "/assets/fotoModerator.jpg",
+      imgUrl: "/assets/fotoModerator.jpg",
     },
   ],
   link: "https://ppij.org/SUM",

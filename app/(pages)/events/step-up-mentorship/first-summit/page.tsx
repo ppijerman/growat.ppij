@@ -50,7 +50,7 @@ export default function Page() {
               </div>
               <div className="w-[60%] mx-auto overflow-hidden rounded-full border-0 drop-shadow-lg">
                 <Image
-                  src={narsum.img}
+                  src={narsum.imgUrl}
                   alt={narsum.name}
                   width={500}
                   height={500}
@@ -93,13 +93,39 @@ export default function Page() {
 
         <div>
           <h2 className="text-2xl text-ga-green leading-6 pb-1">About event</h2>
-          <div className="pl-5 lg:text-[18px] pt-4">
-            <p className="font-bold">What you will learn:</p>
-            {summitContent.learningPoints.map((point, idx) => (
-              <p key={idx}>{point}</p>
-            ))}
-          </div>
-        </div>
+            <div className="pl-5 lg:text-[18px] pt-4 space-y-3">
+              <p className="font-bold">What you will learn:</p>
+              {summitContent.content.map((item, idx) => (
+                <div key={idx}>
+                  {item.text && <p>{item.text}</p>}
+                  
+                  {item.imageUrl && (
+                    <div className="relative w-full max-w-md h-64 my-2">
+                      <Image
+                        src={item.imageUrl}
+                        alt={`content-image-${idx}`}
+                        layout="fill"
+                        objectFit="contain"
+                        priority={idx === 0} // prioritize first image
+                      />
+                    </div>
+                  )}
+
+                  {item.iconPointers && (
+                    <ul className="list-disc pl-6">
+                      {item.iconPointers.map((pointer, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span>{pointer.icon}</span>
+                          <span>{pointer.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+      </div>
+
       </div>
 
       <Timeline />
