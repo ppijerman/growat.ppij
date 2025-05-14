@@ -1,94 +1,56 @@
 import Image from "next/image"
 import Link from "next/link"
-
-//assets
-import logoPPIJ from "@/public/assets/logoppij.png"
-import logoGrowAt from "@/public/assets/logogrowat.png"
-import logoIPA from "@/public/assets/IPA_LogoBlack.png"
-import fotoNarsum_1 from "@/public/assets/stepUpMentors/summitPhoto/maslaSpeaker.jpg"
-import fotoMod from "@/public/assets/fotoModerator.jpg"
+import { summitContent } from "@/app/(pages)/events/step-up-mentorship/first-summit/data"
 import { Button } from "@/components/ui/button"
 import Timeline from "./timeline"
-
-const narasumber = [
-  {
-    name: "Malsa Nirmala Rusli",
-    role: "Speaker",
-    description: "Social Media Strategist & Illustrator at e.Consult AG",
-    socmed: "IG: malsanirmala",
-    img: fotoNarsum_1,
-  },
-  {
-    name: "Muhammad Rafi Aziz Dzakwan",
-    role: "Moderator",
-    description:
-      "Bachelor Student | HAW Hamburg Logistik/Technical Business Administration",
-    socmed: "IG: razizdz",
-    img: fotoMod,
-  },
-]
 
 export default function Page() {
   return (
     <div className="bg-ga-light bg-cover">
-      {/* Header & Speakers Section */}
+      {/* Header & Logos */}
       <div className="py-10 bg-gradient-to-br bg-cover from-ga-blue to-ga-light-green">
         <div className="flex flex-wrap justify-center space-x-2 mx-auto py-2">
-          <Image
-            src={logoGrowAt}
-            alt="logo growat"
-            width={150}
-            height={60}
-            className="object-contain w-1/3 md:w-1/6 lg:w-[10%]"
-          />
-          <Image
-            src={logoPPIJ}
-            alt="logo PPIJ"
-            width={150}
-            height={60}
-            className="object-contain w-1/3 md:w-1/6 lg:w-[10%]"
-          />
-          <Image
-            src={logoIPA}
-            alt="logo IPA"
-            width={150}
-            height={60}
-            className="object-contain w-1/3 md:w-1/6 lg:w-[10%]"
-          />
+          {summitContent.logos.map((logo, i) => (
+            <Image
+              key={i}
+              src={logo.src}
+              alt={logo.alt}
+              width={150}
+              height={60}
+              className="object-contain w-1/3 md:w-1/6 lg:w-[10%]"
+            />
+          ))}
         </div>
 
         <div className="px-5 lg:px-40 xl:px-72">
           <h1 className="text-center text-[32px] leading-[40px] font-bold tracking-wider text-ga-dark lg:text-5xl lg:leading-[72px]">
-            Summit #1: AI as Your Career Co-Pilot: Strategies for Students and
-            Professionals
+            {summitContent.title}
           </h1>
           <h2 className="text-center text-lg pt-6 text-ga-dark lg:text-[20px] lg:leading-7">
-            19 April | Online
+          {new Date(summitContent.eventInfo.startDate).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          })} | Online
           </h2>
           <p className="text-center text-lg pt-8 text-ga-dark text-bold lg:text-[20px] lg:leading-7">
-            Bergabunglah bersama kami dalam sesi pembukaan SUM 3.0, di mana kami
-            akan mengeksplorasi cara mencari dan melamar pekerjaan secara
-            efektif menggunakan AI. <br />
-            Topik-topik yang akan dibahas mencakupi pembuatan CV dan menulis
-            surat lamaran yang menarik serta persiapan interview menggunakan
-            alat bantu AI dan prompt engineering.
+            {summitContent.description}
           </p>
         </div>
 
         <div className="w-full sm:flex md:pt-5 justify-center">
-          {narasumber.map((narsum, index) => (
+          {summitContent.speakers.map((narsum, index) => (
             <div key={index} className="text-center p-4">
               <div className="flex flex-col items-center justify-center mb-5">
-                <div className="font-bold text-ga-dark text-lg lg:text-xl text">
+                <div className="font-bold text-ga-dark text-lg lg:text-xl">
                   {narsum.role}: {narsum.name}
                 </div>
                 <div>{narsum.description}</div>
-                {/*add insta logo here?*/}
                 <div>{narsum.socmed}</div>
               </div>
               <div className="w-[60%] mx-auto overflow-hidden rounded-full border-0 drop-shadow-lg">
                 <Image
-                  src={narsum.img}
+                  src={narsum.imgUrl}
                   alt={narsum.name}
                   width={500}
                   height={500}
@@ -100,10 +62,11 @@ export default function Page() {
         </div>
       </div>
 
+      {/* CTA */}
       <div className="relative">
         <div className="sticky bottom-0 z-50 bg-ga-light py-4 shadow">
           <div className="flex justify-center">
-            <Link href="https://ppij.org/SUM)">
+            <Link href={summitContent.link}>
               <Button variant="secondary" size="lg">
                 Join here!
               </Button>
@@ -112,42 +75,57 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Event Information Section */}
+      {/* Event Info */}
       <div className="w-full pb-10 pt-5 md:pt-20 px-6 max-w-7xl mx-auto flex flex-col gap-10">
         <div>
           <h2 className="text-2xl text-ga-green lg:leading-6">When?</h2>
-          <div className="pl-5 lg:text-[24px]">
-            <p className="pt-8">🗓️ 19 April 2025</p>
-            <p>⏰ 13:00 s.d. 15:55 CET | 18:00 s.d. 20:55 WIB</p>
-            <p>📍 Zoom Meeting</p>
-            <p>FREE Entry, no registration required.</p>
+          <div className="pl-5 lg:text-[24px] pt-8">
+            <p>{new Date(summitContent.eventInfo.startDate).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          })} </p>
+            <p>{summitContent.eventInfo.time}</p>
+            <p>{summitContent.eventInfo.location}</p>
+            <p>{summitContent.eventInfo.note}</p>
           </div>
         </div>
 
         <div>
           <h2 className="text-2xl text-ga-green leading-6 pb-1">About event</h2>
-
-          <div className="pl-5 lg:text-[18px]">
-            <div className="pt-4">
+            <div className="pl-5 lg:text-[18px] pt-4 space-y-3">
               <p className="font-bold">What you will learn:</p>
-              <p>
-                1. Bagaimana AI dapat membantu dalam proses melamar kerja:{" "}
-                <br />
-                1.1. Dalam pembuatan CV dan cover letter?
-                <br />
-                1.2. Dalam persiapan wawancara kerja?
-                <br />
-                1.3. AI Tools yang bisa digunakan untuk membuat CV dan cover
-                letter dan bagaimana cara untuk prompt
-                <br />
-                2. Apa tantangan dalam penggunaan AI untuk melamar kerja dan
-                bagaimana cara mengatasinya? <br />
-                3. Apa pertimbangan etika dalam penggunaan AI untuk aplikasi
-                kerja?
-              </p>
+              {summitContent.content.map((item, idx) => (
+                <div key={idx}>
+                  {item.text && <p>{item.text}</p>}
+                  
+                  {item.imageUrl && (
+                    <div className="relative w-full max-w-md h-64 my-2">
+                      <Image
+                        src={item.imageUrl}
+                        alt={`content-image-${idx}`}
+                        layout="fill"
+                        objectFit="contain"
+                        priority={idx === 0} // prioritize first image
+                      />
+                    </div>
+                  )}
+
+                  {item.iconPointers && (
+                    <ul className="list-disc pl-6">
+                      {item.iconPointers.map((pointer, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span>{pointer.icon}</span>
+                          <span>{pointer.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
+      </div>
+
       </div>
 
       <Timeline />
