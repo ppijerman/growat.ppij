@@ -53,6 +53,15 @@ export const events: Event[] = [
     image: undefined,
     icon: <Rocket />,
     showOnNavbar: true,
+  },{
+    slug: "puma-workshop",
+    title: "Puma Company Visit",
+    description: "",
+    startDate: new Date("2025-07-04"),
+    location: "Online",
+    image: undefined,
+    icon: <Rocket />,
+    showOnNavbar: true,
   },
   {
     slug: "sea-career-fair",

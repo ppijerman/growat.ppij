@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { summitContent } from "@/app/(pages)/events/step-up-mentorship/first-summit/data"
+import { summitContent } from "@/lib/types/event"
 import { Button } from "@/components/ui/button"
 import Timeline from "./timeline"
 
@@ -95,7 +95,7 @@ export default function Page() {
           <h2 className="text-2xl text-ga-green leading-6 pb-1">About event</h2>
             <div className="pl-5 lg:text-[18px] pt-4 space-y-3">
               <p className="font-bold">What you will learn:</p>
-              {summitContent.content.map((item, idx) => (
+              {summitContent.contents.map((item, idx) => (
                 <div key={idx}>
                   {item.text && <p>{item.text}</p>}
                   
