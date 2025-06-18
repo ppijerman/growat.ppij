@@ -111,7 +111,7 @@ export default function Header() {
   fetchEventSubmenus(navItems)
 
   return (
-    <div className="flex h-20 w-full px-10 border-5 border-black items-center lg:px-[5%] z-50 bg-ga-light">
+    <div className="flex h-20 w-full px-10 items-center lg:px-[5%] z-50 bg-ga-light">
       <Link href={PATHS.HOME} className="max-h-20">
         <Image src={GrowAtLogo} alt="GrowAt Logo" className="w-32" />
       </Link>
@@ -177,14 +177,14 @@ export default function Header() {
       </Sheet>
 
       {/* large screen */}
-      <div className="ml-auto border-5 border-black hidden lg:flex">
+      <div className="ml-auto hidden lg:flex">
         <NavigationMenu>
           <NavigationMenuList>
             {NavItems.map((item, index) =>
               item.submenus ? (
                 <NavigationMenuItem key={index}>
                   <NavigationMenuTrigger
-                    className={`hover:text-ga-blue border-5 border-black bg-ga-light hover:bg-ga-light focus:bg-gray-100 text-xl font-medium ${
+                    className={`hover:text-ga-blue bg-ga-light hover:bg-ga-light focus:bg-gray-100 text-xl font-medium ${
                       isActive(item.href) ? "text-primary2" : ""
                     }`}
                   >

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { summitContent } from "@/lib/types/event"
+import { summitContent } from "@/lib/models/growat-event"
 import { Button } from "@/components/ui/button"
 import Timeline from "./timeline"
 
@@ -27,11 +27,15 @@ export default function Page() {
             {summitContent.title}
           </h1>
           <h2 className="text-center text-lg pt-6 text-ga-dark lg:text-[20px] lg:leading-7">
-          {new Date(summitContent.eventInfo.startDate).toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "long",
-            year: "numeric",
-          })} | Online
+            {new Date(summitContent.eventInfo.startDate).toLocaleDateString(
+              "en-GB",
+              {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              }
+            )}{" "}
+            | Online
           </h2>
           <p className="text-center text-lg pt-8 text-ga-dark text-bold lg:text-[20px] lg:leading-7">
             {summitContent.description}
@@ -80,11 +84,16 @@ export default function Page() {
         <div>
           <h2 className="text-2xl text-ga-green lg:leading-6">When?</h2>
           <div className="pl-5 lg:text-[24px] pt-8">
-            <p>{new Date(summitContent.eventInfo.startDate).toLocaleDateString("en-GB", {
-            day: "2-digit",
-            month: "long",
-            year: "numeric",
-          })} </p>
+            <p>
+              {new Date(summitContent.eventInfo.startDate).toLocaleDateString(
+                "en-GB",
+                {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                }
+              )}{" "}
+            </p>
             <p>{summitContent.eventInfo.time}</p>
             <p>{summitContent.eventInfo.location}</p>
             <p>{summitContent.eventInfo.note}</p>
@@ -93,39 +102,38 @@ export default function Page() {
 
         <div>
           <h2 className="text-2xl text-ga-green leading-6 pb-1">About event</h2>
-            <div className="pl-5 lg:text-[18px] pt-4 space-y-3">
-              <p className="font-bold">What you will learn:</p>
-              {summitContent.contents.map((item, idx) => (
-                <div key={idx}>
-                  {item.text && <p>{item.text}</p>}
-                  
-                  {item.imageUrl && (
-                    <div className="relative w-full max-w-md h-64 my-2">
-                      <Image
-                        src={item.imageUrl}
-                        alt={`content-image-${idx}`}
-                        layout="fill"
-                        objectFit="contain"
-                        priority={idx === 0} // prioritize first image
-                      />
-                    </div>
-                  )}
+          <div className="pl-5 lg:text-[18px] pt-4 space-y-3">
+            <p className="font-bold">What you will learn:</p>
+            {summitContent.contents.map((item, idx) => (
+              <div key={idx}>
+                {item.text && <p>{item.text}</p>}
 
-                  {item.iconPointers && (
-                    <ul className="list-disc pl-6">
-                      {item.iconPointers.map((pointer, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span>{pointer.icon}</span>
-                          <span>{pointer.text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-      </div>
+                {item.imageUrl && (
+                  <div className="relative w-full max-w-md h-64 my-2">
+                    <Image
+                      src={item.imageUrl}
+                      alt={`content-image-${idx}`}
+                      layout="fill"
+                      objectFit="contain"
+                      priority={idx === 0} // prioritize first image
+                    />
+                  </div>
+                )}
 
+                {item.iconPointers && (
+                  <ul className="list-disc pl-6">
+                    {item.iconPointers.map((pointer, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span>{pointer.icon}</span>
+                        <span>{pointer.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <Timeline />

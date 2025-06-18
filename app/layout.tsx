@@ -24,7 +24,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </Head>
-      <body className="min-h-dvh py-0 flex flex-col  scroll-smooth font-akzidenz-grotesk bg-ga-beige text-ga-dark bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] bg-[size:40px_40px]">
+      <body className="min-h-dvh py-0 flex flex-col  scroll-smooth font-akzidenz-grotesk text-ga-dark bg-ga-light">
         <div className="grow">{children}</div>
         <Footer />
         <Analytics />
