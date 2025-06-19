@@ -1,5 +1,6 @@
 export type GrowatEvent = {
   id: string
+  documentId: string
   slug: string
   mainPartnerLogo: ImageMedia
   partnerLogos: ImageMedia[]
@@ -38,23 +39,39 @@ export type ImageMedia = {
   formats: ImageFormats
 }
 
-type RichTextContent = {
-  type: "richtext"
+export type RichTextContent = {
+  __component: "richtext"
   text: string
 }
 
-type RichTextWithImageContent = {
-  type: "richtext-image"
+export type RichTextWithImageContent = {
+  __component: "richtext-image"
   text: string
   imageUrl: string
 }
 
-type IconPointersContent = {
-  type: "iconpointers"
+export type IconPointersContent = {
+  __component: "iconpointers"
   iconPointers: IconPointer[]
 }
 
-type Content = RichTextContent | RichTextWithImageContent | IconPointersContent
+type EventAgenda = {
+  time: string
+  agenda: string
+  description?: string
+}
+
+export type EventAgendaTimelineContent = {
+  __component: "event-content.event-timeline"
+  timezone: string
+  agendas: EventAgenda[]
+}
+
+type Content =
+  | RichTextContent
+  | RichTextWithImageContent
+  | IconPointersContent
+  | EventAgendaTimelineContent
 
 type IconPointer = {
   icon: string

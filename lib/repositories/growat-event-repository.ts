@@ -3,8 +3,15 @@ import { fetchStrapiAPI } from "../utils/strapi-client"
 
 export interface IGrowatEventRepository {
   getAllEvents(): Promise<GrowatEvent[]>
-  getEventBySlug(slug: string): Promise<GrowatEvent | null>
-  getEventById(id: string): Promise<GrowatEvent | null>
+  getEventBySlug(
+    slug: string,
+    populateQuery: string
+  ): Promise<GrowatEvent | null>
+  getEventById(
+    documentId: string,
+    populateQuery: string
+  ): Promise<GrowatEvent | null>
+  populateContent(event: GrowatEvent): Promise<GrowatEvent>
 }
 
 export class GrowatEventRepository implements IGrowatEventRepository {
@@ -16,9 +23,12 @@ export class GrowatEventRepository implements IGrowatEventRepository {
     return response.map(mapGrowatEvent) as GrowatEvent[]
   }
 
-  async getEventBySlug(slug: string): Promise<GrowatEvent | null> {
+  async getEventBySlug(
+    slug: string,
+    populateQuery: string = "populate=*"
+  ): Promise<GrowatEvent | null> {
     const response = await fetchStrapiAPI<GrowatEvent[]>(
-      `growat-events?filters[slug][$eq]=${slug}&sort=startDate:asc&populate=*`
+      `growat-events?filters[slug][$eq]=${slug}&sort=startDate:asc&${populateQuery}`
     )
 
     if (response.length === 0) {
@@ -28,9 +38,12 @@ export class GrowatEventRepository implements IGrowatEventRepository {
     return mapGrowatEvent(response[0]) as GrowatEvent
   }
 
-  async getEventById(id: string): Promise<GrowatEvent | null> {
+  async getEventById(
+    documentId: string,
+    populateQuery: string = "populate=*"
+  ): Promise<GrowatEvent | null> {
     const response = await fetchStrapiAPI<GrowatEvent>(
-      `growat-event/${id}?populate=*`
+      `growat-events/${documentId}?${populateQuery}`
     )
 
     if (!response) {
@@ -39,8 +52,21 @@ export class GrowatEventRepository implements IGrowatEventRepository {
 
     return mapGrowatEvent(response) as GrowatEvent
   }
+
+  async populateContent(event: GrowatEvent): Promise<GrowatEvent> {
+    const response = await this.getEventById(
+      event.documentId,
+      "populate[contents][populate]=*"
+    )
+    if (!response) {
+      throw new Error(`Event with documentId ${event.documentId} not found`)
+    }
+
+    return mapEventContent(event, response)
+  }
 }
 
+// Helper function for mapping
 function mapGrowatEvent(event: GrowatEvent): GrowatEvent {
   let logo = event.logo
   if (logo) {
@@ -93,5 +119,15 @@ function mapImageFormat(format: ImageFormat): ImageFormat {
   return {
     ...format,
     url: `${process.env.BACKEND_API_URL}${format.url}`,
+  }
+}
+
+function mapEventContent(
+  baseEvent: GrowatEvent,
+  eventWithContents: GrowatEvent
+): GrowatEvent {
+  return {
+    ...baseEvent,
+    contents: eventWithContents.contents,
   }
 }

@@ -1,5 +1,6 @@
 import EventHero from "./_components/hero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
+import EventAgendaTimeline from "./_components/timeline"
 
 type Params = {
   slug: string
@@ -8,7 +9,10 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const { slug } = await params
 
   const eventRepository = new GrowatEventRepository()
-  const event = await eventRepository.getEventBySlug(slug)
+  let event = await eventRepository.getEventBySlug(slug)
+  if (event?.contents) {
+    event = await eventRepository.populateContent(event)
+  }
 
   if (!event) {
     return (
@@ -21,6 +25,18 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
     <main className="flex flex-col items-center justify-center grow">
       <EventHero event={event} />
+      {event.contents.map((content, index) => {
+        switch (content.__component) {
+          case "event-content.event-timeline":
+            return (
+              <div key={index} className="w-full">
+                <EventAgendaTimeline timeline={content} />
+              </div>
+            )
+          default:
+            return null
+        }
+      })}
     </main>
   )
 }
