@@ -1,6 +1,6 @@
-import EventHero from "./_components/hero"
+import EventHero from "./_components/EventHero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
-import EventAgendaTimeline from "./_components/timeline"
+import EventTimetable from "./_components/EventTimetable"
 
 type Params = {
   slug: string
@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
           case "event-content.event-timeline":
             return (
               <div key={index} className="w-full">
-                <EventAgendaTimeline timeline={content} />
+                <EventTimetable eventAgenda={content} />
               </div>
             )
           default:

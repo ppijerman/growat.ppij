@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Countdown } from "./countdown"
+import { Countdown } from "./Countdown"
 
 import { Card } from "@/components/ui/card"
 import { GrowatEvent } from "@/lib/models/growat-event"

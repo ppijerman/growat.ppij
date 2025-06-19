@@ -55,23 +55,23 @@ export type IconPointersContent = {
   iconPointers: IconPointer[]
 }
 
-type EventAgenda = {
+type EventTimetableEntry = {
   time: string
   agenda: string
   description?: string
 }
 
-export type EventAgendaTimelineContent = {
+export type EventAgendaTimetableContent = {
   __component: "event-content.event-timeline"
   timezone: string
-  agendas: EventAgenda[]
+  agendas: EventTimetableEntry[]
 }
 
 type Content =
   | RichTextContent
   | RichTextWithImageContent
   | IconPointersContent
-  | EventAgendaTimelineContent
+  | EventAgendaTimetableContent
 
 type IconPointer = {
   icon: string

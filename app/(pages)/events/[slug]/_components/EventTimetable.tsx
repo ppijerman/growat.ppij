@@ -1,10 +1,10 @@
-import { EventAgendaTimelineContent } from "@/lib/models/growat-event"
+import { EventAgendaTimetableContent } from "@/lib/models/growat-event"
 
 type Props = {
-  timeline: EventAgendaTimelineContent
+  eventAgenda: EventAgendaTimetableContent
 }
 
-export default function EventAgendaTimeline({ timeline }: Props) {
+export default function EventTimetable({ eventAgenda }: Props) {
   return (
     <main className="bg-ga-light px-10 lg:px-[5%]">
       <div>
@@ -18,13 +18,13 @@ export default function EventAgendaTimeline({ timeline }: Props) {
             <thead className="bg-black text-ga-light">
               <tr className="indent-2">
                 <th className="w-1/5">
-                  Time{timeline.timezone && ` (${timeline.timezone})`}
+                  Time{eventAgenda.timezone && ` (${eventAgenda.timezone})`}
                 </th>
                 <th className="">Agenda</th>
               </tr>
             </thead>
             <tbody>
-              {timeline.agendas.map((agenda, index) => (
+              {eventAgenda.agendas.map((agenda, index) => (
                 <tr key={index}>
                   <td className="border-b border-gray-300 p-3">
                     {agenda.time}
