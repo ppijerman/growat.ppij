@@ -34,7 +34,7 @@ export default function EventTimeline({
         Upcoming Events
       </h2>
       <div className="w-full flex justify-center my-4">
-        <div className="flex gap-6 overflow-x-scroll overflow-visible px-2">
+        <div className="flex gap-6 overflow-x-visible px-2">
           {filteredEvents.map((event, index) => (
             <Link href={`/events/${event.slug}`} key={index}>
               <Card
