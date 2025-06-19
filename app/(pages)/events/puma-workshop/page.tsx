@@ -1,12 +1,11 @@
-import Hero from "./components/hero"
+// import EventHero from "../[slug]/_components/hero"
 import Timeline from "./components/timeline"
-// import { Countdown } from "./components/countdown"
 
-export default function Page() {
+export default async function Page() {
   return (
     <main className="w-screen">
-      <Hero />
-      <Timeline/>
+      {/* <EventHero event={} /> */}
+      <Timeline />
     </main>
   )
 }

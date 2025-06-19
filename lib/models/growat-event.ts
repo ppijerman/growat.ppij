@@ -1,9 +1,10 @@
 export type GrowatEvent = {
   id: string
   slug: string
-  partnerLogos: ImageAsset[]
+  mainPartnerLogo: ImageMedia
+  partnerLogos: ImageMedia[]
   title: string
-  logo?: ImageAsset[]
+  logo?: ImageMedia
   iconName: string
   description: string
   startDate: Date
@@ -12,12 +13,29 @@ export type GrowatEvent = {
   speakers: Speaker[]
   contents: Content[]
   linkButtons: LinkButton[]
+  heroBackground: ImageMedia
 }
 
-export type ImageAsset = {
-  imgUrl: string
-  alt: string
-  // Optional: width?: number; height?: number;
+export type ImageFormat = {
+  url: string
+  name: string
+  width: number
+  height: number
+}
+
+type ImageFormats = {
+  large: ImageFormat
+  medium: ImageFormat
+  small: ImageFormat
+  thumbnail: ImageFormat
+}
+
+export type ImageMedia = {
+  url: string
+  name: string
+  width: number
+  height: number
+  formats: ImageFormats
 }
 
 type RichTextContent = {
@@ -63,7 +81,7 @@ export type Speaker = {
   role: string
   description: string
   socialProfiles: SocialProfile[]
-  image: ImageAsset
+  image: ImageMedia
 }
 
 export type LinkButton = {

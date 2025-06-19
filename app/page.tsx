@@ -1,4 +1,4 @@
-import Header from "@/components/Navbar/header"
+import NavBar from "@/components/Navbar/NavBar"
 import Hero from "@/app/_components/Hero"
 import EventTimeline from "@/app/_components/EventTimeline"
 // import Recap from "./_components/recap"
@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <div>
       <div className="flex flex-col h-dvh">
-        <Header />
+        <NavBar events={events} />
         <Hero />
       </div>
       <main className="px-7 lg:px-[8%]">

@@ -25,7 +25,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu"
-import { events } from "@/lib/events"
+import { GrowatEvent } from "@/lib/models/growat-event"
 
 type NavItem = {
   id: string
@@ -55,9 +55,8 @@ const NavItems: NavItem[] = [
   },
 ]
 
-function fetchEventSubmenus(navItems: NavItem[]) {
+function fetchEventSubmenus(events: GrowatEvent[], navItems: NavItem[]) {
   const upcomingEvents = events
-    .filter((event) => event.showOnNavbar)
     .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
     .filter(
       (event) =>
@@ -74,17 +73,15 @@ function fetchEventSubmenus(navItems: NavItem[]) {
       id: event.slug,
       href: "/events/" + event.slug,
       label: event.title,
-      description: event.shortDescription,
+      description: event.description,
     }))
   }
 
-  const pastEvents = events
-    .filter((event) => event.showOnNavbar)
-    .filter(
-      (event) =>
-        (event.endDate && event.endDate < new Date()) ||
-        (!event.endDate && event.startDate < new Date())
-    )
+  const pastEvents = events.filter(
+    (event) =>
+      (event.endDate && event.endDate < new Date()) ||
+      (!event.endDate && event.startDate < new Date())
+  )
   const pastEventsSubmenu = navItems?.find(
     (submenu) => submenu.id === "past-events"
   )
@@ -93,12 +90,16 @@ function fetchEventSubmenus(navItems: NavItem[]) {
       id: event.slug,
       href: "/events/" + event.slug,
       label: event.title,
-      description: event.shortDescription,
+      description: event.description,
     }))
   }
 }
 
-export default function Header() {
+interface NavBarProps {
+  events: GrowatEvent[]
+}
+
+export default function NavBar({ events }: NavBarProps) {
   const pathname = usePathname()
 
   // Define a function to determine if a link is active based on the pathname
@@ -108,7 +109,7 @@ export default function Header() {
   }
 
   const navItems = NavItems
-  fetchEventSubmenus(navItems)
+  fetchEventSubmenus(events, navItems)
 
   return (
     <div className="flex h-20 w-full px-10 items-center lg:px-[5%] z-50 bg-ga-light">

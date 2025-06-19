@@ -1,10 +1,15 @@
+import EventHero from "./_components/hero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 
-export default async function Page({ params }: { params: { slug: string } }) {
+type Params = {
+  slug: string
+}
+export default async function Page({ params }: { params: Promise<Params> }) {
   const { slug } = await params
 
   const eventRepository = new GrowatEventRepository()
   const event = await eventRepository.getEventBySlug(slug)
+
   if (!event) {
     return (
       <main className="flex flex-col items-center justify-center grow my-auto">
@@ -15,10 +20,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <main className="flex flex-col items-center justify-center grow">
-      <h1 className="flex text-3xl md:text-5xl font-bold">{event.title}</h1>
-      <div className="flex flex-col items-center justify-center mt-4">
-        <p className="mt-4 text-lg">{event.description}</p>
-      </div>
+      <EventHero event={event} />
     </main>
   )
 }
