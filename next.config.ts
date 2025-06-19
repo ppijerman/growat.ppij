@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
-const nextConfig: NextConfig = {
-  
-};
+const config: NextConfig = {
+  images: {
+    remotePatterns: [new URL(`${process.env.BACKEND_API_URL}/uploads/**`)],
+  },
+}
 
-export default nextConfig;
+export default config

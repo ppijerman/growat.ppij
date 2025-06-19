@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from "react"
 
-export function Countdown() {
+type CountdownProps = {
+  date: Date
+}
+
+export function Countdown({ date }: CountdownProps) {
   const [countdown, setCountdown] = useState({
     Days: 0,
     Hours: 0,
@@ -13,7 +17,7 @@ export function Countdown() {
   useEffect(() => {
     const updateCountdown = () => {
       const currentTime = new Date().getTime()
-      const eventDate = new Date("2025-07-04T00:00:00Z")
+      const eventDate = date
       const timeLeft = eventDate.getTime() - currentTime
 
       if (timeLeft > 0) {
@@ -38,7 +42,7 @@ export function Countdown() {
     updateCountdown() // initial call to avoid delay
     const intervalChange = setInterval(updateCountdown, 1000)
     return () => clearInterval(intervalChange)
-  }, [])
+  }, [date])
 
   return (
     <div className="flex justify-center gap-2 md:gap-4">
