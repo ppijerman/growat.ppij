@@ -2,6 +2,8 @@ import EventHero from "./_components/EventHero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 import EventTimetable from "./_components/EventTimetable"
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 type Params = {
   slug: string
 }
