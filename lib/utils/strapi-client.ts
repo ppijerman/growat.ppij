@@ -6,6 +6,9 @@ export function fetchStrapiAPI<T>(path: string): Promise<T> {
 
   return fetch(url, {
     headers: headers,
+    next: {
+      revalidate: 60, // Revalidate every 60 seconds
+    },
   })
     .then((res) => {
       if (!res.ok) {
