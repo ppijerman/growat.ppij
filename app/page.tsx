@@ -1,9 +1,10 @@
 import NavBar from "@/components/Navbar/NavBar"
 import Hero from "@/app/_components/Hero"
 import EventTimeline from "@/app/_components/EventTimeline"
-// import Recap from "./_components/recap"
 import WorkshopRegistration from "./_components/WorkshopRegistration"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
+
+export const revalidate = 60
 
 export default async function Home() {
   const eventsRepository = new GrowatEventRepository()
@@ -16,10 +17,9 @@ export default async function Home() {
         <NavBar events={events} />
         <Hero />
       </div>
-      <main className="px-7 lg:px-[8%]">
-        <EventTimeline events={events} isVisible={true} />
+      <main>
+        <EventTimeline events={events} />
         <WorkshopRegistration isVisible={false} />
-        {/* <Recap isVisible={true} /> */}
       </main>
     </div>
   )
