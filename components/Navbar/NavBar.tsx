@@ -53,6 +53,11 @@ const NavItems: NavItem[] = [
     label: "Past Events",
     description: "Browse past events",
   },
+  {id: "bursa-kerja",
+   href: "/bursakerja",
+   label: "Bursa Kerja",
+   description: "See Job Offers"
+  },
 ]
 
 function fetchEventSubmenus(events: GrowatEvent[], navItems: NavItem[]) {

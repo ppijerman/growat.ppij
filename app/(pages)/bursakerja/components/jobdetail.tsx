@@ -3,6 +3,7 @@ import companyLogo from "@/public/assets/FAISS.png"
 import {BriefcaseBusiness, Clock, CircleUserRound, Calendar, MapPin, Building, SquareArrowOutUpRight} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import JobTag from "./jobtag"
 
 export default function JobDetail(){
     return  <div className="flex flex-col gap-1">
@@ -14,51 +15,77 @@ export default function JobDetail(){
                         <p className=" w-full font-bold h-auto text-lg self-center">Grafik Designer (m/w/d)</p>
                     </div>
                     <div className="flex flex-col h-auto gap-2">        
-                        <div className="flex flex-row gap-2">
+                        <div className="lg:flex h-auto gap-2 flex-row">
+                            <div className="flex flex-row gap-2 lg:w-1/3">
                                 <Building className="h-5 w-5"/>
                                 <div>
                                     <p>Company</p>
                                     <p className="font-semibold">PUMA</p>
                                 </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
+                            </div>
+                            <div className="flex flex-row gap-2 lg:w-1/3">
                                 <MapPin className="h-5 w-5"/>
                                 <div>
                                     <p>Location</p>
                                     <p className="font-semibold">Herzogenaurach, Germany</p>
                                 </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
+                            </div>
+                            <div className="flex flex-row gap-2 lg:w-1/3">
                                 <CircleUserRound className="h-5 w-5"/>
                                 <div>
                                     <p>Apply as</p>
                                     <p className="font-semibold">Student</p>
                                 </div>
+                            </div>
                         </div>
-                        <div className="flex flex-row gap-2">
+                        <div className="lg:flex h-auto gap-2 flex-row">
+                            <div className="flex flex-row gap-2 lg:w-1/3">
                                 <BriefcaseBusiness className="h-5 w-5"/>
                                 <div>
                                     <p>Fields of work</p>
                                     <p className="font-semibold">IT</p>
                                 </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
+                            </div>
+                            <div className="flex flex-row gap-2 lg:w-1/3">
                                 <Calendar className="h-5 w-5"/>
                                 <div>
                                     <p>Starting date</p>
                                     <p className="font-semibold">According to arrangement</p>
                                 </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
+                            </div>
+                            <div className="flex flex-row gap-2 lg:w-1/3">
                                 <Clock className="h-5 w-5"/>
                                 <div>
                                     <p>Working time</p>
                                     <p className="font-semibold">Part-time</p>
                                 </div>
+                            </div>
                         </div>
-                        <div className="w-full text-right pt-2 pb-1 pr-1">
-                            <p>Posted 3 days ago</p>
-                            <p className="font-semibold">JOB-ID: 123456-789-A</p>
+                        <div className="flex flex-wrap gap-2">
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                            <JobTag/>
+                        </div>
+                        <div className="w-full h-full p-1 flex flex-row justify-between align-bottom">
+                                <Button className="bg-[#1b4a49] text-white font-semibold text-sm px-6 rounded-lg gap-2" asChild>
+                                <Link href={"https://www.google.com"}>
+                                    <p>Apply now</p> <SquareArrowOutUpRight className="h-5 w-5"/>
+                                </Link>
+                                </Button>
+                            
+                            <div className="flex flex-col">
+                                <p>Posted 3 days ago</p>
+                                <p className="font-semibold">JOB-ID: 123456-789-A</p>
+                            </div>
                         </div>
                     </div>
                 </div>
