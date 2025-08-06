@@ -35,7 +35,7 @@ export default function Page() {
                       <SheetTrigger asChild>
                         <Card/>
                       </SheetTrigger>
-                      <SheetContent side={"right"} className="w-1/2 overflow-y-scroll py-10 px-3 gap-1">
+                      <SheetContent side={"right"} className="w-4/7 overflow-y-scroll py-10 px-3 gap-1">
                         <SheetTitle/>
                         <JobDetail/>
                       </SheetContent>
