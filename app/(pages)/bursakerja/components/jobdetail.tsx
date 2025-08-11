@@ -75,8 +75,8 @@ export default function JobDetail(){
                             <JobTag/>
                             <JobTag/>
                         </div>
-                        <div className="w-full h-full p-1 flex flex-row justify-between align-bottom">
-                                <Button className="bg-[#1b4a49] text-white font-semibold text-sm px-6 rounded-lg gap-2" asChild>
+                        <div className="p-1 flex flex-row justify-between align-bottom">
+                                <Button className="bg-[#1b4a49] text-white font-semibold text-sm px-6 rounded-lg gap-2 self-end" asChild>
                                 <Link href={"https://www.google.com"}>
                                     <p>Apply now</p> <SquareArrowOutUpRight className="h-5 w-5"/>
                                 </Link>

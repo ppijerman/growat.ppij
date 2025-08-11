@@ -55,7 +55,7 @@ const NavItems: NavItem[] = [
   },
   {id: "bursa-kerja",
    href: "/bursakerja",
-   label: "Bursa Kerja",
+   label: "Karierbruecke",
    description: "See Job Offers"
   },
 ]
