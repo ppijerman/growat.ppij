@@ -16,7 +16,6 @@ export default function Page() {
   return (
     <main className="bg-[#f7f7f7] lg:px-10">
         <div className="flex flex-col lg:flex-row p-4">
-                <div className="w-full lg:w-1/5 p-4 rounded-lg border-2 border-[#737373] border-solid bg-white">Ini filter</div>
                 {/*Smaller screen*/}
                 <div className="w-full lg:w-4/5 lg:p-4 rounded-lg block lg:hidden">   
                     <Sheet>
