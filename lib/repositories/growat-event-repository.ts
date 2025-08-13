@@ -115,7 +115,11 @@ function mapImageMedia(image: ImageMedia): ImageMedia {
   }
 }
 
-function mapImageFormat(format: ImageFormat): ImageFormat {
+function mapImageFormat(format?: ImageFormat): ImageFormat | undefined {
+  if (!format || !format.url) {
+    return undefined
+  }
+
   return {
     ...format,
     url: `${process.env.BACKEND_API_URL}${format.url}`,
