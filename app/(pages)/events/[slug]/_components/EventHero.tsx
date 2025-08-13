@@ -27,7 +27,11 @@ export default function EventHero({ event }: EventHeroProps) {
         <div className="text-left space-y-2">
           {event.logo ? (
             <Image
-              src={event.logo.formats.small.url}
+              src={
+                event.logo.formats.small?.url ||
+                event.logo.formats.medium?.url ||
+                event.logo.url
+              }
               alt="Event Logo"
               width={150}
               height={40}
@@ -75,10 +79,10 @@ export default function EventHero({ event }: EventHeroProps) {
               {event.partnerLogos.map((logo, i) => (
                 <Image
                   key={i}
-                  src={logo.formats.thumbnail.url}
+                  src={logo.formats.thumbnail?.url || logo.url}
                   alt={logo.name}
-                  width={logo.formats.thumbnail.width}
-                  height={logo.formats.thumbnail.height}
+                  width={logo.formats.thumbnail?.width}
+                  height={logo.formats.thumbnail?.height}
                   className="grow object-contain"
                 />
               ))}
@@ -88,10 +92,13 @@ export default function EventHero({ event }: EventHeroProps) {
           {event.mainPartnerLogo && (
             <div className="flex justify-end">
               <Image
-                src={event.mainPartnerLogo.formats.small.url}
+                src={
+                  event.mainPartnerLogo.formats.small?.url ||
+                  event.mainPartnerLogo.url
+                }
                 alt="logo Puma"
-                height={event.mainPartnerLogo.formats.small.height}
-                width={event.mainPartnerLogo.formats.small.width}
+                height={event.mainPartnerLogo.formats.small?.height}
+                width={event.mainPartnerLogo.formats.small?.width}
                 className="object-contain"
               />
             </div>
