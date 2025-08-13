@@ -25,10 +25,10 @@ export type ImageFormat = {
 }
 
 type ImageFormats = {
-  large: ImageFormat
-  medium: ImageFormat
-  small: ImageFormat
-  thumbnail: ImageFormat
+  large?: ImageFormat
+  medium?: ImageFormat
+  small?: ImageFormat
+  thumbnail?: ImageFormat
 }
 
 export type ImageMedia = {
