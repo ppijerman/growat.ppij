@@ -31,7 +31,9 @@ export default function ContentCard({
       className={clsx(
         "flex flex-col outline-2 border-l-18 bg-white p-4 rounded-[18px]",
         outlineColorClass,
-        hoverable ? `border-transparent hover:${borderClass}` : borderClass,
+        hoverable
+          ? `${borderClass} md:border-transparent md:hover:${borderClass}`
+          : borderClass,
         className
       )}
     >
