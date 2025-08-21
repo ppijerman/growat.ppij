@@ -1,7 +1,7 @@
 import { JobOfferRepository } from "@/lib/repositories/job-offer-repository"
 import JobOfferCard from "./components/JobOfferCard"
 
-export const revalidate = 5 // Revalidate every 60 seconds
+export const revalidate = 60 // Revalidate every 60 seconds
 
 export default async function Page() {
   const repository = new JobOfferRepository()
