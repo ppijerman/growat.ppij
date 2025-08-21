@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Countdown } from "./Countdown"
 
 import { Card } from "@/components/ui/card"
-import { GrowatEvent } from "@/lib/models/growat-event"
+import { GrowatEvent } from "@/lib/models/GrowatEvent"
 import Link from "next/link"
 
 type EventHeroProps = {
@@ -41,17 +41,23 @@ export default function EventHero({ event }: EventHeroProps) {
             <h1 className="text-3xl md:text-4xl font-bold">{event.title}</h1>
           )}
           <p className="text-lg md:text-xl font-semibold">
-            {event.startDate.toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            })}
-            {event.endDate &&
-              ` - ${event.endDate.toLocaleDateString("en-GB", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}`}
+            {event.hideDate ? (
+              "Date to be announced"
+            ) : (
+              <>
+                {event.startDate.toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+                {event.endDate &&
+                  ` - ${event.endDate.toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}`}
+              </>
+            )}
           </p>
         </div>
 
@@ -62,7 +68,7 @@ export default function EventHero({ event }: EventHeroProps) {
         <div className="flex flex-row">
           <div className="flex flex-col justify-between items-baseline gap-4">
             <div className="text-left py-[2%] space-y-2 space-x-2">
-              {event.linkButtons.map((button, index) => (
+              {event.linkButtons?.map((button, index) => (
                 <Button
                   key={index}
                   className="bg-white text-black font-bold text-lg px-6 rounded-full"
@@ -76,7 +82,7 @@ export default function EventHero({ event }: EventHeroProps) {
             </div>
             {/* Left-aligned logos */}
             <div className="grid grid-cols-5 gap-2 items-stretch">
-              {event.partnerLogos.map((logo, i) => (
+              {event.partnerLogos?.map((logo, i) => (
                 <Image
                   key={i}
                   src={logo.formats.thumbnail?.url || logo.url}

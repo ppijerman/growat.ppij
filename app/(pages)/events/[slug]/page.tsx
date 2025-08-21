@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
     <main className="flex flex-col items-center justify-center grow">
       <EventHero event={event} />
-      {event.contents.map((content, index) => {
+      {event.contents?.map((content, index) => {
         switch (content.__component) {
           case "event-content.event-timeline":
             return (
