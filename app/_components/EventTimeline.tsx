@@ -29,6 +29,7 @@ export default function EventTimeline({ events }: EventTimelineProps) {
       <div className="flex flex-col my-4 gap-4 py-4">
         {filteredEvents.map((event, index) => (
           <ContentCard
+            hoverable={false}
             className="flex md:flex-row items-center gap-4 mx-4 md:mx-20"
             color={
               event.eventType === "workshop" || event.eventType === "webinar"
@@ -40,7 +41,7 @@ export default function EventTimeline({ events }: EventTimelineProps) {
             key={index}
           >
             {/* left side text */}
-            <div className="grow flex-col gap-2 text-xl text-center md:text-left">
+            <div className="grow flex-col gap-2 text-xl text-center md:text-left space-y-3">
               <div className="text-3xl font-bold">{event.title}</div>
               <div className="hidden md:flex">{event.description}</div>
               <div>

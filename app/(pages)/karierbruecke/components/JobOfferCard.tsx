@@ -55,8 +55,8 @@ export default function JobOfferCard({ jobOffer }: JobOfferCardProps) {
 function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
   return (
     <ContentCard hoverable={true} color="ga-green">
-      <div className="flex grow py-2 bg-ga-light">
-        <div className="flex md:h-1/3 aspect-square self-start bg-ga-beige rounded-[18] overflow-hidden">
+      <div className="flex flex-wrap grow py-2 bg-ga-light">
+        <div className="flex flex-none md:h-1/3 aspect-square self-start bg-ga-beige rounded-[18] overflow-hidden">
           <Image
             src={jobOffer.companyLogo?.formats.small?.url || companyLogo}
             alt="company logo"
@@ -65,7 +65,7 @@ function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
             width={100}
           />
         </div>
-        <div className="flex w-full flex-col pl-4">
+        <div className="flex w-full flex-col md:pl-4 space-y-2">
           <div className="flex flex-col py-2">
             <p className="text-lg font-extrabold">{jobOffer.title}</p>
             <p>
@@ -77,7 +77,7 @@ function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
               {jobOffer.location}
             </p>
           </div>
-          <div className="flex flex-row flex-wrap gap-5">
+          <div className="flex flex-row flex-wrap space-x-30">
             <div className="flex justify-between flex-col md:flex-row gap-1">
               <div className="flex flex-row gap-1">
                 <div>

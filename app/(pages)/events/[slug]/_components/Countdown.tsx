@@ -1,12 +1,14 @@
 "use client"
 
+import clsx from "clsx"
 import { useState, useEffect } from "react"
 
 type CountdownProps = {
   date: Date
+  darkMode?: boolean
 }
 
-export function Countdown({ date }: CountdownProps) {
+export function Countdown({ date, darkMode = false }: CountdownProps) {
   const [countdown, setCountdown] = useState({
     Days: 0,
     Hours: 0,
@@ -49,7 +51,10 @@ export function Countdown({ date }: CountdownProps) {
       {Object.entries(countdown).map(([unit, value]) => (
         <div
           key={unit}
-          className="bg-white text-black px-4 py-2 rounded-xl text-center min-w-[60px]"
+          className={clsx(
+            "px-4 py-2 rounded-xl text-center min-w-[60px]",
+            darkMode ? "bg-ga-dark text-ga-light" : "bg-ga-light text-ga-dark"
+          )}
         >
           <p className="text-2xl font-bold">{String(value).padStart(2, "0")}</p>
           <p className="text-xs font-semibold">{unit}</p>

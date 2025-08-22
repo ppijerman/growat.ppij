@@ -3,15 +3,15 @@ import clsx from "clsx"
 export type CardColor = "ga-dark" | "ga-blue" | "ga-green"
 
 interface ContentCardProps {
-  hoverable?: boolean
-  color?: CardColor
+  hoverable: boolean
+  color: CardColor
   children?: React.ReactNode
   className?: string
 }
 
 export default function ContentCard({
-  hoverable = false,
-  color = "ga-green",
+  hoverable,
+  color,
   children,
   className,
 }: ContentCardProps) {
@@ -26,14 +26,20 @@ export default function ContentCard({
     "ga-blue": "border-l-ga-blue",
     "ga-green": "border-l-ga-green",
   }[color]
+
+  const hoverableClass = {
+    "ga-dark": "md:border-l-transparent md:hover:border-l-ga-dark",
+    "ga-blue": "md:border-l-transparent md:hover:border-l-ga-blue",
+    "ga-green": "md:border-l-transparent md:hover:border-l-ga-green",
+  }[color]
+
   return (
     <div
       className={clsx(
-        "flex flex-col outline-2 border-l-18 bg-white p-4 rounded-[18px]",
+        "cursor-pointer flex flex-col outline-2 border-l-25 bg-white px-10 py-5 rounded-[18px]",
         outlineColorClass,
-        hoverable
-          ? `${borderClass} md:border-transparent md:hover:${borderClass}`
-          : borderClass,
+        borderClass,
+        hoverable && hoverableClass,
         className
       )}
     >
