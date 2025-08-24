@@ -4,7 +4,8 @@ import Link from "next/link"
 
 export default function Hero() {
   return (
-    <div className="relative h-full flex flex-col bg-landing bg-cover bg-center">
+    <div className="h-full lg:px-10 lg:py-5 p-5">
+      <div className="relative h-full flex flex-col bg-landing bg-cover bg-center rounded-xl">
       {/* Logo and text */}
       <div className="w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-5 justify-items-center text-center text-5xl md:text-6xl lg:text-8xl font-bold grow">
         <h1 className="">
@@ -16,15 +17,15 @@ export default function Hero() {
           Let&apos;s Grow, Glow and Go!
         </h3>
       </div>
-
       {/* arrow */}
-      <div className="w-full flex justify-center mt-auto mb-10 landscape:mb-1">
-        <Link
-          href="#event-timeline"
-          className="hover:bg-transparent focus:bg-transparent"
-        >
-          <Arrow className="animate-bounce transform not-hover:scale-60 not-hover:duration-300 hover:scale-70 landscape:not-hover:scale-50 landscape:hover:scale-60 hover:duration-400" />
-        </Link>
+        {/* <div className="w-full flex justify-center mt-auto mb-10 landscape:mb-1">
+          <Link
+            href="#event-timeline"
+            className="hover:bg-transparent focus:bg-transparent"
+          >
+            <Arrow className="animate-bounce transform not-hover:scale-60 not-hover:duration-300 hover:scale-70 landscape:not-hover:scale-50 landscape:hover:scale-60 hover:duration-400" />
+          </Link>
+        </div> */}
       </div>
     </div>
   )
