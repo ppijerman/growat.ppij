@@ -1,37 +1,38 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Globe, Camera, Code, Cpu, Cloud, Shield } from "lucide-react";
+import GrowatIcon from "./GrowatIcon";
+
 
 const bulletPoints = [
   {
-    icon: Globe,
+    icon: "camera",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    icon: Camera,
+    icon: "calendar",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    icon: Code,
+    icon: "clock",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    icon: Cpu,
+    icon: "book-open",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    icon: Cloud,
+    icon: "phone",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    icon: Shield,
+    icon: "mail",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
 ];
 
 type BulletPointData = {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: string;
   text: string;
 };
 
@@ -39,7 +40,7 @@ const BulletPoint: React.FC<{ bulletPoint: BulletPointData }> = ({
   bulletPoint,
 }) => (
   <div className="flex flex-col items-center justify-center text-center flex-shrink-0 w-40 md:w-50">
-    <bulletPoint.icon className="w-15 h-15 mb-4 md:w-20 md:h-20 md:mb-6" />
+    <GrowatIcon name={bulletPoint.icon} className="w-15 h-15 mb-4 md:w-20 md:h-20 md:mb-6" />
     <p className="text-lg md:text-xl leading-tight">{bulletPoint.text}</p>
   </div>
 );
