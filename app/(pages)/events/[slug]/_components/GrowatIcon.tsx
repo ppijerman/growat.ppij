@@ -45,7 +45,7 @@ const GrowatIcon = ({ name, className = "" }: GrowatIconProps) => {
   let IconComponent;
 
   if (!(iconKey in iconMap)) {
-    console.warn(`Icon "${name}" not found in permitted icons`);
+    console.warn(`Icon "${name}" not found in permitted icons; default to CloudAlert.`);
     IconComponent = CloudAlert; // Default icon if not found
   } else {
     IconComponent = iconMap[iconKey as keyof typeof iconMap];
