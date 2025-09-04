@@ -1,6 +1,8 @@
 import EventHero from "./_components/EventHero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 import EventTimetable from "./_components/EventTimetable"
+import WhatSection1 from "./_components/WhatSection1"
+import WhatSection2 from "./_components/WhatSection2"
 
 export const revalidate = 60 // Revalidate every 60 seconds
 
@@ -39,6 +41,27 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             return null
         }
       })}
+      <WhatSection1
+          // // CONTOH - using props
+          // title="Produk"
+          // paragraphs={[
+          //   "Deskripsi singkat tentang produk.",
+          //   "Deskripsi lain-lain tentang produk. Coba diisi dengan beberapa kalimat lagi agar terlihat lebih menarik."
+          // ]}
+          // accentColorClass="border-blue-500"
+      />
+      <WhatSection2
+          // // CONTOH - using props
+          // title="Produk"
+          // paragraphs={[
+          //   "Deskripsi singkat tentang produk.",
+          //   "Deskripsi lain-lain tentang produk. Coba diisi dengan beberapa kalimat lagi agar terlihat lebih menarik."
+          // ]}
+          // imageSrc="/IMG/img1.jpg" 
+          // imageAlt="Product Illustration"
+          // borderColorClass="border-blue-500"
+      />
+      
     </main>
   )
 }
