@@ -1,4 +1,3 @@
-import React from "react";
 import GrowatIcon from "./GrowatIcon";
 
 const bulletPoints = [
@@ -28,28 +27,28 @@ const bulletPoints = [
   },
 ];
 
-type BulletPointData = {
+type BulletPointProps = {
   icon: string;
   text: string;
 };
 
-const BulletPoint: React.FC<{ bulletPoint: BulletPointData }> = ({
-  bulletPoint,
-}) => (
-  <div className="flex flex-col items-center justify-center text-center w-40 sm:w-50">
-    <GrowatIcon
-      name={bulletPoint.icon}
-      className="w-15 h-15 mb-4 sm:w-20 sm:h-20 sm:mb-6"
-    />
-    <p className="text-base md:text-xl leading-tight">{bulletPoint.text}</p>
-  </div>
-);
-
 type ResponsiveGridProps = {
-  bulletPoints: BulletPointData[];
+  bulletPoints: BulletPointProps[];
 };
 
-const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({ bulletPoints }) => {
+function BulletPoint({ bulletPoint }: { bulletPoint: BulletPointProps }) {
+  return (
+    <div className="flex flex-col items-center justify-center text-center w-40 sm:w-50">
+      <GrowatIcon
+        name={bulletPoint.icon}
+        className="w-15 h-15 mb-4 sm:w-20 sm:h-20 sm:mb-6"
+      />
+      <p className="text-base md:text-xl leading-tight">{bulletPoint.text}</p>
+    </div>
+  );
+}
+
+export default function ResponsiveGrid({ bulletPoints }: ResponsiveGridProps) {
   return (
     <div className="flex w-full items-center justify-center bg-white px-10 lg:px-[5%]">
       <div className="flex flex-wrap justify-center gap-5 sm:gap-10">
@@ -64,7 +63,6 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({ bulletPoints }) => {
       </div>
     </div>
   );
-};
+}
 
-export default ResponsiveGrid;
 export { bulletPoints };
