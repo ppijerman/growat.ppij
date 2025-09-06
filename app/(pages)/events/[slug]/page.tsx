@@ -3,7 +3,6 @@ import EventHero from "./_components/EventHero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 import EventTimetable from "./_components/EventTimetable"
 import ResponsiveGrid from "./_components/BulletSection"
-import { bulletPoints } from "./_components/BulletSection"
 
 export const revalidate = 60 // Revalidate every 60 seconds
 
@@ -53,13 +52,18 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
     <main className="flex flex-col items-center justify-center grow">
       <EventHero event={event} />
-      <ResponsiveGrid bulletPoints={bulletPoints} />
       {event.contents?.map((content, index) => {
         switch (content.__component) {
           case "event-content.event-timeline":
             return (
               <div key={index} className="w-full">
                 <EventTimetable eventAgenda={content} />
+              </div>
+            )
+          case "event-content.bullets-section":
+            return (
+              <div key={index} className="w-full">
+                <ResponsiveGrid bulletSection={content} />;
               </div>
             )
           default:

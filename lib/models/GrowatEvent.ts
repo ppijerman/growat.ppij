@@ -34,9 +34,9 @@ export type RichTextContent = {
   image?: string
 }
 
-export type IconPointersContent = {
+export type BulletSectionContent = {
   __component: "event-content.bullets-section"
-  iconPointers: IconPointer[]
+  bulletPoints: BulletPoint[]
 }
 
 type EventTimetableEntry = {
@@ -53,11 +53,11 @@ export type EventAgendaTimetableContent = {
 
 type Content =
   | RichTextContent
-  | IconPointersContent
+  | BulletSectionContent
   | EventAgendaTimetableContent
 
-type IconPointer = {
-  icon: string
+export type BulletPoint = {
+  icon?: string
   text: string
 }
 

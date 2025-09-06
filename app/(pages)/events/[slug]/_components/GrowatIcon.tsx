@@ -35,12 +35,17 @@ const iconMap = {
 };
 
 type GrowatIconProps = {
-  name: string;
+  name?: string;
   className?: string;
 };
 
 const GrowatIcon = ({ name, className = "" }: GrowatIconProps) => {
-  const iconKey = name.toLowerCase();
+  let iconKey;
+  if (!name) {
+    iconKey = "cloud-alert";
+  } else {
+    iconKey = name.toLowerCase();
+  }
 
   let IconComponent;
 
