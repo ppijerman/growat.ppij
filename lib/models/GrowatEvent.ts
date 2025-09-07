@@ -1,9 +1,11 @@
+import { ImageMedia } from "./ImageMedia"
+
 export type GrowatEvent = {
   id: string
   documentId: string
   slug: string
-  mainPartnerLogo: ImageMedia
-  partnerLogos: ImageMedia[]
+  mainPartnerLogo?: ImageMedia
+  partnerLogos?: ImageMedia[]
   title: string
   logo?: ImageMedia
   iconName: string
@@ -11,32 +13,19 @@ export type GrowatEvent = {
   startDate: Date
   endDate?: Date
   location: string
-  speakers: Speaker[]
-  contents: Content[]
-  linkButtons: LinkButton[]
-  heroBackground: ImageMedia
+  speakers?: Speaker[]
+  contents?: Content[]
+  linkButtons?: LinkButton[]
+  heroBackground?: ImageMedia
+  eventType: EventType
+  hideDate?: boolean
 }
 
-export type ImageFormat = {
-  url: string
-  name: string
-  width: number
-  height: number
-}
-
-type ImageFormats = {
-  large?: ImageFormat
-  medium?: ImageFormat
-  small?: ImageFormat
-  thumbnail?: ImageFormat
-}
-
-export type ImageMedia = {
-  url: string
-  name: string
-  width: number
-  height: number
-  formats: ImageFormats
+export enum EventType {
+  Workshop = "workshop",
+  Webinar = "webinar",
+  Offline = "offline",
+  Other = "other",
 }
 
 export type RichTextContent = {
@@ -51,7 +40,7 @@ export type RichTextWithImageContent = {
 }
 
 export type IconPointersContent = {
-  __component: "iconpointers"
+  __component: "event-content.bullets-section"
   iconPointers: IconPointer[]
 }
 

@@ -25,7 +25,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu"
-import { GrowatEvent } from "@/lib/models/growat-event"
+import { GrowatEvent } from "@/lib/models/GrowatEvent"
 
 type NavItem = {
   id: string
@@ -52,6 +52,12 @@ const NavItems: NavItem[] = [
     href: "/",
     label: "Past Events",
     description: "Browse past events",
+  },
+  {
+    id: "karierbruecke",
+    href: "/karierbruecke",
+    label: "Karierbruecke",
+    description: "See Job Offers",
   },
 ]
 

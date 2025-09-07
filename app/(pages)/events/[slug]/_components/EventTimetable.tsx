@@ -1,4 +1,4 @@
-import { EventAgendaTimetableContent } from "@/lib/models/growat-event"
+import { EventAgendaTimetableContent } from "@/lib/models/GrowatEvent"
 
 type Props = {
   eventAgenda: EventAgendaTimetableContent

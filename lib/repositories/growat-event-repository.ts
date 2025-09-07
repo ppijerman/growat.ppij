@@ -1,4 +1,6 @@
-import { GrowatEvent, ImageFormat, ImageMedia } from "../models/growat-event"
+import { GrowatEvent } from "../models/GrowatEvent"
+import { mapImageMedia } from "../models/ImageMedia"
+import { ImageMedia } from "../models/ImageMedia"
 import { fetchStrapiAPI } from "../utils/strapi-client"
 
 export interface IGrowatEventRepository {
@@ -99,30 +101,6 @@ function mapGrowatEvent(event: GrowatEvent): GrowatEvent {
     heroBackground: heroBackground,
     startDate: new Date(event.startDate),
     endDate: event.endDate ? new Date(event.endDate) : undefined,
-  }
-}
-
-function mapImageMedia(image: ImageMedia): ImageMedia {
-  return {
-    ...image,
-    url: `${process.env.BACKEND_API_URL}${image.url}`,
-    formats: {
-      large: mapImageFormat(image.formats.large),
-      medium: mapImageFormat(image.formats.medium),
-      small: mapImageFormat(image.formats.small),
-      thumbnail: mapImageFormat(image.formats.thumbnail),
-    },
-  }
-}
-
-function mapImageFormat(format?: ImageFormat): ImageFormat | undefined {
-  if (!format || !format.url) {
-    return undefined
-  }
-
-  return {
-    ...format,
-    url: `${process.env.BACKEND_API_URL}${format.url}`,
   }
 }
 
