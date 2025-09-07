@@ -40,7 +40,7 @@ export type RichTextWithImageContent = {
 }
 
 export type IconPointersContent = {
-  __component: "iconpointers"
+  __component: "event-content.bullets-section"
   iconPointers: IconPointer[]
 }
 

@@ -29,7 +29,7 @@ export default function JobOfferCard({ jobOffer }: JobOfferCardProps) {
             className="h-[70vh] overflow-y-scroll py-10 px-3 gap-1"
           >
             <SheetTitle />
-            <JobDetail />
+            <JobDetail jobOffer={jobOffer} />
           </SheetContent>
         </Sheet>
       </div>
@@ -44,7 +44,7 @@ export default function JobOfferCard({ jobOffer }: JobOfferCardProps) {
             className="w-4/7 overflow-y-scroll py-10 px-3 gap-1"
           >
             <SheetTitle />
-            <JobDetail />
+            <JobDetail jobOffer={jobOffer} />
           </SheetContent>
         </Sheet>
       </div>
@@ -54,70 +54,71 @@ export default function JobOfferCard({ jobOffer }: JobOfferCardProps) {
 
 function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
   return (
-    <ContentCard hoverable={true} color="ga-green">
-      <div className="flex flex-wrap grow py-2 bg-ga-light">
-        <div className="flex flex-none md:h-1/3 aspect-square self-start bg-ga-beige rounded-[18] overflow-hidden">
-          <Image
-            src={jobOffer.companyLogo?.formats.small?.url || companyLogo}
-            alt="company logo"
-            className="object-contain"
-            height={100}
-            width={100}
-          />
-        </div>
-        <div className="flex w-full flex-col md:pl-4 space-y-2">
-          <div className="flex flex-col py-2">
-            <p className="text-lg font-extrabold">{jobOffer.title}</p>
-            <p>
-              {jobOffer.companyName}
-              <span className="hidden md:inline"> &bull; </span>
-              <span className="inline md:hidden">
-                <br />
-              </span>
-              {jobOffer.location}
-            </p>
+    <ContentCard borderEffect={true} hoverable={true} color="ga-green">
+      <div className="flex flex-col flex-wrap grow py-2 bg-ga-light">
+        <div className="flex flex-row gap-3">
+          {/* Company Logo */}
+          <div className="shrink-0 w-[50px] h-[50px] md:w-[100px] md:h-[100px] relative self-start">
+            <Image
+              src={jobOffer.companyLogo?.formats.small?.url || companyLogo}
+              alt="company logo"
+              className="object-contain aspect-square bg-ga-beige rounded-lg overflow-hidden"
+              fill
+            />
           </div>
-          <div className="flex flex-row flex-wrap space-x-30">
-            <div className="flex justify-between flex-col md:flex-row gap-1">
-              <div className="flex flex-row gap-1">
+          {/* Details */}
+          <div className="text-xs flex w-full flex-col sm:pl-4 space-y-2">
+            <div className="flex flex-col py-2">
+              <p className="sm:text-lg font-extrabold text-wrap">
+                {jobOffer.title}
+              </p>
+              <p>
+                {jobOffer.companyName}
+                <span className="hidden sm:inline"> &bull; </span>
+                <span className="inline sm:hidden">
+                  <br />
+                </span>
+                {jobOffer.location}
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-between text-xs sm:text-sm">
+              <div className="flex flex-row gap-1 sm:justify-center items-center">
+                <BriefcaseBusiness className="h-5 w-5 lg:my-1" />
                 <div>
-                  <BriefcaseBusiness className="h-5 w-5 lg:my-1" />
-                </div>
-                <div>
-                  <p className="hidden md:block">Fields of work</p>
-                  <p className="text-sm font-semibold">
+                  <p>Fields of work</p>
+                  <p className="font-semibold">
                     {jobOffer.jobField ? jobOffer.jobField.fieldName : "-"}
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="flex flex-row gap-1">
-              <div>
-                <Clock className="h-5 w-5 lg:my-1" />
+              <div className="flex flex-row gap-1">
+                <div>
+                  <Clock className="h-5 w-5 lg:my-1" />
+                </div>
+                <div>
+                  <p>Working hours</p>
+                  <p className="font-semibold">{jobOffer.workingTime}</p>
+                </div>
               </div>
-              <div>
-                <p className="hidden md:block">Working hours</p>
-                <p className="text-sm font-semibold">{jobOffer.workingTime}</p>
-              </div>
-            </div>
-            <div className="flex flex-row gap-1">
-              <div>
-                <CircleUserRound className="h-5 w-5 lg:my-1" />
-              </div>
-              <div>
-                <p className="hidden md:block">Apply as</p>
-                <p className="text-sm font-semibold">{jobOffer.target}</p>
+              <div className="flex flex-row gap-1">
+                <div>
+                  <CircleUserRound className="h-5 w-5 lg:my-1" />
+                </div>
+                <div>
+                  <p>Apply as</p>
+                  <p className="font-semibold">{jobOffer.target}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       {/*Ini div untuk see more*/}
-      <div className="hidden lg:flex justify-between items-end">
+      <div className="flex justify-between items-end text-xs">
         <p>
-          Posted on {new Date(jobOffer.publishedAt).toLocaleDateString("de-DE")}
+          Posted on {new Date(jobOffer.publishedAt).toLocaleDateString("en-GB")}
         </p>
-        <p className="font-normal">Learn More &gt;&gt; </p>
+        <p className="font-normal">Learn More &gt;&gt;</p>
       </div>
     </ContentCard>
   )

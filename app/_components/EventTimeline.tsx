@@ -29,6 +29,7 @@ export default function EventTimeline({ events }: EventTimelineProps) {
       <div className="flex flex-col my-4 gap-4 py-4">
         {filteredEvents.map((event, index) => (
           <ContentCard
+            borderEffect={true}
             hoverable={false}
             className="flex md:flex-row items-center gap-4 mx-4 md:mx-20"
             color={
