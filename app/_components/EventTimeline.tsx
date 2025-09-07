@@ -22,8 +22,8 @@ export default function EventTimeline({ events }: EventTimelineProps) {
   })
 
   return (
-    <>
-      <h2 className="text-4xl lg:text-5xl font-bold mt-10 mx-5 md:mx-20">
+    <div className="mx-5 lg:mx-15 py-5">
+      <h2 className="text-4xl lg:text-5xl font-bold text-shadow-sm">
         Upcoming Events
       </h2>
       <div className="flex flex-col my-4 gap-4 py-4">
@@ -31,7 +31,7 @@ export default function EventTimeline({ events }: EventTimelineProps) {
           <ContentCard
             borderEffect={true}
             hoverable={false}
-            className="flex md:flex-row items-center gap-4 mx-4 md:mx-20"
+            className="flex md:flex-row items-center gap-4 border-l-25"
             color={
               event.eventType === "workshop" || event.eventType === "webinar"
                 ? "ga-green"
@@ -72,8 +72,9 @@ export default function EventTimeline({ events }: EventTimelineProps) {
             </div>
             {/* right side button */}
             <Button
+              size={"lg"}
               className={clsx(
-                "shrink-0 mx-10 text-xl font-bold basis-1/6",
+                "shrink-0 mx-10 font-bold basis-1/6",
                 (event.eventType === "workshop" ||
                   event.eventType === "webinar") &&
                   "bg-ga-green hover:bg-ga-green/80",
@@ -88,6 +89,6 @@ export default function EventTimeline({ events }: EventTimelineProps) {
           </ContentCard>
         ))}
       </div>
-    </>
+    </div>
   )
 }
