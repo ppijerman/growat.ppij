@@ -4,9 +4,9 @@ import Image from "next/image"
 import sideImage from "@/public/assets/teamwork.jpg"
 export default function AboutUs() {
   return (
-    <div className="flex flex-col lg:flex-row mx-5 lg:mx-15 py-5">
-      <div className="lg:w-2/3 gap-5 lg:pr-4 flex flex-col shrink-0">
-        <p className="text-5xl text-shadow-lg font-bold text-center lg:text-start">
+    <div className="flex flex-col md:flex-row mx-5 lg:mx-15 py-5 items-center gap-5">
+      <div className="md:basis-2/3 gap-5 lg:pr-4 flex flex-col">
+        <p className="text-5xl text-shadow-lg font-bold text-center md:text-start">
           About Us
         </p>
         <p className="font-md text-lg text-justify">
@@ -33,7 +33,7 @@ export default function AboutUs() {
           </Link>
         </Button>
       </div>
-      <div>
+      <div className="md:basis-1/3">
         <Image
           src={sideImage}
           alt="Sample Image"
