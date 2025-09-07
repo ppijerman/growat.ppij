@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { JobOffer } from "@/lib/models/JobOffer"
 import MarkdownContent from "./MarkdownContent"
+import JobKeyword from "./JobKeyword"
 
 type JobDetailProps = {
   jobOffer: JobOffer
@@ -21,7 +22,9 @@ type JobDetailProps = {
 export default async function JobDetail({ jobOffer }: JobDetailProps) {
   return (
     <div className="text-xs flex flex-col gap-1">
+      {/* Upper box */}
       <div className="flex flex-col rounded-lg border-lg border-ga-green border-2 p-5 gap-5">
+        {/* Heading image and title */}
         <div className="flex flex-row gap-3">
           <div className=" flex aspect-square h-[10vh]">
             <Image
@@ -34,6 +37,7 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
             {jobOffer.title}
           </p>
         </div>
+        {/* Job details */}
         <div className="flex flex-row flex-wrap space-y-5">
           <div className="flex flex-row gap-2 basis-1/2 md:basis-1/3">
             <Building className="h-5 w-5" />
@@ -77,6 +81,14 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
               <p className="font-semibold">{jobOffer.workingTime}</p>
             </div>
           </div>
+        </div>
+        {/* Keywords/labels */}
+        <div className="flex flex-row flex-wrap gap-2">
+          {jobOffer.labels &&
+            jobOffer.labels.length > 0 &&
+            jobOffer.labels.map((label, index) => (
+              <JobKeyword key={index}>{label.label}</JobKeyword>
+            ))}
         </div>
         <div className="p-1 flex flex-row justify-between align-bottom">
           <Button
