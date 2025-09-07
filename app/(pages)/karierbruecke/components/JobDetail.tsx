@@ -12,8 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { JobOffer } from "@/lib/models/JobOffer"
-import Dompurify from "isomorphic-dompurify"
-import { marked } from "marked"
+import MarkdownContent from "./MarkdownContent"
 
 type JobDetailProps = {
   jobOffer: JobOffer
@@ -22,7 +21,7 @@ type JobDetailProps = {
 export default async function JobDetail({ jobOffer }: JobDetailProps) {
   return (
     <div className="text-xs flex flex-col gap-1">
-      <div className="flex flex-col rounded-lg border-lg border-2 border-ga-green p-3 gap-5">
+      <div className="flex flex-col rounded-lg border-lg border-ga-green border-2 p-5 gap-5">
         <div className="flex flex-row gap-3">
           <div className=" flex aspect-square h-[10vh]">
             <Image
@@ -35,43 +34,43 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
             {jobOffer.title}
           </p>
         </div>
-        <div className="flex flex-row flex-wrap gap-2">
-          <div className="flex flex-row gap-2 lg:basis-1/3">
+        <div className="flex flex-row flex-wrap space-y-5">
+          <div className="flex flex-row gap-2 basis-1/2 md:basis-1/3">
             <Building className="h-5 w-5" />
             <div>
               <p>Company</p>
               <p className="font-semibold">{jobOffer.companyName}</p>
             </div>
           </div>
-          <div className="flex flex-row gap-2 lg:basis-1/3">
+          <div className="flex flex-row gap-2 basis-1/2 md:basis-1/3">
             <MapPin className="h-5 w-5" />
             <div>
               <p>Location</p>
               <p className="font-semibold">{jobOffer.location}</p>
             </div>
           </div>
-          <div className="flex flex-row gap-2 lg:basis-1/3">
+          <div className="flex flex-row gap-2 basis-1/2 md:basis-1/3">
             <CircleUserRound className="h-5 w-5" />
             <div>
               <p>Apply as</p>
               <p className="font-semibold">{jobOffer.target}</p>
             </div>
           </div>
-          <div className="flex flex-row gap-2 lg:basis-1/3">
+          <div className="flex flex-row gap-2 basis-1/2 md:basis-1/3">
             <BriefcaseBusiness className="h-5 w-5" />
             <div>
               <p>Field of work</p>
               <p className="font-semibold">{jobOffer.jobField?.fieldName}</p>
             </div>
           </div>
-          <div className="flex flex-row gap-2 lg:basis-1/3">
+          <div className="flex flex-row gap-2 basis-1/2 md:basis-1/3">
             <Calendar className="h-5 w-5" />
             <div>
               <p>Starting date</p>
               <p className="font-semibold">{jobOffer.starting}</p>
             </div>
           </div>
-          <div className="flex flex-row gap-2 lg:basis-1/3">
+          <div className="flex flex-row gap-2 basis-1/2 md:basis-1/3">
             <Clock className="h-5 w-5" />
             <div>
               <p>Working time</p>
@@ -79,9 +78,9 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
             </div>
           </div>
         </div>
-        <div className="p-1 flex flex-row justify-between align-bottom border-2">
+        <div className="p-1 flex flex-row justify-between align-bottom">
           <Button
-            className="bg-[#1b4a49] text-white font-semibold text-sm px-6 rounded-lg gap-2 self-end"
+            className="bg-ga-green text-white font-semibold text-sm px-6 rounded-lg gap-2 self-end"
             asChild
           >
             <Link href={"https://www.google.com"}>
@@ -94,39 +93,28 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
               Posted on{" "}
               {new Date(jobOffer.publishedAt).toLocaleDateString("en-GB")}
             </p>
-            <p className="font-semibold">JOB-ID: {jobOffer.documentId}</p>
+            <p className="font-semibold text-ellipsis">
+              JOB-ID: {jobOffer.documentId}
+            </p>
           </div>
         </div>
       </div>
       <div className="rounded-lg border-lg border-2 border-ga-green border-solid p-4 gap-5">
         <p className="text-lg font-semibold">Your tasks</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: Dompurify.sanitize(await marked.parse(jobOffer.tasks)),
-          }}
-        />
+        <MarkdownContent markdown={jobOffer.tasks} />
         <p className="text-lg font-semibold">Your profile</p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: Dompurify.sanitize(await marked.parse(jobOffer.profile)),
-          }}
-        />
+        <MarkdownContent markdown={jobOffer.profile} />
         <p className="font-semibold text-lg">
           Contact & additional information
         </p>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: Dompurify.sanitize(
-              await marked.parse(jobOffer.additionalInformation)
-            ),
-          }}
-        />
+        <MarkdownContent markdown={jobOffer.additionalInformation} />
         <Button
-          className="bg-[#1b4a49] text-white font-semibold text-sm px-6 rounded-lg gap-2 my-2"
+          className="bg-ga-green text-white font-semibold px-6 rounded-lg gap-2 my-2"
           asChild
         >
           <Link href={"https://www.google.com"}>
-            <p>Apply now</p> <SquareArrowOutUpRight className="h-5 w-5" />
+            <p className="text-xs">Apply now</p>{" "}
+            <SquareArrowOutUpRight className="h-5 w-5" />
           </Link>
         </Button>
       </div>
