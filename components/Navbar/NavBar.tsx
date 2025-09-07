@@ -56,7 +56,7 @@ const NavItems: NavItem[] = [
   {
     id: "karierbruecke",
     href: "/karierbruecke",
-    label: "Karierbruecke",
+    label: "Karierbrücke",
     description: "See Job Offers",
   },
 ]
@@ -74,13 +74,23 @@ function fetchEventSubmenus(events: GrowatEvent[], navItems: NavItem[]) {
   const upcomingEventsSubmenu = navItems?.find(
     (submenu) => submenu.id === "upcoming-events"
   )
-  if (upcomingEventsSubmenu) {
+
+  if (upcomingEventsSubmenu && upcomingEvents.length > 0) {
     upcomingEventsSubmenu.submenus = upcomingEvents.map((event) => ({
       id: event.slug,
       href: "/events/" + event.slug,
       label: event.title,
       description: event.description,
     }))
+  } else if (upcomingEventsSubmenu) {
+    // if no upcoming events, put "check back later" submenu
+    upcomingEventsSubmenu.submenus = [
+      {
+        id: "no-upcoming-events",
+        href: "/",
+        label: "Check back soon!",
+      },
+    ]
   }
 
   const pastEvents = events.filter(

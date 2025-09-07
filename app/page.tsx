@@ -2,6 +2,7 @@ import NavBar from "@/components/Navbar/NavBar"
 import Hero from "@/app/_components/Hero"
 import EventTimeline from "@/app/_components/EventTimeline"
 import WorkshopRegistration from "./_components/WorkshopRegistration"
+import AboutUs from "./_components/AboutUs"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 
 export const revalidate = 60
@@ -18,6 +19,7 @@ export default async function Home() {
         <Hero />
       </div>
       <main>
+        <AboutUs/>
         <EventTimeline events={events} />
         <WorkshopRegistration isVisible={false} />
       </main>
