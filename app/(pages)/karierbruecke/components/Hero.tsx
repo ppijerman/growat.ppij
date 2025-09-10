@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card"
 
 
 export default function Hero(){
-    const backgroundImageUrl = "'/assets/KarierHero.jpg'"
+    const backgroundImageUrl = "'/assets/KarierHero.jpeg'"
     return (
         <div className="flex flex-col lg:flex-row items-center justify-center md:py-4 bg-cover bg-center px-5 lg:px-10 py-5 space-y-5 xl:mx-20">
             <Card style={{backgroundImage: `url(${backgroundImageUrl})`}} className="bg-cover bg-center h-[50vh] lg:h-[70vh] w-full rounded-3xl shadow-lg flex justify-center items-center "/>
