@@ -5,7 +5,7 @@ import { Metadata } from "next"
 export const revalidate = 60 // Revalidate every 60 seconds
 
 export const metadata: Metadata = {
-  title: "Grow at PPI Jerman | Karierbrücke",
+  title: "Karierbrücke | Grow at PPI Jerman",
   description:
     "Karierbrücke - Job opportunities for Indonesian professionals in Germany",
 }

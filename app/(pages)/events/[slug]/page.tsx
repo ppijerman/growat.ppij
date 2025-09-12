@@ -1,12 +1,36 @@
 import EventHero from "./_components/EventHero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 import EventTimetable from "./_components/EventTimetable"
+import { Metadata } from "next"
 
 export const revalidate = 60 // Revalidate every 60 seconds
 
 type Params = {
   slug: string
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const eventRepository = new GrowatEventRepository()
+  const event = await eventRepository.getEventBySlug(slug)
+
+  if (!event) {
+    return {
+      title: "Event Not Found | Grow at PPI Jerman",
+      description: "The requested event could not be found.",
+    }
+  }
+
+  return {
+    title: `${event.title} | Grow at PPI Jerman`,
+    description: event.description || "",
+  }
+}
+
 export default async function Page({ params }: { params: Promise<Params> }) {
   const { slug } = await params
 
