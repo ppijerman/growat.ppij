@@ -95,7 +95,7 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
             className="bg-ga-green text-white font-semibold text-sm px-6 rounded-lg gap-2 self-end"
             asChild
           >
-            <Link href={"https://www.google.com"}>
+            <Link href={jobOffer.link}>
               <p>Apply now</p> <SquareArrowOutUpRight className="h-5 w-5" />
             </Link>
           </Button>
@@ -121,12 +121,11 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
         </p>
         <MarkdownContent markdown={jobOffer.additionalInformation} />
         <Button
-          className="bg-ga-green text-white font-semibold px-6 rounded-lg gap-2 my-2"
+          className="bg-ga-green text-white font-semibold text-sm px-6 rounded-lg gap-2 self-end"
           asChild
         >
-          <Link href={"https://www.google.com"}>
-            <p className="text-xs">Apply now</p>{" "}
-            <SquareArrowOutUpRight className="h-5 w-5" />
+          <Link href={jobOffer.link}>
+            <p>Apply now</p> <SquareArrowOutUpRight className="h-5 w-5" />
           </Link>
         </Button>
       </div>

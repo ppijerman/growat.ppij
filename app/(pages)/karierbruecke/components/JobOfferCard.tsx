@@ -54,8 +54,13 @@ export default function JobOfferCard({ jobOffer }: JobOfferCardProps) {
 
 function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
   return (
-    <ContentCard borderEffect={true} hoverable={true} color="ga-green">
-      <div className="flex flex-col flex-wrap grow py-2 bg-ga-light">
+    <ContentCard
+      borderEffect={true}
+      hoverable={true}
+      color="ga-green"
+      className="pb-1 pt-1.5 cursor-pointer"
+    >
+      <div className="flex flex-col flex-wrap grow pt-2 pb-4 bg-ga-light">
         <div className="flex flex-row gap-3">
           {/* Company Logo */}
           <div className="shrink-0 w-[50px] h-[50px] md:w-[100px] md:h-[100px] relative self-start">
@@ -67,8 +72,8 @@ function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
             />
           </div>
           {/* Details */}
-          <div className="text-xs flex w-full flex-col sm:pl-4 space-y-2">
-            <div className="flex flex-col py-2">
+          <div className="text-xs flex w-full flex-col sm:pl-4 space-y-1 justify-between">
+            <div className="flex flex-col">
               <p className="sm:text-lg font-extrabold text-wrap">
                 {jobOffer.title}
               </p>
@@ -81,9 +86,9 @@ function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
                 {jobOffer.location}
               </p>
             </div>
-            <div className="flex flex-wrap justify-between text-xs sm:text-sm">
-              <div className="flex flex-row gap-1 sm:justify-center items-center">
-                <BriefcaseBusiness className="h-5 w-5 lg:my-1" />
+            <div className="flex flex-wrap justify-between text-xs sm:text-sm items-center">
+              <div className="flex flex-row gap-1 justify-center space-x-1">
+                <BriefcaseBusiness className="h-[2em] w-5 lg:my-1" />
                 <div>
                   <p>Fields of work</p>
                   <p className="font-semibold">
@@ -91,18 +96,18 @@ function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row gap-1">
+              <div className="flex flex-row gap-1 justify-center space-x-1">
                 <div>
-                  <Clock className="h-5 w-5 lg:my-1" />
+                  <Clock className="h-[2em] w-5 lg:my-1" />
                 </div>
                 <div>
                   <p>Working hours</p>
                   <p className="font-semibold">{jobOffer.workingTime}</p>
                 </div>
               </div>
-              <div className="flex flex-row gap-1">
+              <div className="flex flex-row gap-1 justify-center space-x-1">
                 <div>
-                  <CircleUserRound className="h-5 w-5 lg:my-1" />
+                  <CircleUserRound className="h-[2em] w-5 lg:my-1" />
                 </div>
                 <div>
                   <p>Apply as</p>
@@ -114,7 +119,7 @@ function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
         </div>
       </div>
       {/*Ini div untuk see more*/}
-      <div className="flex justify-between items-end text-xs">
+      <div className="flex justify-between items-end text-sm md:text-base">
         <p>
           Posted on {new Date(jobOffer.publishedAt).toLocaleDateString("en-GB")}
         </p>

@@ -1,7 +1,14 @@
 import { JobOfferRepository } from "@/lib/repositories/job-offer-repository"
 import JobOfferCard from "./components/JobOfferCard"
+import { Metadata } from "next"
 
 export const revalidate = 60 // Revalidate every 60 seconds
+
+export const metadata: Metadata = {
+  title: "Karierbrücke | Grow at PPI Jerman",
+  description:
+    "Karierbrücke - Job opportunities for Indonesian professionals in Germany",
+}
 
 export default async function Page() {
   const repository = new JobOfferRepository()
