@@ -56,7 +56,7 @@ export type EventAgendaTimetableContent = {
 
 export type SpeakersListContent = {
   __component: "event-content.speakers-list"
-  title: string
+  title?: string
   speakers: Speaker[]
 }
 

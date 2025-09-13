@@ -67,11 +67,21 @@ export default function SpeakersList({ speakersList }: Props) {
     ];
   }
 
+  let title = "";
+  if (!speakersList.title) {
+    title = "Speakers List";
+  } else {
+    title = speakersList.title;
+  }
+
   // Chunk speakers into groups of 6 for carousel slides
   const speakerChunks = chunkArray(speakersList.speakers, 6);
 
   return (
-    <div className="flex w-full items-center justify-center bg-white px-10 lg:px-[5%]">
+    <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[5%]">
+      <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
+        {title}
+      </p>
       <Carousel>
         <CarouselContent>
           {speakerChunks.map((chunk, idx) => (
