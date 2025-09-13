@@ -54,9 +54,16 @@ export type EventAgendaTimetableContent = {
   agendas: EventTimetableEntry[]
 }
 
+export type SpeakersListContent = {
+  __component: "event-content.speakers-list"
+  title: string
+  speakers: Speaker[]
+}
+
 type Content =
   | RichTextContent
   | BulletSectionContent
+  | SpeakersListContent
   | EventAgendaTimetableContent
 
 export type BulletPoint = {
