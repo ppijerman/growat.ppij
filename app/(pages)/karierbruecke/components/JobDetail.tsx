@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { JobOffer } from "@/lib/models/JobOffer"
-import MarkdownContent from "./MarkdownContent"
+import MarkdownContent from "@/components/MarkdownContent/MarkdownContent"
 import JobKeyword from "./JobKeyword"
 
 type JobDetailProps = {

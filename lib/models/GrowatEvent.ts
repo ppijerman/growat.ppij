@@ -29,14 +29,15 @@ export enum EventType {
 }
 
 export type RichTextContent = {
-  __component: "richtext"
-  text: string
+  __component: "event-content.rich-text"
+  id: number
+  text: RichTextBlock[]
+  imageUrl?: string
 }
 
-export type RichTextWithImageContent = {
-  __component: "richtext-image"
-  text: string
-  imageUrl: string
+export type RichTextBlock = {
+  type: string
+  children: {text: string; type: string}[]
 }
 
 export type IconPointersContent = {
@@ -58,7 +59,6 @@ export type EventAgendaTimetableContent = {
 
 type Content =
   | RichTextContent
-  | RichTextWithImageContent
   | IconPointersContent
   | EventAgendaTimetableContent
 
