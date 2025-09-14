@@ -23,7 +23,7 @@ export default function WhatSection({
         <div>
           {richTextContent?.image ? (
               <div className="w-full flex flex-col md:flex-row">
-                <div className="md:w-4/7 text-justify text-base">
+                <div className="md:w-4/7 text-justify text-base md:pr-5">
                     <MarkdownContent className="prose-base text-justify" markdown={richTextContent.text} />
                 </div>
                 <div className="md:w-3/7 flex justify-center items-center p-5">
