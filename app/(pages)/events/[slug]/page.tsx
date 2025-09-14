@@ -64,6 +64,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
           case "event-content.rich-text":
             return(
               <div className="w-full" key={index}>
+                {/* {JSON.stringify(content.image?.url)} */}
                 <WhatSection richTextContent={content} />
               </div>
             )

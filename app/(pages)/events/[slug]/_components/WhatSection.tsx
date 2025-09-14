@@ -1,6 +1,7 @@
 import Image from "next/image"
 import MarkdownContent from "@/components/MarkdownContent/MarkdownContent"
 import { RichTextContent } from "@/lib/models/GrowatEvent"
+import { mapImageMedia } from "@/lib/models/ImageMedia"
 
 type Props = {
   richTextContent?: RichTextContent
@@ -17,35 +18,27 @@ export default function WhatSection({
     <main className="bg-ga-light px-[6%] w-full">
       <div className="py-10 gap-y-4 flex flex-col">
         <h2 className="text-3xl leading-tight font-bold lg:text-4xl text-center md:text-start">
-          <b>Testing</b>
+          <b>{richTextContent?.title}</b>
         </h2>
         <div>
-          {richTextContent?.imageUrl ? (
+          {richTextContent?.image ? (
               <div className="w-full flex flex-col md:flex-row">
-                <div className="md:w-4/7 border-solid border-3 text-justify text-base">
-                    {richTextContent?.text.map((block, index) => (
-                    <MarkdownContent key={index} className="prose-lg" markdown={block.children.map(child => child.text).join(' ')} />
-                  )) || DEFAULT_PARAGRAPHS.map((paragraph, index) => (
-                    <p key={index} className="mb-4">{paragraph}</p>
-                  ))}
+                <div className="md:w-4/7 text-justify text-base">
+                    <MarkdownContent className="prose-base text-justify" markdown={richTextContent.text} />
                 </div>
-                <div className="md:w-3/7 border-solid border-3 flex justify-center items-center p-5">
+                <div className="md:w-3/7 flex justify-center items-center p-5">
                   <Image
-                    src={richTextContent.imageUrl}
+                    src={mapImageMedia(richTextContent.image).url}
                     alt="What Section Image"
-                    width={300}
-                    height={300}
+                    width={richTextContent.image.width}
+                    height={richTextContent.image.height}
                     className="object-contain rounded-2xl"
                     />
                 </div>
               </div>
             ) : (
-              <div className="w-full text-justify text-base text-start">
-                {richTextContent?.text.map((block, index) => (
-                  <MarkdownContent key={index} className="prose-lg" markdown={block.children.map(child => child.text).join(' ')} />
-                )) || DEFAULT_PARAGRAPHS.map((paragraph, index) => (
-                  <p key={index} className="mb-4">{paragraph}</p>
-                ))}
+              <div className="w-full">
+                <MarkdownContent className="prose-base text-justify" markdown={richTextContent?.text || DEFAULT_PARAGRAPHS.join('\n\n')} />
               </div>
             )}
         </div>
