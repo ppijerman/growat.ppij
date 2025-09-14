@@ -1,37 +1,6 @@
 import GrowatIcon from "./GrowatIcon"
 import { BulletSectionContent, BulletPoint } from "@/lib/models/GrowatEvent"
 
-//const bulletPoints = [
-//  {
-//    icon: "camera",
-//    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-//  },
-//  {
-//    icon: "calendar",
-//    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-//  },
-//  {
-//    icon: "clock",
-//    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-//  },
-//  {
-//    icon: "map-pin",
-//    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-//  },
-//  {
-//    icon: "phone",
-//    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-//  },
-//  {
-//    icon: "mail",
-//    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-//  },
-//];
-
-//type ResponsiveGridProps = {
-//  bulletPoints: BulletPointProps[];
-//};
-
 type Props = {
   bulletSection: BulletSectionContent
 }
@@ -50,12 +19,15 @@ function BulletPointDiv({ bulletPoint }: { bulletPoint: BulletPoint }) {
 
 export default function ResponsiveGrid({ bulletSection }: Props) {
   return (
-    <div className="flex w-full items-center justify-center bg-white px-10 lg:px-[5%]">
-      <div className="flex flex-wrap justify-center gap-5 sm:gap-10">
+    <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[5%] mx-auto">
+      <div className="w-full text-2xl sm:text-3xl mb-7 font-bold text-center md:text-left">
+        {bulletSection.title}
+      </div>
+      <div className="flex flex-wrap w-full justify-center space-y-5">
         {bulletSection.bulletPoints.map((bulletPoint, index) => (
           <div
             key={index}
-            className={`basis-1/3 sm:basis-1/4 flex justify-center`}
+            className={`basis-1/2 sm:basis-1/3 flex justify-center `}
           >
             <BulletPointDiv bulletPoint={bulletPoint} />
           </div>

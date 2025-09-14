@@ -36,6 +36,7 @@ export type RichTextContent = {
 
 export type BulletSectionContent = {
   __component: "event-content.bullets-section"
+  title?: string
   bulletPoints: BulletPoint[]
 }
 
