@@ -82,7 +82,7 @@ export default function SpeakersList({ speakersList }: Props) {
   const speakerChunks = chunkArray(speakersList.speakers, 6);
 
   return (
-    <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[5%]">
+    <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[6%]">
       <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
         {title}
       </p>
