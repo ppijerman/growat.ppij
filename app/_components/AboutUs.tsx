@@ -28,7 +28,7 @@ export default function AboutUs() {
           size={"lg"}
           asChild
         >
-          <Link href={"/bursakerja"}>
+          <Link href={"/karierbruecke"}>
             <p>Visit Job Board</p>
           </Link>
         </Button>
