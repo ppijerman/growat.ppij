@@ -19,7 +19,7 @@ function BulletPointDiv({ bulletPoint }: { bulletPoint: BulletPoint }) {
 
 export default function ResponsiveGrid({ bulletSection }: Props) {
   return (
-    <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[5%] mx-auto">
+    <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[6%] mx-auto">
       <div className="w-full text-2xl sm:text-3xl mb-7 font-bold text-center md:text-left">
         {bulletSection.title}
       </div>
