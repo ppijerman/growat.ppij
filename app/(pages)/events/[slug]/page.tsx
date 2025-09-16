@@ -4,6 +4,7 @@ import { GrowatEventRepository } from "@/lib/repositories/growat-event-repositor
 import EventTimetable from "./_components/EventTimetable"
 import WhatSection from "./_components/WhatSection"
 import ResponsiveGrid from "./_components/BulletSection"
+import SpeakerList from "./_components/SpeakersList"
 
 export const revalidate = 60 // Revalidate every 60 seconds
 
@@ -74,10 +75,15 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                 <ResponsiveGrid bulletSection={content} />
               </div>
             )
+          case "event-content.speakers-list":
+            return (
+              <div key={index} className="w-full">
+                <SpeakerList speakersList={content} />
+              </div>
+            )
           default:
             return null
-        }
-      })}
+        }})}
     </main>
   )
 }
