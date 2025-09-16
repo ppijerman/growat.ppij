@@ -1,7 +1,7 @@
 import { SpeakersListContent } from "@/lib/models/GrowatEvent";
 import { Speaker } from "@/lib/models/GrowatEvent";
 import Image from "next/image";
-import FotoModerator from "@/public/assets/fotoModerator.jpg";
+import { mapImageMedia } from "@/lib/models/ImageMedia";
 
 import {
   Carousel,
@@ -30,11 +30,15 @@ function SpeakerDiv({ speaker }: { speaker: Speaker }) {
       {/* Role */}
       <p className="text-sm text-gray-500 mb-2">{speaker.role}</p>
       {/* Speaker Image */}
-      <Image
-        src={FotoModerator}
-        alt="SpeakerFoto"
-        className="rounded-full w-32"
-      />
+      <div className="rounded-full w-32 h-32 sm:w-40 sm:h-40 relative mb-3 overflow-hidden bg-ga-beige">
+        {speaker.image && (
+          <Image
+            src={mapImageMedia(speaker.image).url}
+            alt="SpeakerFoto"
+            fill
+          />
+        )}
+      </div>
       {/* Name */}
       <p className="font-semibold text-base md:text-lg">{firstName}</p>
       {restName && (

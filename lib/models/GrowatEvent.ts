@@ -91,7 +91,7 @@ export type Speaker = {
   role: string
   description: string
   socialProfiles: SocialProfile[]
-  image: ImageMedia
+  image?: ImageMedia
 }
 
 export type LinkButton = {
