@@ -58,7 +58,7 @@ export class GrowatEventRepository implements IGrowatEventRepository {
   async populateContent(event: GrowatEvent): Promise<GrowatEvent> {
     const response = await this.getEventById(
       event.documentId,
-      "populate[contents][populate]=*"
+      "populate[contents][on][event-content.bullets-section][populate]=*&populate[contents][on][event-content.speakers-list][populate]=speakers.image&populate[contents][on][event-content.rich-text][populate]=*&populate[contents][on][event-content.event-timeline][populate]=*"
     )
     if (!response) {
       throw new Error(`Event with documentId ${event.documentId} not found`)
