@@ -29,9 +29,11 @@ export enum EventType {
 }
 
 export type RichTextContent = {
-  __component: "richtext"
+  __component: "event-content.rich-text"
+  id: number
   text: string
-  image?: string
+  image?: ImageMedia
+  title?: string
 }
 
 export type BulletSectionContent = {
