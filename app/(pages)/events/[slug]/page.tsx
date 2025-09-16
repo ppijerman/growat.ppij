@@ -2,9 +2,7 @@ import { Metadata } from "next"
 import EventHero from "./_components/EventHero"
 import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 import EventTimetable from "./_components/EventTimetable"
-import { Metadata } from "next"
 import WhatSection from "./_components/WhatSection"
-import { json } from "stream/consumers"
 import ResponsiveGrid from "./_components/BulletSection"
 
 export const revalidate = 60 // Revalidate every 60 seconds
@@ -64,14 +62,16 @@ export default async function Page({ params }: { params: Promise<Params> }) {
               </div>
             )
           case "event-content.rich-text":
-            return(
+            return (
               <div className="w-full" key={index}>
                 {/* {JSON.stringify(content.image?.url)} */}
                 <WhatSection richTextContent={content} />
+              </div>
+            )
           case "event-content.bullets-section":
             return (
               <div key={index} className="w-full">
-                <ResponsiveGrid bulletSection={content} />;
+                <ResponsiveGrid bulletSection={content} />
               </div>
             )
           default:
