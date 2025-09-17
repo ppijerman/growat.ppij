@@ -1,7 +1,7 @@
-import { SpeakersListContent } from "@/lib/models/GrowatEvent";
-import { Speaker } from "@/lib/models/GrowatEvent";
-import Image from "next/image";
-import { mapImageMedia } from "@/lib/models/ImageMedia";
+import { SpeakersListContent } from "@/lib/models/GrowatEvent"
+import { Speaker } from "@/lib/models/GrowatEvent"
+import Image from "next/image"
+import { mapImageMedia } from "@/lib/models/ImageMedia"
 
 import {
   Carousel,
@@ -9,20 +9,20 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/components/ui/carousel"
 
 type Props = {
-  speakersList: SpeakersListContent;
-};
+  speakersList: SpeakersListContent
+}
 
 function SpeakerDiv({ speaker }: { speaker: Speaker }) {
   // Split name if more than 2 words
-  const nameParts = speaker.name.split(" ");
-  let firstName = speaker.name;
-  let restName = "";
+  const nameParts = speaker.name.split(" ")
+  let firstName = speaker.name
+  let restName = ""
   if (nameParts.length > 2) {
-    firstName = nameParts[0];
-    restName = nameParts.slice(1).join(" ");
+    firstName = nameParts[0]
+    restName = nameParts.slice(1).join(" ")
   }
 
   return (
@@ -36,7 +36,7 @@ function SpeakerDiv({ speaker }: { speaker: Speaker }) {
             src={mapImageMedia(speaker.image).url}
             alt="SpeakerFoto"
             fill
-            className="object-contain"
+            className="object-cover"
           />
         )}
       </div>
@@ -48,39 +48,36 @@ function SpeakerDiv({ speaker }: { speaker: Speaker }) {
       {/* Description */}
       <p className="text-xsw md:text-sm">{speaker.description}</p>
     </div>
-  );
+  )
 }
 
 // Helper to chunk speakers into groups of n
 function chunkArray<T>(array: T[], size: number): T[][] {
-  const result: T[][] = [];
+  const result: T[][] = []
   for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
+    result.push(array.slice(i, i + size))
   }
-  return result;
+  return result
 }
 
 export default function SpeakersList({ speakersList }: Props) {
   if (speakersList.speakers.length === 0) {
     // No speakersList to show
-    return null;
+    return null
   } else if (speakersList.speakers.length <= 6) {
     // For testing duplicate speakers
-    speakersList.speakers = [
-      ...speakersList.speakers,
-      ...speakersList.speakers,
-    ];
+    speakersList.speakers = [...speakersList.speakers, ...speakersList.speakers]
   }
 
-  let title = "";
+  let title = ""
   if (!speakersList.title) {
-    title = "Speakers List";
+    title = "Speakers List"
   } else {
-    title = speakersList.title;
+    title = speakersList.title
   }
 
   // Chunk speakers into groups of 6 for carousel slides
-  const speakerChunks = chunkArray(speakersList.speakers, 6);
+  const speakerChunks = chunkArray(speakersList.speakers, 6)
 
   return (
     <>
@@ -128,5 +125,5 @@ export default function SpeakersList({ speakersList }: Props) {
         </div>
       </div>
     </>
-  );
+  )
 }
