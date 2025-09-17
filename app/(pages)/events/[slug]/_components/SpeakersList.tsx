@@ -36,6 +36,7 @@ function SpeakerDiv({ speaker }: { speaker: Speaker }) {
             src={mapImageMedia(speaker.image).url}
             alt="SpeakerFoto"
             fill
+            className="object-contain"
           />
         )}
       </div>
@@ -82,30 +83,50 @@ export default function SpeakersList({ speakersList }: Props) {
   const speakerChunks = chunkArray(speakersList.speakers, 6);
 
   return (
-    <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[5%]">
-      <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
-        {title}
-      </p>
-      <Carousel>
-        <CarouselContent>
-          {speakerChunks.map((chunk, idx) => (
-            <CarouselItem key={idx}>
-              <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-10 w-full">
-                {chunk.map((speaker, slideIndex) => (
-                  <div
-                    key={slideIndex}
-                    className="basis-1/3 sm:basis-1/4 flex justify-center"
-                  >
-                    <SpeakerDiv speaker={speaker} />
-                  </div>
-                ))}
-              </div>
-            </CarouselItem>
+    <>
+      {/* Mobile: 2 columns, unlimited rows */}
+      <div className="flex flex-col w-full items-center justify-center bg-white px-6 sm:px-10 lg:px-[6%] md:hidden">
+        <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
+          {title}
+        </p>
+        <div className="flex flex-wrap gap-5 w-full justify-center">
+          {speakersList.speakers.map((speaker, idx) => (
+            <div key={idx} className="sm:basis-1/4 flex justify-center mb-6">
+              <SpeakerDiv speaker={speaker} />
+            </div>
           ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </div>
+        </div>
+      </div>
+      {/* Desktop: carousel */}
+      <div className="hidden md:flex">
+        <div className="flex flex-col items-center justify-center bg-white px-10 lg:px-[6%]">
+          <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
+            {title}
+          </p>
+          <div className="relative w-full flex items-center justify-center">
+            <Carousel>
+              <CarouselContent>
+                {speakerChunks.map((chunk, idx) => (
+                  <CarouselItem key={idx}>
+                    <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-10">
+                      {chunk.map((speaker, slideIndex) => (
+                        <div
+                          key={slideIndex}
+                          className="basis-1/3 sm:basis-1/4 flex justify-center"
+                        >
+                          <SpeakerDiv speaker={speaker} />
+                        </div>
+                      ))}
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-0 lg:left-10 top-1/2 -translate-y-1/2 z-10" />
+              <CarouselNext className="absolute right-0 lg:right-10 top-1/2 -translate-y-1/2 z-10" />
+            </Carousel>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
