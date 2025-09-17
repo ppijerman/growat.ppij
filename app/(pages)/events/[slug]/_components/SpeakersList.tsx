@@ -64,9 +64,6 @@ export default function SpeakersList({ speakersList }: Props) {
   if (speakersList.speakers.length === 0) {
     // No speakersList to show
     return null
-  } else if (speakersList.speakers.length <= 6) {
-    // For testing duplicate speakers
-    speakersList.speakers = [...speakersList.speakers, ...speakersList.speakers]
   }
 
   let title = ""
@@ -82,45 +79,58 @@ export default function SpeakersList({ speakersList }: Props) {
   return (
     <>
       {/* Mobile: 2 columns, unlimited rows */}
-      <div className="flex flex-col w-full items-center justify-center bg-white px-6 sm:px-10 lg:px-[6%] md:hidden">
-        <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
-          {title}
-        </p>
-        <div className="flex flex-wrap gap-5 w-full justify-center">
-          {speakersList.speakers.map((speaker, idx) => (
-            <div key={idx} className="sm:basis-1/4 flex justify-center mb-6">
-              <SpeakerDiv speaker={speaker} />
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* Desktop: carousel */}
-      <div className="hidden md:flex">
-        <div className="flex flex-col items-center justify-center bg-white px-10 lg:px-[6%]">
+      <div className="flex flex-col w-full items-center justify-center bg-white px-6 sm:px-10 lg:px-[6%] lg:hidden">
+        <div className="w-full">
           <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
             {title}
           </p>
-          <div className="relative w-full flex items-center justify-center">
-            <Carousel>
-              <CarouselContent>
-                {speakerChunks.map((chunk, idx) => (
-                  <CarouselItem key={idx}>
-                    <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-10">
-                      {chunk.map((speaker, slideIndex) => (
-                        <div
-                          key={slideIndex}
-                          className="basis-1/3 sm:basis-1/4 flex justify-center"
-                        >
-                          <SpeakerDiv speaker={speaker} />
-                        </div>
-                      ))}
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="absolute left-0 lg:left-10 top-1/2 -translate-y-1/2 z-10" />
-              <CarouselNext className="absolute right-0 lg:right-10 top-1/2 -translate-y-1/2 z-10" />
-            </Carousel>
+        </div>
+        <div className="w-full">
+          <div className="flex flex-wrap gap-5 w-full justify-center">
+            {speakersList.speakers.map((speaker, idx) => (
+              <div key={idx} className="sm:basis-1/4 flex justify-center mb-6">
+                <SpeakerDiv speaker={speaker} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Desktop: carousel */}
+      <div className="hidden lg:flex">
+        <div className="flex flex-col w-full items-center justify-center bg-white px-10 lg:px-[6%]">
+          <div className="w-full">
+            <p className="w-full text-2xl sm:text-3xl font-bold text-left mb-7">
+              {title}
+            </p>
+          </div>
+          <div className="w-full">
+            <div className="relative w-full flex items-center justify-center">
+              <Carousel>
+                <CarouselContent>
+                  {speakerChunks.map((chunk, idx) => (
+                    <CarouselItem key={idx}>
+                      <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-10">
+                        {chunk.map((speaker, slideIndex) => (
+                          <div
+                            key={slideIndex}
+                            className="basis-1/3 sm:basis-1/4 flex justify-center"
+                          >
+                            <SpeakerDiv speaker={speaker} />
+                          </div>
+                        ))}
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                {/* If speakers list less than 6 speakers, hide arrows */}
+                {speakersList.speakers.length > 6 && (
+                  <>
+                    <CarouselPrevious className="absolute left-0 sm:left-2 md:left-8 lg:left-10 top-1/2 -translate-y-1/2 z-10" />
+                    <CarouselNext className="absolute right-0 sm:right-2 md:right-8 lg:right-10 top-1/2 -translate-y-1/2 z-10" />
+                  </>
+                )}
+              </Carousel>
+            </div>
           </div>
         </div>
       </div>
