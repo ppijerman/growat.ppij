@@ -25,7 +25,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu"
-import { events } from "@/lib/events"
+import { GrowatEvent } from "@/lib/models/GrowatEvent"
 
 type NavItem = {
   id: string
@@ -53,11 +53,16 @@ const NavItems: NavItem[] = [
     label: "Past Events",
     description: "Browse past events",
   },
+  {
+    id: "karierbruecke",
+    href: "/karierbruecke",
+    label: "Karierbrücke",
+    description: "See Job Offers",
+  },
 ]
 
-function fetchEventSubmenus(navItems: NavItem[]) {
+function fetchEventSubmenus(events: GrowatEvent[], navItems: NavItem[]) {
   const upcomingEvents = events
-    .filter((event) => event.showOnNavbar)
     .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
     .filter(
       (event) =>
@@ -69,22 +74,30 @@ function fetchEventSubmenus(navItems: NavItem[]) {
   const upcomingEventsSubmenu = navItems?.find(
     (submenu) => submenu.id === "upcoming-events"
   )
-  if (upcomingEventsSubmenu) {
+
+  if (upcomingEventsSubmenu && upcomingEvents.length > 0) {
     upcomingEventsSubmenu.submenus = upcomingEvents.map((event) => ({
       id: event.slug,
       href: "/events/" + event.slug,
       label: event.title,
-      description: event.shortDescription,
+      description: event.description,
     }))
+  } else if (upcomingEventsSubmenu) {
+    // if no upcoming events, put "check back later" submenu
+    upcomingEventsSubmenu.submenus = [
+      {
+        id: "no-upcoming-events",
+        href: "/",
+        label: "Check back soon!",
+      },
+    ]
   }
 
-  const pastEvents = events
-    .filter((event) => event.showOnNavbar)
-    .filter(
-      (event) =>
-        (event.endDate && event.endDate < new Date()) ||
-        (!event.endDate && event.startDate < new Date())
-    )
+  const pastEvents = events.filter(
+    (event) =>
+      (event.endDate && event.endDate < new Date()) ||
+      (!event.endDate && event.startDate < new Date())
+  )
   const pastEventsSubmenu = navItems?.find(
     (submenu) => submenu.id === "past-events"
   )
@@ -93,12 +106,16 @@ function fetchEventSubmenus(navItems: NavItem[]) {
       id: event.slug,
       href: "/events/" + event.slug,
       label: event.title,
-      description: event.shortDescription,
+      description: event.description,
     }))
   }
 }
 
-export default function Header() {
+interface NavBarProps {
+  events: GrowatEvent[]
+}
+
+export default function NavBar({ events }: NavBarProps) {
   const pathname = usePathname()
 
   // Define a function to determine if a link is active based on the pathname
@@ -108,7 +125,7 @@ export default function Header() {
   }
 
   const navItems = NavItems
-  fetchEventSubmenus(navItems)
+  fetchEventSubmenus(events, navItems)
 
   return (
     <div className="flex h-20 w-full px-10 items-center lg:px-[5%] z-50 bg-ga-light">
@@ -196,7 +213,7 @@ export default function Header() {
                         <NavigationMenuLink asChild key={subIndex}>
                           <Link
                             href={submenu.href}
-                            className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-ga-beige hover:text-ga-blue focus:bg-gray-100 focus:outline-hidden"
+                            className="group  grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-ga-beige hover:text-ga-blue focus:bg-gray-100 focus:outline-hidden"
                             prefetch={false}
                           >
                             <div className="text-sm font-bold leading-none">

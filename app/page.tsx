@@ -1,22 +1,27 @@
-import Header from "@/components/Navbar/header"
+import NavBar from "@/components/Navbar/NavBar"
 import Hero from "@/app/_components/Hero"
-import Timeline from "@/app/_components/EventTimeline"
-import StepUpMentorshipSection from "./_components/MentorshipSurvey"
-// import Recap from "./_components/recap"
+import EventTimeline from "@/app/_components/EventTimeline"
 import WorkshopRegistration from "./_components/WorkshopRegistration"
+import AboutUs from "./_components/AboutUs"
+import { GrowatEventRepository } from "@/lib/repositories/growat-event-repository"
 
-export default function Home() {
+export const revalidate = 60
+
+export default async function Home() {
+  const eventsRepository = new GrowatEventRepository()
+
+  const events = await eventsRepository.getAllEvents()
+
   return (
     <div>
       <div className="flex flex-col h-dvh">
-        <Header />
+        <NavBar events={events} />
         <Hero />
       </div>
-      <main className="px-7 lg:px-[8%]">
-        <Timeline isVisible={true} />
+      <main>
+        <AboutUs/>
+        <EventTimeline events={events} />
         <WorkshopRegistration isVisible={false} />
-        <StepUpMentorshipSection isVisible={true} />
-        {/* <Recap isVisible={true} /> */}
       </main>
     </div>
   )
