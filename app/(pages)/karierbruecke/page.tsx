@@ -16,13 +16,12 @@ export default async function Page() {
   const jobOffers = await repository.getAllJobOffers()
 
   return (
-    
     <main>
       <Hero />
-      <div className="bg-ga-light lg:px-10 space-y-3 py-5 justify-items-center">
+      <div className="bg-ga-light px-5 lg:px-10 xl:mx-20 space-y-3 py-5 justify-items-center">
         {jobOffers.map((jobOffer) => (
-        <JobOfferCard key={jobOffer.documentId} jobOffer={jobOffer} />
-      ))}
+          <JobOfferCard key={jobOffer.documentId} jobOffer={jobOffer} />
+        ))}
       </div>
     </main>
   )
