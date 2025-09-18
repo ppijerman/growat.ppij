@@ -17,7 +17,7 @@ type JobOfferCardProps = {
 
 export default function JobOfferCard({ jobOffer }: JobOfferCardProps) {
   return (
-    <div className="flex flex-col lg:flex-row mx-5 w-5/6 lg:w-9/12 xl:w-[1024px]">
+    <div className="flex flex-col lg:flex-row w-full">
       {/*Smaller screen*/}
       <div className="w-full lg:w-4/5 rounded-lg block lg:hidden">
         <Sheet>
@@ -86,7 +86,7 @@ function JobOfferCardContent({ jobOffer }: JobOfferCardProps) {
                 {jobOffer.location}
               </p>
             </div>
-            <div className="flex flex-wrap justify-between text-xs sm:text-sm items-center">
+            <div className="flex flex-wrap justify-between text-xs sm:text-sm items-center space-x-2">
               <div className="flex flex-row gap-1 justify-center space-x-1">
                 <BriefcaseBusiness className="h-[2em] w-5 lg:my-1" />
                 <div>
