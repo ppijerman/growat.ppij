@@ -1,17 +1,18 @@
+import clsx from "clsx"
 import Dompurify from "isomorphic-dompurify"
 import { marked } from "marked"
 
 type Props = {
   markdown: string
-  className? : string
+  className?: string
 }
 export default async function MarkdownContent({ markdown, className }: Props) {
   return (
     <div
-      className={
-        className ??
-        "prose-sm prose-h1:text-sm prose-h1:font-semibold prose-h2:text-sm prose-h3:text-sm prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-a:text-ga-blue prose-a:hover:underline prose-ul:list-disc prose-ol:list-decimal"
-      }
+      className={clsx(
+        className ||
+          "prose prose-headings:font-bold prose-ol:list-decimal prose-ul:list-disc"
+      )}
       dangerouslySetInnerHTML={{
         __html: Dompurify.sanitize(await marked.parse(markdown)),
       }}

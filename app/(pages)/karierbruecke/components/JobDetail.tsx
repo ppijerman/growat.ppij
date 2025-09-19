@@ -113,13 +113,19 @@ export default async function JobDetail({ jobOffer }: JobDetailProps) {
       </div>
       <div className="rounded-lg border-lg border-2 border-ga-green border-solid p-4 gap-5">
         <p className="text-lg font-semibold">Your tasks</p>
-        <MarkdownContent markdown={jobOffer.tasks} />
+        <MarkdownContent
+          className="prose-sm prose-h1:text-sm prose-h1:font-semibold prose-h2:text-sm prose-h3:text-sm prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-a:text-ga-blue prose-a:hover:underline prose-ul:list-disc prose-ol:list-decimal"
+          markdown={jobOffer.tasks}
+        />
         <p className="text-lg font-semibold">Your profile</p>
         <MarkdownContent markdown={jobOffer.profile} />
         <p className="font-semibold text-lg">
           Contact & additional information
         </p>
-        <MarkdownContent markdown={jobOffer.additionalInformation} />
+        <MarkdownContent
+          className="prose-sm prose-h1:text-sm prose-h1:font-semibold prose-h2:text-sm prose-h3:text-sm prose-h4:text-sm prose-h5:text-sm prose-h6:text-sm prose-a:text-ga-blue prose-a:hover:underline prose-ul:list-disc prose-ol:list-decimal"
+          markdown={jobOffer.additionalInformation}
+        />
         <Button
           className="bg-ga-green text-white font-semibold text-sm px-6 rounded-lg gap-2 self-end"
           asChild
