@@ -6,7 +6,7 @@ import Hero from "./components/Hero"
 export const revalidate = 60 // Revalidate every 60 seconds
 
 export const metadata: Metadata = {
-  title: "Karierbrücke | Grow at PPI Jerman",
+  title: "KarierBrücke | Grow at PPI Jerman",
   description:
     "Karierbrücke - Job opportunities for Indonesian professionals in Germany",
 }
