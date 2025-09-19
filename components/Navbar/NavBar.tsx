@@ -56,7 +56,7 @@ const NavItems: NavItem[] = [
   {
     id: "karierbruecke",
     href: "/karierbruecke",
-    label: "Karierbrücke",
+    label: "KarierBrücke",
     description: "See Job Offers",
   },
 ]
