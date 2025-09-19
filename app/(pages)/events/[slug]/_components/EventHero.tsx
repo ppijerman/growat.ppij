@@ -69,7 +69,9 @@ export default function EventHero({ event }: EventHeroProps) {
                 className="mb-2"
               />
             ) : (
-              <h1 className="text-3xl md:text-4xl font-bold">{event.title}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold  w-[65%]">
+                {event.title}
+              </h1>
             )}
             <p className="text-lg md:text-xl font-semibold">
               {event.hideDate ? null : (
@@ -91,9 +93,14 @@ export default function EventHero({ event }: EventHeroProps) {
           </div>
 
           {!event.hideDate ? (
-            <div className="flex justify-left gap-2 md:gap-4">
-              <Countdown date={event.startDate} />
-            </div>
+            event.endDate &&
+            event.endDate < new Date() &&
+            event.startDate &&
+            event.startDate < new Date() && (
+              <div className="flex justify-left gap-2 md:gap-4">
+                <Countdown date={event.startDate} />
+              </div>
+            )
           ) : (
             <div className="text-lg md:text-2xl">
               Date to be announced soon!
