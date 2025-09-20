@@ -98,7 +98,7 @@ export default function SpeakersList({ speakersList }: Props) {
           </div>
           <div className="w-full">
             <div className="relative w-full flex items-center justify-center">
-              <Carousel>
+              <Carousel className="overflow-hidden">
                 <CarouselContent>
                   {speakerChunks.map((chunk, idx) => (
                     <CarouselItem key={idx}>
