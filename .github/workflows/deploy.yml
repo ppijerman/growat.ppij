@@ -23,6 +23,8 @@ jobs:
           # Needed at build time for next.config.ts remotePatterns
           # TODO: update to custom domain URL once DNS + cert are configured
           BACKEND_API_URL: https://app-growat-cms.azurewebsites.net
+          # Needed at build time for SSG page pre-rendering
+          BACKEND_API_TOKEN: ${{ secrets.BACKEND_API_TOKEN }}
 
       - uses: azure/webapps-deploy@v3
         with:
